@@ -22,7 +22,7 @@ public class De {
     public De(){
         this.de = new Face[nbFace];
         for(int i =0;i<6;i++){
-            this.de[i]= new Face(0,"gloire");
+            this.de[i]= new Face(i,"gloire");
         }
     }
 
