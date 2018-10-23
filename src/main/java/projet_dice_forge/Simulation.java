@@ -1,4 +1,4 @@
-package projet_dice_forge;
+package main.java.projet_dice_forge;
 
 
 public class Simulation {
@@ -10,8 +10,17 @@ public class Simulation {
         PlateauDuJoueur joueur1 = new PlateauDuJoueur(1);
         PlateauDuJoueur joueur2 = new PlateauDuJoueur(2);
         Tour tour = new Tour(joueur1,joueur2);
-        System.out.println("joueur1 :"+ joueur1.getPointsDeGloire());
-        System.out.println("joueur2 :" +joueur2.getPointsDeGloire());
+        if (joueur1.getPointsDeGloire() > joueur2.getPointsDeGloire()){
+            System.out.println(" Le gagnant est le joueur1 avec "+ joueur1.getPointsDeGloire() +" points de gloire.");
+        }
+        else if (joueur1.getPointsDeGloire() < joueur2.getPointsDeGloire()){
+            System.out.println(" Le gagnant est le joueur2 avec "+ joueur2.getPointsDeGloire() +" points de gloire.");
+        }
+        else{
+            System.out.println("Egalité. " +joueur2.getPointsDeGloire() + " points de gloire partout.");
+        }
+
+
 
 
     }

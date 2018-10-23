@@ -1,4 +1,4 @@
-package projet_dice_forge;
+package main.java.projet_dice_forge;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,7 +15,6 @@ public class De {
 
     /**
      * Crée un dé qui regroupe des faces et initialise les faces du dé par défault (nb à 0 et typeDeRessource à gloire)
-     * @param aucun
      */
 
     public De(){

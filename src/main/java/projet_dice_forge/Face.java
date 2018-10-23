@@ -1,5 +1,4 @@
-package projet_dice_forge;
-
+package main.java.projet_dice_forge;
 
 /**
  * Cette classe représente une face d'un dé
@@ -19,7 +18,7 @@ public class Face {
     }
 
     /**
-     * @return le nombre de ressource gagner
+     * @return le nombre de ressource gagné
      */
     public int getNb() {
         return nb;
@@ -27,7 +26,7 @@ public class Face {
 
     /**
      *
-     * @return le type de ressource gagner
+     * @return le type de ressource gagné
      */
     public String getTypeDeRessource() {
         return typeDeRessource;

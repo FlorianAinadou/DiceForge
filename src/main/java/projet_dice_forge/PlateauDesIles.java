@@ -1,4 +1,4 @@
-package projet_dice_forge;
+package main.java.projet_dice_forge;
 
 public class PlateauDesIles {
 }
