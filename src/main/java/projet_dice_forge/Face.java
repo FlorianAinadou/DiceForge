@@ -1,4 +1,5 @@
-package si3.projet2;
+package projet_dice_forge;
+
 
 /**
  * Cette classe représente une face d'un dé

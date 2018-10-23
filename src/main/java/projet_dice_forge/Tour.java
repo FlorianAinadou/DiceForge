@@ -1,4 +1,4 @@
-package si3.projet2;
+package projet_dice_forge;
 
 public class Tour {
 

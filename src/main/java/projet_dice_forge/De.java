@@ -1,5 +1,4 @@
-package si3.projet2;
-
+package projet_dice_forge;
 
 import java.util.ArrayList;
 import java.util.Random;
