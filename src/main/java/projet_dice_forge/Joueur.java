@@ -8,19 +8,17 @@ public class Joueur {
 
 
     public Joueur(int Idjoueur){
-        this.id=id;
+        this.id=Idjoueur;
         this.DeClaire=new De();
         this.DeSombre=new De();
         this.Plateau=new PlateauDuJoueur(Idjoueur);
-
     }
 
     public Joueur(int Idjoueur, De de1, De de2, PlateauDuJoueur Plateau){
-        this.id=id;
+        this.id=Idjoueur;
         this.DeClaire=de1;
         this.DeSombre=de2;
         this.Plateau=Plateau;
-
     }
     /**
      * permet de définir les dés du joueur concerné

@@ -31,7 +31,6 @@ public class De {
      */
     public void ajouterUneFace(Face f, int indice){
         this.de[indice]= f;
-
     }
 
     public void ajouterToutLesFace(ArrayList list){
