@@ -48,4 +48,15 @@ public class PlateauDuJoueur {
     public void setPointsDeGloire(int pointsDeGloire) {
         this.pointsDeGloire = pointsDeGloire;
     }
+
+    /**
+     * permet de définir le joueur concerné
+     * @param idJoueur
+     */
+    public void setJoueur(int idJoueur) {
+        this.idJoueur = idJoueur;
+    }
+
+
+
 }

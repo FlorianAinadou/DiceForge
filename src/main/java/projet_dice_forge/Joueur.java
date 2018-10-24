@@ -8,7 +8,7 @@ public class Joueur {
 
 
     public Joueur(int Idjoueur){
-        this.id=Idjoueur;
+        this.id=id;
         this.DeClaire=new De();
         this.DeSombre=new De();
         this.Plateau=new PlateauDuJoueur(Idjoueur);
@@ -16,7 +16,7 @@ public class Joueur {
     }
 
     public Joueur(int Idjoueur, De de1, De de2, PlateauDuJoueur Plateau){
-        this.id=Idjoueur;
+        this.id=id;
         this.DeClaire=de1;
         this.DeSombre=de2;
         this.Plateau=Plateau;
@@ -52,12 +52,5 @@ public class Joueur {
      */
     public int getIdJoueur(){
         return id;
-    }
-    /**
-     * permet de définir le joueur concerné
-     * @param idJoueur
-     */
-    public void setJoueur(int idJoueur) {
-        this.id = idJoueur;
     }
 }
