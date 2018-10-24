@@ -2,26 +2,34 @@ package main.java.projet_dice_forge;
 
 public class Joueur {
     private int id;
-    private PlateauDuJoueur plateau;
-    private De deClaire;
-    private De deSombre;
+    private De DeClaire;
+    private De DeSombre;
+    private PlateauDuJoueur Plateau;
 
 
-    public Joueur(int id,PlateauDuJoueur plateau,De deClaire,De deSombre) {
-        this.id = id;
-        this.plateau=plateau;
-        this.deSombre=deSombre;
-        this.deClaire=deClaire;
+    public Joueur(int Idjoueur){
+        this.id=id;
+        this.DeClaire=new De();
+        this.DeSombre=new De();
+        this.Plateau=new PlateauDuJoueur(Idjoueur);
+
     }
 
+    public Joueur(int Idjoueur, De de1, De de2, PlateauDuJoueur Plateau){
+        this.id=id;
+        this.DeClaire=de1;
+        this.DeSombre=de2;
+        this.Plateau=Plateau;
+
+    }
     /**
      * permet de définir les dés du joueur concerné
      * @param de1
      * @param de2
      */
     public void setDe(De de1,De de2 ){
-        this.deClaire = de1;
-        this.deSombre = de2;
+        this.DeClaire = de1;
+        this.DeSombre = de2;
     }
     /**
      * Retourne les dés du joueur concerné
@@ -29,11 +37,20 @@ public class Joueur {
      */
     public De getDe(int idDe){
         if(idDe == 1){
-            return deClaire;
+            return DeClaire;
         }
         else{
-            return deSombre;
+            return DeSombre;
         }
     }
+    public  PlateauDuJoueur getPlateauDuJoueur(){
+        return Plateau;
+    }
 
+    /**
+     * Retourne l'identifiant du joueur
+     */
+    public int getIdJoueur(){
+        return id;
+    }
 }
