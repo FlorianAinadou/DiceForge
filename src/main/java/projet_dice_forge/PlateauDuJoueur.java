@@ -46,13 +46,6 @@ public class PlateauDuJoueur {
     }
 
     /**
-     * Retourne l'identifiant du joueur
-     */
-    public int getIdJoueur(){
-        return idJoueur;
-    }
-
-    /**
      * Permet de modifier les points de gloire du joueur
      * @param pointsDeGloire
      */
@@ -68,26 +61,6 @@ public class PlateauDuJoueur {
         this.idJoueur = idJoueur;
     }
 
-    /**
-     * permet de définir les dés du joueur concerné
-     * @param de1
-     * @param de2
-     */
-    public void setDe(De de1,De de2 ){
-        this.de1 = de1;
-        this.de2 = de2;
-    }
-    /**
-     * Retourne les dés du joueur concerné
-     *
-     */
-    public De getDe(int idDe){
-        if(idDe == 1){
-            return de1;
-        }
-        else{
-            return de2;
-        }
-    }
+
 
 }
