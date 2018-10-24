@@ -41,6 +41,10 @@ public class PlateauDuJoueur {
         return pointsDeGloire;
     }
 
+    public void addPointsDeGloire(int pointsDeGloire){
+        this.pointsDeGloire = this.pointsDeGloire + pointsDeGloire;
+    }
+
     /**
      * Permet de modifier les points de gloire du joueur
      * @param pointsDeGloire

@@ -23,8 +23,8 @@ public class Tour {
      * Lancer des dés et augmentation des ressources lors de la faveur des dieux
      */
     public void FaveurdesDieux(Joueur joueur){
-       //this.de1 = joueur.getDe(1);
-       // this.de2 = joueur.getDe(2);
+        //this.de1 = joueur.getDe(1);
+        // this.de2 = joueur.getDe(2);
 
         int val1=joueur.getDe(1).lancerLeDe().getNb();
         int val2=joueur.getDe(2).lancerLeDe().getNb();
