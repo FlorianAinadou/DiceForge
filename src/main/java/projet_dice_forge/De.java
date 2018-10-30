@@ -14,7 +14,8 @@ public class De {
     private final int nbFace = 6;
 
     /**
-     * Crée un dé qui regroupe des faces et initialise les faces du dé par défault (nb à 0 et typeDeRessource à gloire)
+     * Crée un dé avec des faces contenant des points de gloire et de l'or
+     * nous avons donc 4 faces avec de l'or et 2 faces avec des poits de gloire 
      */
 
     public De(){
