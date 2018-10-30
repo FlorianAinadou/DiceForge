@@ -15,7 +15,7 @@ public class De {
 
     /**
      * Crée un dé avec des faces contenant des points de gloire et de l'or
-     * nous avons donc 4 faces avec de l'or et 2 faces avec des poits de gloire 
+     * nous avons donc 4 faces avec de l'or et 2 faces avec des poits de gloire
      */
 
     public De(){
@@ -48,7 +48,7 @@ public class De {
      */
     public Face lancerLeDe(){
         Random r = new Random();
-        int valeur = r.nextInt(5);
+        int valeur = r.nextInt(6);
         return this.de[valeur];
     }
 

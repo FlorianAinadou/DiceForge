@@ -4,7 +4,7 @@ package main.java.projet_dice_forge;
 /**
 *Cette classe représente le plateau d'un joueur de Dice Forge.
  */
-public class PlateauDuJoueur {
+public class PlateauDuJoueur{
 
         //l'Identifiant du joueur concerné.
         private int idJoueur;
@@ -46,9 +46,6 @@ public class PlateauDuJoueur {
         return pointsDeGloire;
     }
 
-    public void addPointsDeGloire(int pointsDeGloire){
-        this.pointsDeGloire = this.pointsDeGloire + pointsDeGloire;
-    }
 
     /**
      * Permet de modifier les points de gloire du joueur
@@ -70,7 +67,7 @@ public class PlateauDuJoueur {
     public int getIdJoueur(){return this.idJoueur;}
 
     /**
-     *
+     *getter et setter pour la ressource or
      */
     public int getOr(){
         return or;
