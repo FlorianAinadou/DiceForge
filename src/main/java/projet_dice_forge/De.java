@@ -11,16 +11,20 @@ public class De {
     //C'est un tableau d'objet de type Face qui regroupe les faces du dé.
     private Face[] de;
     // C'est un int qui définit le nombre de face d'un dé
-    private int nbFace = 6;
+    private final int nbFace = 6;
 
     /**
      * Crée un dé qui regroupe des faces et initialise les faces du dé par défault (nb à 0 et typeDeRessource à gloire)
      */
 
     public De(){
+        int i=0;
         this.de = new Face[nbFace];
-        for(int i =0;i<6;i++){
-            this.de[i]= new Face(i,"gloire");
+        for(  ; i<4 ;i++){
+            this.de[i]= new Face(1,"or");
+        }
+        for(  ; i<6 ;i++){
+            this.de[i]= new Face(i-3,"gloire");
         }
     }
 

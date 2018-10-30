@@ -14,12 +14,15 @@ public class Simulation {
         Tour tour = new Tour(joueur1,joueur2);
         if (joueur1.getPlateauDuJoueur().getPointsDeGloire() > joueur2.getPlateauDuJoueur().getPointsDeGloire()){
             System.out.println(" Le gagnant est le joueur1 avec "+ joueur1.getPlateauDuJoueur().getPointsDeGloire() +" points de gloire.");
+            //System.out.println("or " + joueur1.getPlateauDuJoueur().getOr());
         }
         else if (joueur1.getPlateauDuJoueur().getPointsDeGloire() < joueur2.getPlateauDuJoueur().getPointsDeGloire()){
             System.out.println(" Le gagnant est le joueur2 avec "+ joueur2.getPlateauDuJoueur().getPointsDeGloire() +" points de gloire.");
+            //System.out.println("or " + joueur2.getPlateauDuJoueur().getOr());
         }
         else{
             System.out.println("Egalité. " +joueur2.getPlateauDuJoueur().getPointsDeGloire() + " points de gloire partout.");
+            //System.out.println("or " + joueur1.getPlateauDuJoueur().getOr());
         }
 
 

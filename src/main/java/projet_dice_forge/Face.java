@@ -25,6 +25,32 @@ public class Face {
     }
 
     /**
+     * Cette methode vérifie si le type de ressource de cette face est la gloire
+     * @return boolean
+     */
+
+    boolean isFaceContainsGloire(){
+        boolean testeur=false;
+        if(this.getTypeDeRessource().equals("gloire")){
+            testeur=true;
+        }
+        return testeur;
+    }
+
+    /**
+     * Cette methode vérifie si le type de ressource de cette face est l'or
+     * @return boolean
+     */
+
+    boolean isFaceContainsOr(){
+        boolean testeur=false;
+        if(this.getTypeDeRessource().equals("or")){
+            testeur=true;
+        }
+        return testeur;
+    }
+
+    /**
      *
      * @return le type de ressource gagné
      */

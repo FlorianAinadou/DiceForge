@@ -10,7 +10,8 @@ public class PlateauDuJoueur {
         private int idJoueur;
         //Les points de gloire du joueur concerné.
         private int pointsDeGloire;
-        //Les dés du joueur concerné.
+        //L'or dont dispose le joueur concerné.
+        private int or;
 
 
     /**
@@ -18,19 +19,23 @@ public class PlateauDuJoueur {
      *
      * @param idJoueur identifiant du joueur concerné.
      * @param pointsDeGloire ponits de goire du joueur concerné.
-     * de1 et de2 de nouveaux dés du joueur concerné.
+     * @param or ressoure or du joueur concerné.
+     *
      */
 
 
 
-    PlateauDuJoueur(int idJoueur, int pointsDeGloire){
+    PlateauDuJoueur(int idJoueur, int pointsDeGloire, int or){
         this.pointsDeGloire=pointsDeGloire;
         this.idJoueur=idJoueur;
+        this.or=or;
+
     }
 
     PlateauDuJoueur(int idJoueur){
         this.pointsDeGloire=0;
         this.idJoueur=idJoueur;
+        this.or=0;
     }
 
     /**
@@ -59,6 +64,20 @@ public class PlateauDuJoueur {
      */
     public void setJoueur(int idJoueur) {
         this.idJoueur = idJoueur;
+    }
+
+
+    public int getIdJoueur(){return this.idJoueur;}
+
+    /**
+     *
+     */
+    public int getOr(){
+        return or;
+    }
+
+    public void setOr(int or){
+        this.or=or;
     }
 
 

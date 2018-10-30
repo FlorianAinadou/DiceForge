@@ -15,27 +15,55 @@ public class Tour {
     public Tour(Joueur joueur1,Joueur joueur2 ){
         for (int tour =0; tour<nbTour; tour++){
             System.out.println("Tour " + (tour+1));
-            FaveurdesDieux(joueur1);
-            FaveurdesDieux(joueur2);
+            gainDeRessources(joueur1);
+            gainDeRessources(joueur2);
         }
     }
     /**
-     * Lancer des dés et augmentation des ressources lors de la faveur des dieux
+     * Lancer des dés
+     * Ici, on affectte les ressources au joueur en fonction des résultats obtenus
+     * suite au lancé des dés
      */
-    public void FaveurdesDieux(Joueur joueur){
-        //this.de1 = joueur.getDe(1);
-        // this.de2 = joueur.getDe(2);
+    public void gainDeRessources(Joueur joueur){
+        int gloire1=0;
+        int gloire2=0;
+        int or1=0;
+        int or2=0;
+        int quantitéOrInitiale= joueur.getPlateauDuJoueur().getOr();
+        int pointsDeGloireInitiaux=joueur.getPlateauDuJoueur().getPointsDeGloire();
+        Face face1= joueur.getDe(1).lancerLeDe();
+        Face face2= joueur.getDe(2).lancerLeDe();
 
-        int val1=joueur.getDe(1).lancerLeDe().getNb();
-        int val2=joueur.getDe(2).lancerLeDe().getNb();
-        joueur.getPlateauDuJoueur().setPointsDeGloire(joueur.getPlateauDuJoueur().getPointsDeGloire()+val1+val2);
+        if(face1.isFaceContainsGloire()){
+            gloire1= face1.getNb();
+        }
+
+        if(face2.isFaceContainsGloire()){
+            gloire1= face2.getNb();
+        }
+
+        if (face1.isFaceContainsOr()){
+            or1= face1.getNb();
+        }
+
+        if (face2.isFaceContainsOr()){
+            or2= face1.getNb();
+        }
+
+
+
+        joueur.getPlateauDuJoueur().setPointsDeGloire(pointsDeGloireInitiaux +gloire1 + gloire2);
+
+        joueur.getPlateauDuJoueur().setOr(quantitéOrInitiale +or1 + or2);
 
         System.out.print(" Le joueur " + joueur.getIdJoueur() + " lance les dés    ");
-        System.out.print("Dé 1: " + val1 + "   ");
-        System.out.print("Dé 2: " + val2 + "   ");
+        System.out.print("Dé 1: " + face1.getNb() + "  " + face1.getTypeDeRessource() +"   ");
+        System.out.print("Dé 2: " + face2.getNb() + "  " + face2.getTypeDeRessource() +"   ");
 
 
         System.out.println("Nombre de points de gloire actuels: " + joueur.getPlateauDuJoueur().getPointsDeGloire());
     }
+
+
 
 }
