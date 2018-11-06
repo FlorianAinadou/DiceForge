@@ -7,11 +7,17 @@ public class Face {
     private int nb;
     private String typeDeRessource;
 
+
+    public Face(int nb){
+        this.nb=nb;
+        this.typeDeRessource="";
+    }
     /**
      * Ce constructeur cré une face caractérisée par:
      * @param nb
      * @param typeDeRessource
      */
+
     public Face(int nb , String typeDeRessource){
         this.nb=nb;
         this.typeDeRessource=typeDeRessource;

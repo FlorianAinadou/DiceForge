@@ -1,6 +1,7 @@
 package main.java.projet_dice_forge;
 
 
+import java.util.Random;
 
 public class Simulation {
 
@@ -12,6 +13,7 @@ public class Simulation {
         Joueur joueur2 = new Joueur(2);
         Temple temple =new Temple();
         Tour tour = new Tour(joueur1,joueur2);
+
         if (joueur1.getPlateauDuJoueur().getPointsDeGloire() > joueur2.getPlateauDuJoueur().getPointsDeGloire()){
             System.out.println(" Le gagnant est le joueur1 avec "+ joueur1.getPlateauDuJoueur().getPointsDeGloire() +" points de gloire.");
             //System.out.println("or " + joueur1.getPlateauDuJoueur().getOr());
@@ -24,6 +26,10 @@ public class Simulation {
             System.out.println("Egalité. " +joueur2.getPlateauDuJoueur().getPointsDeGloire() + " points de gloire partout.");
             //System.out.println("or " + joueur1.getPlateauDuJoueur().getOr());
         }
+
+
+
+        //tour.AllerAuTemple(joueur1);
 
 
 

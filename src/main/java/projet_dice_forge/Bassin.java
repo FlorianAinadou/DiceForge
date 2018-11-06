@@ -3,6 +3,7 @@ package main.java.projet_dice_forge;
 import org.omg.PortableInterceptor.ObjectReferenceFactory;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Cette classe représente un bassin contenant des listes de faces.
@@ -75,4 +76,24 @@ public class Bassin {
 
         }
     }
+
+    public void AcheterFace(Face face, Joueur joueur){
+        this.EnleverFaceBassin(face);
+        PlateauDuJoueur plateau =joueur.getPlateauDuJoueur();
+        plateau.setOr(plateau.getOr() - this.getCout());
+    }
+
+    public Face FaceAleaBassin(){
+        Random r = new Random();
+        int indice = r.nextInt(5);
+        Face face = this.ListFace.get(indice);
+        return face;
+    }
+
 }
+
+
+
+
+
+

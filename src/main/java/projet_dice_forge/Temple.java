@@ -5,7 +5,7 @@ package main.java.projet_dice_forge;
  */
 public class Temple {
     //Ce sont les différents bassins présents dans le temple.
-    private Bassin Bassin2Or; Bassin Bassin3Or; Bassin Bassin4Or; Bassin Bassin5Or; Bassin Bassin6Or;Bassin Bassin8Or;Bassin Bassin12Or;
+    Bassin Bassin2Or; Bassin Bassin3Or; Bassin Bassin4Or; Bassin Bassin5Or; Bassin Bassin6Or;Bassin Bassin8Or;Bassin Bassin12Or;
 
     /**
      * Création du temple avec les différents bassins.
@@ -87,6 +87,8 @@ public class Temple {
         bassin12Or.AjouterFaceBassin(face, 1);
         this.Bassin12Or = bassin12Or;
     }
+
+
 
 }
 

@@ -59,6 +59,7 @@ public class De {
         for(int i=0 ; i<6;i++){
             System.out.println("Val : " + de[i].getNb()+ " type :" + de[i].getTypeDeRessource() );
         }
+        System.out.println("\n");
     }
 
 
