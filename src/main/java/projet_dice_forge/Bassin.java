@@ -84,12 +84,14 @@ public class Bassin {
     }
 
     public Face FaceAleaBassin(){
-        Random r = new Random();
-        int indice = r.nextInt(5);
-        Face face = this.ListFace.get(indice);
+        int nbFaceBassin = this.ListFace.size();
+        Random r = new Random(nbFaceBassin);
+        int indice = r.nextInt(1);
+        //Face face = this.ListFace.get(0);
+        Face face = new Face(4,"or");
+        EnleverFaceBassin(face);
         return face;
     }
-
 }
 
 

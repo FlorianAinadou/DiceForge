@@ -15,10 +15,23 @@ public class Tour {
      */
 
     public Tour(Joueur joueur1,Joueur joueur2 ){
+
         Random r = new Random();
+        int choixJ1 =r.nextInt(1);
+        int choixJ2 = r.nextInt(1);
+
+        int choixDé = (r.nextInt(1) + 1);
+        int choixDeFaceChanger = r.nextInt(5);
+
         for (int tour =0; tour<nbTour; tour++){
 
-            /*Cela me permet de voir si les dés sont bien changer
+            /*Cela me permet de voir si les dés sont bien changer*/
+
+
+
+
+            System.out.println("Tour " + (tour+1));
+            /*
             joueur1.getDe(1).afficherDe();
             joueur1.getDe(2).afficherDe();
             joueur2.getDe(1).afficherDe();
@@ -26,15 +39,11 @@ public class Tour {
             */
 
 
-            System.out.println("Tour " + (tour+1));
-
-            int choixJ1 =r.nextInt(1);
-            int choixJ2 = r.nextInt(1);
 
             int GoTemple = 0;
 
             if (choixJ1 == GoTemple){
-                AllerAuTemple(joueur1);
+                AllerAuTemple(joueur1,choixDé,choixDeFaceChanger);
                 gainDeRessources(joueur1);
 
             }
@@ -43,7 +52,7 @@ public class Tour {
             }
 
             if (choixJ2 ==GoTemple){
-                AllerAuTemple(joueur2);
+                AllerAuTemple(joueur2,choixDé,choixDeFaceChanger);
                 gainDeRessources(joueur2);
 
             }
@@ -113,13 +122,11 @@ public class Tour {
      * @param joueur
      */
 
-    void AllerAuTemple(Joueur joueur){
+    void AllerAuTemple(Joueur joueur,int choixDé,int choixDeFaceChanger){
 
         int nbOr = joueur.getPlateauDuJoueur().getOr();
 
-        Random r = new Random();
-        int choixDé = (r.nextInt(1) + 1);
-        int choixDeFaceChanger = r.nextInt(5);
+
 
         switch (nbOr){
             case 2:
