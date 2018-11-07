@@ -83,8 +83,12 @@ public class PlateauDuJoueur{
         return or;
     }
 
-    public void setOr(int or){
-        this.or=or;
+    public void setOr(int or) {
+        if (or >= 12) {
+            this.or = 12;
+        } else {
+            this.or = or;
+        }
     }
 
 
