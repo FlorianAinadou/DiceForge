@@ -42,6 +42,12 @@ public class De {
 
     }
 
+    public Face getface(int i){
+        return de[i];
+    }
+
+
+
     /**
      * Cette méthode simule un lancement de dé
      * @return cette méthode retourne la face du dé qui a était lancé.
