@@ -20,19 +20,5 @@ class PlateauDuJoueurTest {
         assertEquals(plateauTest1.getPointsDeGloire(),1);
     }
 
-    @Test
-    void setJoueur() {
-    }
 
-    @Test
-    void getIdJoueur() {
-    }
-
-    @Test
-    void getOr() {
-    }
-
-    @Test
-    void setOr() {
-    }
 }
