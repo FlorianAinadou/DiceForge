@@ -11,7 +11,6 @@ public class Simulation {
     public Simulation(){
         Joueur joueur1 = new Joueur(1);
         Joueur joueur2 = new Joueur(2);
-        Temple temple =new Temple();
         Tour tour = new Tour(joueur1,joueur2);
 
         if (joueur1.getPlateauDuJoueur().getPointsDeGloire() > joueur2.getPlateauDuJoueur().getPointsDeGloire()){

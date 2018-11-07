@@ -38,8 +38,6 @@ public class Tour {
             joueur2.getDe(2).afficherDe();
             */
 
-
-
             int GoTemple = 0;
 
             if (choixJ1 == GoTemple){
@@ -105,9 +103,7 @@ public class Tour {
         }
 
         joueur.getPlateauDuJoueur().setPointsDeGloire(pointsDeGloireInitiaux +gloire1 + gloire2);
-
         joueur.getPlateauDuJoueur().setOr(quantitéOrInitiale +or1 + or2);
-
         System.out.print(" Le joueur " + joueur.getIdJoueur() + " lance les dés    ");
         System.out.print("Dé 1: " + face1.getNb() + "  " + face1.getTypeDeRessource() +"   ");
         System.out.print("Dé 2: " + face2.getNb() + "  " + face2.getTypeDeRessource() +"   ");
@@ -127,50 +123,83 @@ public class Tour {
         int nbOr = joueur.getPlateauDuJoueur().getOr();
 
 
-
         switch (nbOr){
             case 2:
-                Face f0 = temple.Bassin2Or.FaceAleaBassin();
-                temple.Bassin2Or.AcheterFace(f0,joueur);
-                joueur.getDe(choixDé).ajouterUneFace(f0,choixDeFaceChanger);
-
+                if(temple.Bassin2Or.TailleBassin()==0){
+                    break;
+                }
+                else{
+                    Face f0 = temple.Bassin2Or.FaceAleaBassin();
+                    temple.Bassin2Or.AcheterFace(f0,joueur);
+                    joueur.getDe(choixDé).ajouterUneFace(f0,choixDeFaceChanger);
+                }
                 break;
 
             case 3:
-                Face f1 = temple.Bassin3Or.FaceAleaBassin();
-                temple.Bassin2Or.AcheterFace(f1,joueur);
-                joueur.getDe(choixDé).ajouterUneFace(f1,choixDeFaceChanger);
-                break;
+                if(temple.Bassin2Or.TailleBassin()==0){
+                    break;
+                }
+                else {
+                    Face f1 = temple.Bassin3Or.FaceAleaBassin();
+                    temple.Bassin3Or.AcheterFace(f1, joueur);
+                    joueur.getDe(choixDé).ajouterUneFace(f1, choixDeFaceChanger);
+                    break;
+                }
 
             case 4:
-                Face f2 = temple.Bassin4Or.FaceAleaBassin();
-                temple.Bassin2Or.AcheterFace(f2,joueur);
-                joueur.getDe(choixDé).ajouterUneFace(f2,choixDeFaceChanger);
-                break;
+                if(temple.Bassin4Or.TailleBassin()==0){
+                    break;
+                }
+                else {
+                    Face f2 = temple.Bassin4Or.FaceAleaBassin();
+                    temple.Bassin4Or.AcheterFace(f2, joueur);
+                    joueur.getDe(choixDé).ajouterUneFace(f2, choixDeFaceChanger);
+                    break;
+                }
 
             case 5:
-                Face f3 = temple.Bassin5Or.FaceAleaBassin();
-                temple.Bassin2Or.AcheterFace(f3,joueur);
-                joueur.getDe(choixDé).ajouterUneFace(f3,choixDeFaceChanger);
-                break;
+                if(temple.Bassin5Or.TailleBassin()==0){
+                    break;
+                }
+                else {
+                    Face f3 = temple.Bassin5Or.FaceAleaBassin();
+                    temple.Bassin5Or.AcheterFace(f3, joueur);
+                    joueur.getDe(choixDé).ajouterUneFace(f3, choixDeFaceChanger);
+                    break;
+                }
 
             case 6:
-                Face f4 = temple.Bassin6Or.FaceAleaBassin();
-                temple.Bassin2Or.AcheterFace(f4,joueur);
-                joueur.getDe(choixDé).ajouterUneFace(f4,choixDeFaceChanger);
-                break;
+                if(temple.Bassin6Or.TailleBassin()==0){
+                    break;
+                }
+                else {
+                    Face f4 = temple.Bassin6Or.FaceAleaBassin();
+                    temple.Bassin6Or.AcheterFace(f4, joueur);
+                    joueur.getDe(choixDé).ajouterUneFace(f4, choixDeFaceChanger);
+                    break;
+                }
 
             case 8:
-                Face f5 = temple.Bassin8Or.FaceAleaBassin();
-                temple.Bassin2Or.AcheterFace(f5,joueur);
-                joueur.getDe(choixDé).ajouterUneFace(f5,choixDeFaceChanger);
-                break;
+                if(temple.Bassin8Or.TailleBassin()==0){
+                    break;
+                }
+                else {
+                    Face f5 = temple.Bassin8Or.FaceAleaBassin();
+                    temple.Bassin8Or.AcheterFace(f5, joueur);
+                    joueur.getDe(choixDé).ajouterUneFace(f5, choixDeFaceChanger);
+                    break;
+                }
 
             case 12:
-                Face f6 = temple.Bassin12Or.FaceAleaBassin();
-                temple.Bassin2Or.AcheterFace(f6,joueur);
-                joueur.getDe(choixDé).ajouterUneFace(f6,choixDeFaceChanger);
-                break;
+                if(temple.Bassin12Or.TailleBassin()==0){
+                    break;
+                }
+                else {
+                    Face f6 = temple.Bassin12Or.FaceAleaBassin();
+                    temple.Bassin12Or.AcheterFace(f6, joueur);
+                    joueur.getDe(choixDé).ajouterUneFace(f6, choixDeFaceChanger);
+                    break;
+                }
 
         }
 

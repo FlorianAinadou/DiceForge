@@ -12,10 +12,6 @@ public class Temple {
      */
     public Temple(){
        Bassin2Or(); Bassin3Or(); Bassin4Or(); Bassin5Or(); Bassin6Or(); Bassin8Or(); Bassin12Or();
-       Bassin2Or.AfficherBassin();
-       Face face = new Face(3, "Or");
-       Bassin2Or.EnleverFaceBassin(face);
-       Bassin2Or.AfficherBassin();
     }
 
     /**

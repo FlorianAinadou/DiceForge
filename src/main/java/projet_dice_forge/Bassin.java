@@ -66,6 +66,7 @@ public class Bassin {
      * Permet d'enlever une face du bassin.
      * @param Face
      */
+
     public void EnleverFaceBassin(Face Face) {
         for (int i = 0; i < this.ListFace.size(); i++) {
             Face face = this.ListFace.get(i);
@@ -85,12 +86,20 @@ public class Bassin {
 
     public Face FaceAleaBassin(){
         int nbFaceBassin = this.ListFace.size();
+
         Random r = new Random(nbFaceBassin);
         int indice = r.nextInt(1);
-        //Face face = this.ListFace.get(0);
-        Face face = new Face(4,"or");
+        Face face = this.ListFace.get(0);
+        //Face face = new Face(4,"or");
         EnleverFaceBassin(face);
         return face;
+    }
+    public int TailleBassin(){
+        int compt=0;
+        for(int i=0; i<this.ListFace.size();i++){
+            compt++;
+        }
+        return compt;
     }
 }
 
