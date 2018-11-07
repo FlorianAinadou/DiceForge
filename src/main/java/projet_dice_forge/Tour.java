@@ -47,7 +47,7 @@ public class Tour {
             }
 
             if (choixJ2 == GoTemple) {
-                AllerAuTemple(joueur2, choixDé, choixDeFaceChanger);
+                AllerAuTemple2(joueur2, choixDé, choixDeFaceChanger);
                 gainDeRessources(joueur2);
 
             } else {
@@ -118,7 +118,25 @@ public class Tour {
         int t[] = {2, 3, 4, 5, 6, 6, 8, 8, 8, 8, 12};
         int nbOr = joueur.getPlateauDuJoueur().getOr();
         int taille = 0;
+        int indice = 0;
+        if (nbOr > 1) {
+            Random r = new Random();
+            indice = r.nextInt(nbOr - 1);
+            taille = temple.getBassin(t[indice]).TailleBassin();
+            if (taille != 0) {
+                Face f0 = temple.getBassin(t[indice]).FaceAleaBassin();
+                temple.getBassin(t[indice]).AcheterFace(f0, joueur);
+                joueur.getDe(choixDé).ajouterUneFace(f0, choixDeFaceChanger);
+            }
+        }
 
+    }
+
+
+    void AllerAuTemple2(Joueur joueur, int choixDé, int choixDeFaceChanger) {
+        int t[] = {2,3,4,5,6,6,8,8,8,8,8,12};
+        int nbOr = joueur.getPlateauDuJoueur().getOr();
+        int taille=0;
         if (nbOr > 1) {
             taille = temple.getBassin(t[nbOr]).TailleBassin();
             if (taille != 0) {
@@ -126,20 +144,6 @@ public class Tour {
                 temple.getBassin(t[nbOr]).AcheterFace(f0, joueur);
                 joueur.getDe(choixDé).ajouterUneFace(f0, choixDeFaceChanger);
             }
-        }
-    }
-}
-        /*
-        int indice = 0;
-        if(nbOr>1) {
-                Random r = new Random();
-                indice = r.nextInt(nbOr+1);
-                taille = temple.getBassin(t[indice]).TailleBassin();
-                if(taille!=0){
-                    Face f0 = temple.getBassin(t[indice]).FaceAleaBassin();
-                    temple.getBassin(t[indice]).AcheterFace(f0, joueur);
-                    joueur.getDe(choixDé).ajouterUneFace(f0, choixDeFaceChanger);
-                }
         }
     }
 }

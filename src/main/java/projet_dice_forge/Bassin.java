@@ -92,7 +92,7 @@ public class Bassin {
 
         Random r = new Random(nbFaceBassin);
         int indice = r.nextInt(1);
-        Face face = this.ListFace.get(0);
+        Face face = this.ListFace.get(indice);
         //Face face = new Face(4,"or");
         EnleverFaceBassin(face);
         return face;
