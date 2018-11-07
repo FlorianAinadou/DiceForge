@@ -47,6 +47,7 @@ public class Tour {
             }
 
             if (choixJ2 == GoTemple) {
+                System.out.println("Joueur 2 au temple");
                 AllerAuTemple2(joueur2, choixDé, choixDeFaceChanger);
                 gainDeRessources(joueur2);
 
@@ -134,7 +135,7 @@ public class Tour {
 
 
     void AllerAuTemple2(Joueur joueur, int choixDé, int choixDeFaceChanger) {
-        int t[] = {2,3,4,5,6,6,8,8,8,8,8,12};
+        int t[] = {2,2,2,3,4,5,6,6,8,8,8,8,12};
         int nbOr = joueur.getPlateauDuJoueur().getOr();
         int taille=0;
         if (nbOr > 1) {
