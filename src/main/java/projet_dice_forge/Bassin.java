@@ -69,17 +69,16 @@ public class Bassin {
 
     /**
      * Permet d'enlever une face du bassin.
-     * @param Face
+     * @param FaceJoueur
      */
 
-    public void EnleverFaceBassin(Face Face) {
+    public void EnleverFaceBassin(Face FaceJoueur) {
         for (int i = 0; i < this.ListFace.size(); i++) {
             Face face = this.ListFace.get(i);
-            if ((Face.getNb() == face.getNb())&&(Face.getTypeDeRessource()==face.getTypeDeRessource())) {
+            if ((FaceJoueur.getNb() == face.getNb())&&(FaceJoueur.getTypeDeRessource()==face.getTypeDeRessource())) {
                 this.ListFace.remove(i);
                 break;
             }
-
         }
     }
 
@@ -100,11 +99,7 @@ public class Bassin {
         return face;
     }
     public int TailleBassin(){
-        int compt=0;
-        for(int i=0; i<this.ListFace.size();i++){
-            compt++;
-        }
-        return compt;
+       return this.ListFace.size();
     }
     public ArrayList<Face> getListFace(){
         return this.ListFace;
