@@ -24,7 +24,12 @@ public class Bassin {
         ListFace = new ArrayList<>();
         setCout(coutBassin);
     }
+    public Bassin(int cout, List<Face> Face){
+        ListFace = new ArrayList<>();
+        Face.forEach(p -> ListFace.add(p));
+        setCout(cout);
 
+    }
     /**
      *Renvoi le coût du bassin.
      */
@@ -100,6 +105,9 @@ public class Bassin {
             compt++;
         }
         return compt;
+    }
+    public ArrayList<Face> getListFace(){
+        return this.ListFace;
     }
 }
 
