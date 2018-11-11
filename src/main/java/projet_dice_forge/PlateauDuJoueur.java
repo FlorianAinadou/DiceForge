@@ -13,6 +13,10 @@ public class PlateauDuJoueur{
         //L'or dont dispose le joueur concerné.
         private int or;
 
+        private int maxOr = 25;
+
+        private int maxGloire = 25;
+
 
 
 
@@ -48,14 +52,35 @@ public class PlateauDuJoueur{
         return pointsDeGloire;
     }
 
-
-    /**
-     * Permet de modifier les points de gloire du joueur
-     * @param pointsDeGloire
-     */
-    public void setPointsDeGloire(int pointsDeGloire) {
-        this.pointsDeGloire = pointsDeGloire;
+    public void ajouterOr(int or) {
+        if((this.or + or)> this.maxOr) {
+            this.or = this.maxOr;
+        }
+        else {
+            this.or += or;
+        }
     }
+
+    public void enleverOr(int or) {
+        if((this.or - or) >= 0 ) {
+            this.or -= or;
+        }
+        else {
+            System.out.println("Error : Vous avez tenter de retirer trop d'or");
+            System.exit(0);
+        }
+    }
+
+    public void ajouterPointDeGloire(int ptGloire) {
+        if((this.pointsDeGloire + ptGloire)> this.maxGloire) {
+            this.pointsDeGloire = this.maxGloire;
+        }
+        else {
+            this.pointsDeGloire += ptGloire;
+        }
+    }
+
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -91,6 +116,9 @@ public class PlateauDuJoueur{
         }
     }
 
-
+    void reset() {
+        this.or = 0;
+        this.pointsDeGloire = 0;
+    }
 
 }

@@ -78,8 +78,6 @@ public class Tour {
         int gloire2 = 0;
         int or1 = 0;
         int or2 = 0;
-        int quantitéOrInitiale = joueur.getPlateauDuJoueur().getOr();
-        int pointsDeGloireInitiaux = joueur.getPlateauDuJoueur().getPointsDeGloire();
         Face face1 = joueur.getDe(1).lancerLeDe();
         Face face2 = joueur.getDe(2).lancerLeDe();
 
@@ -99,8 +97,8 @@ public class Tour {
             or2 = face1.getNb();
         }
 
-        joueur.getPlateauDuJoueur().setPointsDeGloire(pointsDeGloireInitiaux + gloire1 + gloire2);
-        joueur.getPlateauDuJoueur().setOr(quantitéOrInitiale + or1 + or2);
+        joueur.getPlateauDuJoueur().ajouterPointDeGloire(  gloire1 + gloire2);
+        joueur.getPlateauDuJoueur().ajouterOr(or1 + or2);
         System.out.print(" Le joueur " + joueur.getIdJoueur() + " lance les dés    ");
         System.out.print("Dé 1: " + face1.getNb() + "  " + face1.getTypeDeRessource() + "   ");
         System.out.print("Dé 2: " + face2.getNb() + "  " + face2.getTypeDeRessource() + "   ");
