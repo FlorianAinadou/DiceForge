@@ -63,11 +63,17 @@ public class Joueur {
         this.Plateau = new PlateauDuJoueur(this.id);
     }
 
+    /**
+     * Cette classe reinitialise les dés. On l'utilise quand on veut relancer une partie
+     */
     private void resetDe() {
         this.DeClaire = new De();
         this.DeSombre = new De();
     }
 
+    /**
+     * On lance les dés et on attribue au joueur en fonction du résultat du lancé des ressources
+     */
     public void lanceDe() {
         Face sombre, claire;
         claire = this.DeClaire.lancerLeDe();
@@ -105,6 +111,12 @@ public class Joueur {
         temp.deleteFace(echange);
     }
 
+    /**
+     * On remplace une face du dé d'un joueur donné
+     * @param nouvelle représente la nouvelle face à insérer
+     * @param ancienne représente la face à remplacer
+     * @param idDe renseigne le dé dont on veut modifier l'une des faces
+     */
     private void echangerFace(Face nouvelle,Face ancienne,int idDe) {
         int i = 0;
         if(idDe == 1) {
@@ -121,10 +133,7 @@ public class Joueur {
         }
     }
 
-
-    /**
-     * Retourne l'identifiant du joueur
-     */
+    
     public int getIdJoueur(){
         return id;
     }
