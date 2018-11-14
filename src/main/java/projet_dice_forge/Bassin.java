@@ -71,10 +71,10 @@ public class Bassin {
      * @param FaceJoueur
      */
 
-    public void EnleverFaceBassin(Face FaceJoueur) {
+    public void EnleverFaceBassin(Face faceJoueur) {
         for (int i = 0; i < this.ListFace.size(); i++) {
             Face face = this.ListFace.get(i);
-            if ((FaceJoueur.getNb() == face.getNb())&&(FaceJoueur.getTypeDeRessource()==face.getTypeDeRessource())) {
+            if (face.equals(faceJoueur)) {
                 this.ListFace.remove(i);
                 break;
             }
@@ -102,6 +102,21 @@ public class Bassin {
     }
     public ArrayList<Face> getListFace(){
         return this.ListFace;
+    }
+
+    public ArrayList<Face> getFace() {
+        ArrayList<Face> res = new ArrayList<>();
+        for(Face face : this.ListFace) {
+            res.add(face);
+        }
+        return res;
+    }
+
+    public boolean faceIsIn(Face face) {
+        for(Face fac : this.ListFace) {
+            if(face.equals(fac)) return true;
+        }
+        return false;
     }
 }
 

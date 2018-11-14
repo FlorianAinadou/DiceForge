@@ -1,6 +1,7 @@
 package main.java.projet_dice_forge;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 /**
  * Cette classe représente le temple avec les différents bassin à l'intérieur.
@@ -103,4 +104,20 @@ public class Temple {
         }
         return null;
     }
+
+    public ArrayList<Face> getFaceFromBassin(int coutBassin) {
+        return getBassin(coutBassin).getListFace();
+    }
+
+    public void deleteFace(Face face) {
+        int size = bassins.size();
+        for(int i = 0; i<size; i++) {
+            Bassin bas = bassins.get(i);
+            if(bas.faceIsIn(face))
+            {
+                bas.EnleverFaceBassin(face);
+            }
+        }
+    }
+
 }

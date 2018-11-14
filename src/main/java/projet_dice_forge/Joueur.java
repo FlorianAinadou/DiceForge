@@ -72,10 +72,10 @@ public class Joueur {
         }
     }
 
-    public void acheterFace(Face acheter, Face echange, int idDe) {
+    public void acheterFace(Temple temp, Face acheter, Face echange, int idDe) {
         this.Plateau.enleverOr(acheter.getNb());
         echangerFace(acheter, echange, idDe);
-
+        temp.deleteFace(echange);
     }
 
     private void echangerFace(Face nouvelle,Face ancienne,int idDe) {
