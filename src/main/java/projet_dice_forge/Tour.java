@@ -4,8 +4,6 @@ import java.util.Random;
 
 public class Tour {
 
-    private PlateauDuJoueur joueur1;
-    private PlateauDuJoueur joueur2;
     private int nbTour = 9;
     Temple temple = new Temple();
 

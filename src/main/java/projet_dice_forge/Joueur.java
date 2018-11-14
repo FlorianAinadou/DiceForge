@@ -81,13 +81,13 @@ public class Joueur {
     private void echangerFace(Face nouvelle,Face ancienne,int idDe) {
         int i = 0;
         if(idDe == 1) {
-            while(this.DeClaire.getface(i).equals(ancienne)) {
+            while(!this.DeClaire.getface(i).equals(ancienne)) {
                 i++;
             }
             DeClaire.ajouterUneFace(nouvelle,i);
         }
         else if(idDe == 2) {
-            while(this.DeSombre.getface(i) != ancienne) {
+            while(!this.DeSombre.getface(i).equals(ancienne)) {
                 i++;
             }
             DeSombre.ajouterUneFace(nouvelle,i);
