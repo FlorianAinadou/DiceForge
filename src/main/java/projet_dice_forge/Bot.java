@@ -11,5 +11,7 @@ public class Bot extends Joueur {
         return detailTour;
     }
 
-    public void jouer(Temple temple, PlateauDesIles plateauDesIles ) {}
+    protected void jouer(Temple temple, PlateauDesIles plateauDesIles ) {
+        lanceDe();
+    }
 }

@@ -116,9 +116,4 @@ public class PlateauDuJoueur{
         }
     }
 
-    void reset() {
-        this.or = 0;
-        this.pointsDeGloire = 0;
-    }
-
 }

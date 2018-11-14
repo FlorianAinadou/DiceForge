@@ -48,6 +48,9 @@ public class Jeu {
                 }
             }
         }
+        if(affichage) {
+            afficherGagnant();
+        }
     }
 
     /**
@@ -82,5 +85,19 @@ public class Jeu {
             }
         }
         return res;
+    }
+
+    public void lancerNPartie(int nbrPartie) {
+        int[] gagnant = new int[nbrJoueur];
+        ArrayList<Integer> win;
+        for(int i = 0; i<nbrPartie; i++ )
+        {
+            lancerUnePartie(false);
+            win = quiQuiCestLesGagnant();
+            win.forEach(nb -> gagnant[bot[nb].getIdJoueur()]++);
+        }
+        for(int j = 0; j<nbrJoueur; j++) {
+            System.out.println("Le joueur " + bot[j].getIdJoueur() + " a gagné " + gagnant[bot[j].getIdJoueur()]);
+        }
     }
 }

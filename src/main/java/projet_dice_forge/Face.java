@@ -3,15 +3,12 @@ package main.java.projet_dice_forge;
 /**
  * Cette classe représente une face d'un dé
  */
+
 public class Face {
     private int nb;
     private String typeDeRessource;
 
 
-    public Face(int nb){
-        this.nb=nb;
-        this.typeDeRessource="";
-    }
     /**
      * Ce constructeur cré une face caractérisée par:
      * @param nb
@@ -64,7 +61,18 @@ public class Face {
         return typeDeRessource;
     }
 
+    @Override
+    public boolean equals(Object other)
+    {
+        if(other instanceof Face && other != null) {
+            Face face = (Face) other;
+            return (this.getNb() == face.getNb() && this.typeDeRessource.equals(face.getTypeDeRessource()));
+        } else
+        {
+            return false;
+        }
 
+    }
 
 
 

@@ -54,14 +54,34 @@ public class Joueur {
         this.DeSombre = new De();
     }
 
-    public void acheterFace(Face face) {
-        this.Plateau.enleverOr(face.getNb());
+    public void lanceDe() {
+        Face sombre, claire;
+        claire = this.DeClaire.lancerLeDe();
+        sombre = this.DeSombre.lancerLeDe();
+        if(claire.isFaceContainsGloire()){
+            this.Plateau.ajouterPointDeGloire(claire.getNb());
+        }
+        if(claire.isFaceContainsOr()) {
+            this.Plateau.ajouterOr(claire.getNb());
+        }
+        if(sombre.isFaceContainsOr()) {
+            this.Plateau.ajouterOr(sombre.getNb());
+        }
+        if(sombre.isFaceContainsGloire()) {
+            this.Plateau.ajouterPointDeGloire(sombre.getNb());
+        }
     }
 
-    public void echangerFace(Face nouvelle,Face ancienne,int idDe) {
+    public void acheterFace(Face acheter, Face echange, int idDe) {
+        this.Plateau.enleverOr(acheter.getNb());
+        echangerFace(acheter, echange, idDe);
+
+    }
+
+    private void echangerFace(Face nouvelle,Face ancienne,int idDe) {
         int i = 0;
         if(idDe == 1) {
-            while(this.DeClaire.getface(i) != ancienne) {
+            while(this.DeClaire.getface(i).equals(ancienne)) {
                 i++;
             }
             DeClaire.ajouterUneFace(nouvelle,i);
