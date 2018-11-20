@@ -1,5 +1,9 @@
-package main.java.projet_dice_forge;
+package main.java.projet_dice_forge.Gestion_du_Jeu;
 
+
+import main.java.projet_dice_forge.Bot.Bot;
+import main.java.projet_dice_forge.Partie_Bassin.Temple;
+import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 
 import java.util.ArrayList;
 

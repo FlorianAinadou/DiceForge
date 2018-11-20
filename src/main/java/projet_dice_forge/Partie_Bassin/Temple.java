@@ -1,7 +1,8 @@
-package main.java.projet_dice_forge;
+package main.java.projet_dice_forge.Partie_Bassin;
+
+import main.java.projet_dice_forge.Plateau_Joueur.Face;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 /**
  * Cette classe représente le temple avec les différents bassin à l'intérieur.
@@ -30,7 +31,7 @@ public class Temple {
      */
     private Bassin Bassin2Or() {
         Bassin bassin2Or = new Bassin(2);
-        Face face = new Face(3, "Or");
+        Face face = new Face(new int[]{3}, new String[]{"Or"});
         bassin2Or.AjouterFaceBassin(face, 4);
         return bassin2Or;
     }
@@ -40,7 +41,7 @@ public class Temple {
      */
     private Bassin Bassin3Or() {
         Bassin bassin3Or = new Bassin(3);
-        Face face = new Face(4, "Or");
+        Face face = new Face(new int[]{4}, new String[]{"Or"});
         bassin3Or.AjouterFaceBassin(face, 4);
         return bassin3Or;
     }
@@ -50,7 +51,7 @@ public class Temple {
      */
     private Bassin Bassin4Or() {
         Bassin bassin4Or = new Bassin(4);
-        Face face = new Face(6, "Or");
+        Face face = new Face(new int[]{6}, new String[]{"Or"});
         bassin4Or.AjouterFaceBassin(face, 1);
         return bassin4Or;
     }
@@ -60,7 +61,7 @@ public class Temple {
      */
     private Bassin Bassin5Or() {
         Bassin bassin5Or = new Bassin(5);
-        Face face = new Face(3,"Or");
+        Face face = new Face(new int[]{3}, new String[]{"Or"});
         bassin5Or.AjouterFaceBassin(face, 4);
         return bassin5Or;
     }
@@ -70,7 +71,7 @@ public class Temple {
      */
     private Bassin Bassin6Or() {
         Bassin bassin6Or = new Bassin(6);
-        Face face = new Face(3,"Or");
+        Face face = new Face(new int[]{3}, new String[]{"Or"});
         bassin6Or.AjouterFaceBassin(face, 4);
         return bassin6Or;
     }
@@ -80,7 +81,7 @@ public class Temple {
      */
     private Bassin Bassin8Or() {
         Bassin bassin8Or = new Bassin(8);
-        Face face = new Face(3, "gloire");
+        Face face = new Face(new int[]{3}, new String[]{"gloire"});
         bassin8Or.AjouterFaceBassin(face, 4);
         return bassin8Or;
     }
@@ -90,7 +91,7 @@ public class Temple {
      */
     private Bassin Bassin12Or() {
         Bassin bassin12Or = new Bassin(12);
-        Face face = new Face(4, "gloire");
+        Face face = new Face(new int[]{4}, new String[]{"gloire"});
         bassin12Or.AjouterFaceBassin(face, 1);
         return bassin12Or;
     }
@@ -118,6 +119,9 @@ public class Temple {
                 bas.EnleverFaceBassin(face);
             }
         }
+    }
+    public List<Bassin> getBassins(){
+        return this.bassins;
     }
 
 }

@@ -1,4 +1,7 @@
-package main.java.projet_dice_forge;
+package main.java.projet_dice_forge.Partie_Iles;
+
+import main.java.projet_dice_forge.Partie_Iles.Carte;
+import main.java.projet_dice_forge.Partie_Iles.Iles;
 
 import java.util.ArrayList;
 import java.util.List;

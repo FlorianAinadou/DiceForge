@@ -1,4 +1,4 @@
-package main.java.projet_dice_forge;
+package main.java.projet_dice_forge.Partie_Iles;
 
 
 import main.java.projet_dice_forge.effet.Effet;
