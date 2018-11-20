@@ -1,5 +1,8 @@
 package main.java.projet_dice_forge;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PlateauDesIles {
         Iles IlesN1;
         Iles IlesN2;
@@ -11,24 +14,25 @@ public class PlateauDesIles {
 
     public PlateauDesIles(){
         IlesN1();
+        /*
         IlesN2();
         IlesN3();
         IlesN4();
         IlesN5();
-        IlesN6();
+        IlesN6();*/
         IlesN7();
       }
 
 
     private void IlesN1(){
         Iles iles = new Iles(1,false,2 );
-        Carte carte = new Carte(1,"Le marteau du forgeron", new int[]{1},new String[]{"PierredeLune"}, 0);
-        Carte carte1 = new Carte(2,"Le coffre du forgeron ",new int[]{1},new String[]{"PierredeLune"},2);
+        Carte carte = Carte.LeMarteauDuForgeron;
+        Carte carte1= Carte.LeCoffreDuForgeron;
         iles.ajouterCarte(carte, 2);
         iles.ajouterCarte(carte1, 2);
         this.IlesN1=iles;
     }
-
+/*
     private void IlesN2(){
         Iles iles = new Iles(2,false,2 );
         Carte carte = new Carte(3,"Les sabots d'argent",new int[] {2},new String[]{"PierredeLune"},2);
@@ -81,11 +85,12 @@ public class PlateauDesIles {
         this.IlesN6=iles;
 
     }
+    */
 
     private void IlesN7(){
         Iles iles = new Iles(7,false,2 );
-        Carte carte = new Carte(14,"Les herbes folles",new int[]{1},new String[]{"PierredeLune"},2);
-        Carte carte1 = new Carte(15,"L'ancien",new int[] {1},new String[]{"PierredeSoleil"},0);
+        Carte carte = Carte.LesHerbesFolles;
+        Carte carte1 = Carte.LAncien;
         iles.ajouterCarte(carte, 2);
         iles.ajouterCarte(carte1, 2);
         this.IlesN7=iles;

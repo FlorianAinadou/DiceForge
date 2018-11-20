@@ -28,7 +28,6 @@ public class Simulation {
 
 
 
-        //tour.AllerAuTemple(joueur1);
 
 
 

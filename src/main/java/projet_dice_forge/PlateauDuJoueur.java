@@ -13,9 +13,17 @@ public class PlateauDuJoueur{
         //L'or dont dispose le joueur concerné.
         private int or;
 
+        private int fragmentSolaire;
+
+        private int fragmentLunaire;
+
         private int maxOr = 25;
 
         private int maxGloire = 25;
+
+        private int maxFragLun =25;
+
+        private int maxFragSol=25;
 
 
 
@@ -31,10 +39,12 @@ public class PlateauDuJoueur{
 
 
 
-    PlateauDuJoueur(int idJoueur, int pointsDeGloire, int or){
+    PlateauDuJoueur(int idJoueur, int pointsDeGloire, int or,int fragmentSolaire,int fragmentLunaire){
         this.pointsDeGloire=pointsDeGloire;
         this.idJoueur=idJoueur;
         this.or=or;
+        this.fragmentSolaire=fragmentSolaire;
+        this.fragmentLunaire=fragmentLunaire;
 
     }
 
@@ -42,8 +52,10 @@ public class PlateauDuJoueur{
         this.pointsDeGloire=0;
         this.idJoueur=idJoueur;
         this.or=0;
+        this.fragmentSolaire=0;
+        this.fragmentLunaire=0;
     }
-
+    ////////////////////////////////////////*Traitement Point de gloire *///////////////////////////////////////////////////
     /**
      * Retourne les points de gloire du joueur
      */
@@ -86,9 +98,25 @@ public class PlateauDuJoueur{
 
     ////////////////////////////////////////*Traitement Point d'Or *///////////////////////////////////////////////////
 
+    /**
+     *getter et setter pour la ressource or
+     */
+    public int getOr(){
+        return or;
+    }
 
+    public void setOr(int or){
+        this.or=or;
+    }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void setMaxOr(int maxOr) {
+        this.maxOr = maxOr;
+    }
+
+    public int getMaxOr() {
+        return maxOr;
+    }
+    /////////////////////////////////////////////Taitement Joueur/////////////////////////////////////////////////////
 
     /**
      * permet de définir le joueur concerné
@@ -101,19 +129,59 @@ public class PlateauDuJoueur{
 
     public int getIdJoueur(){return this.idJoueur;}
 
-    /**
-     *getter et setter pour la ressource or
-     */
-    public int getOr(){
-        return or;
+    ////////////////////////////////////////*Traitement fragement Lunaire et Solaire *///////////////////////////////////////////////////
+
+
+    public int getFragmentLunaire() {
+        return fragmentLunaire;
     }
 
-    public void setOr(int or) {
-        if (or >= 12) {
-            this.or = 12;
-        } else {
-            this.or = or;
+    public int getFragmentSolaire() {
+        return fragmentSolaire;
+    }
+
+    public void setFragmentSolaire(int fragmentSolaire) {
+        this.fragmentSolaire = fragmentSolaire;
+    }
+
+    public void setFragmentLunaire(int fragmentLunaire) {
+        this.fragmentLunaire = fragmentLunaire;
+    }
+
+
+    public int getMaxFragLun() {
+        return maxFragLun;
+    }
+
+    public int getMaxFragSol() {
+        return maxFragSol;
+    }
+
+    public void setMaxFragSol(int maxFragSol) {
+        this.maxFragSol = maxFragSol;
+    }
+
+    public void setMaxFragLun(int maxFragLun) {
+        this.maxFragLun = maxFragLun;
+    }
+
+    public void ajoutFragLun(int fragLun){
+        if((this.fragmentLunaire + fragLun)> this.maxFragLun) {
+            this.fragmentLunaire = this.maxFragLun;
+        }
+        else {
+            this.fragmentLunaire += fragLun;
         }
     }
+
+    public void ajoutFragSol(int fragSol){
+        if((this.fragmentSolaire + fragSol)> this.maxFragSol) {
+            this.fragmentSolaire = this.maxFragSol;
+        }
+        else {
+            this.fragmentSolaire += fragSol;
+        }
+    }
+
 
 }

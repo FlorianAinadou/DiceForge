@@ -19,6 +19,7 @@ public class Bassin {
      * Création d'un nouveau bassin avec son coût.
      * @param coutBassin
      */
+
     public Bassin(int coutBassin) {
         ListFace = new ArrayList<>();
         setCout(coutBassin);
@@ -90,8 +91,8 @@ public class Bassin {
     public Face FaceAleaBassin(){
         int nbFaceBassin = this.ListFace.size();
 
-        Random r = new Random(nbFaceBassin);
-        int indice = r.nextInt(1);
+        Random r = new Random();
+        int indice = r.nextInt(nbFaceBassin);
         Face face = this.ListFace.get(indice);
         //Face face = new Face(4,"or");
         EnleverFaceBassin(face);

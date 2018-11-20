@@ -1,16 +1,20 @@
 package main.java.projet_dice_forge;
 
+import java.util.ArrayList;
+
 public class Joueur {
     protected int id = -1;
     protected De DeClaire;
     protected De DeSombre;
     protected PlateauDuJoueur Plateau;
+    protected ArrayList<Carte> ListeCarte;
 
     public Joueur(int Idjoueur){
         this.id=Idjoueur;
         this.DeClaire=new De();
         this.DeSombre=new De();
         this.Plateau=new PlateauDuJoueur(Idjoueur);
+        this.ListeCarte=new ArrayList<>();
     }
 
     public Joueur(int Idjoueur, De de1, De de2, PlateauDuJoueur Plateau){
@@ -18,6 +22,7 @@ public class Joueur {
         this.DeClaire=de1;
         this.DeSombre=de2;
         this.Plateau=Plateau;
+        this.ListeCarte=new ArrayList<>();
     }
 
     /**
@@ -100,5 +105,9 @@ public class Joueur {
      */
     public int getIdJoueur(){
         return id;
+    }
+
+    public void acheterCarte(Carte carte){
+        ListeCarte.add(carte);
     }
 }

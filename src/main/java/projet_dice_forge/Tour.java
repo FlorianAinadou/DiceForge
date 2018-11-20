@@ -112,7 +112,8 @@ public class Tour {
      */
 
     void AllerAuTemple(Joueur joueur, int choixDé, int choixDeFaceChanger) {
-        int t[] = {2, 3, 4, 5, 6, 6, 8, 8, 8, 8, 12};
+
+        int t[] = {2,2,2,3,4,5,6,6,8,8,8,8,12};
         int nbOr = joueur.getPlateauDuJoueur().getOr();
         int taille = 0;
         int indice = 0;
@@ -238,21 +239,7 @@ public class Tour {
 
 
 
-    /*Permet de tester si ma méthode marche bien
 
-    void AllerAuTemple(Joueur joueur){
-        Face f0 = temple.Bassin3Or.FaceAleaBassin();
-        System.out.println(f0.getNb());
-
-        temple.Bassin2Or.AcheterFace(f0,joueur);
-
-        joueur.getDe(0).ajouterUneFace(f0,0);
-        temple.Bassin2Or.AfficherBassin();
-
-        joueur.getDe(0).afficherDe();
-
-    }
-    */
 
 
 
