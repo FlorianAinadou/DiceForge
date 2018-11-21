@@ -1,7 +1,7 @@
 package main.java.projet_dice_forge.Partie_Bassin;
 
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
-import main.java.projet_dice_forge.Plateau_Joueur.Joueur;
+import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
 
 import java.util.ArrayList;

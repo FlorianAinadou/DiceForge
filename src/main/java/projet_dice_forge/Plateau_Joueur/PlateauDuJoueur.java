@@ -17,13 +17,11 @@ public class PlateauDuJoueur{
 
         private int fragmentLunaire;
 
-        private int maxOr = 25;
+        private int maxOr = 12;
 
-        private int maxGloire = 25;
+        private int maxFragLun =6;
 
-        private int maxFragLun =25;
-
-        private int maxFragSol=25;
+        private int maxFragSol=6;
 
 
 
@@ -48,7 +46,7 @@ public class PlateauDuJoueur{
 
     }
 
-    PlateauDuJoueur(int idJoueur){
+    public PlateauDuJoueur(int idJoueur){
         this.pointsDeGloire=0;
         this.idJoueur=idJoueur;
         this.or=0;
@@ -84,12 +82,7 @@ public class PlateauDuJoueur{
     }
 
     public void ajouterPointDeGloire(int ptGloire) {
-        if((this.pointsDeGloire + ptGloire)> this.maxGloire) {
-            this.pointsDeGloire = this.maxGloire;
-        }
-        else {
             this.pointsDeGloire += ptGloire;
-        }
     }
 
 

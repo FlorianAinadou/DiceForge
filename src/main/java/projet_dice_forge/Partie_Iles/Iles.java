@@ -2,7 +2,7 @@ package main.java.projet_dice_forge.Partie_Iles;
 
 import main.java.projet_dice_forge.Partie_Iles.Carte;
 
-
+import java.util.ArrayList;
 
 
 public class Iles {
@@ -10,11 +10,11 @@ public class Iles {
     private int nbExploit;
     private int idIles;
     private boolean occupé =true;
-    private Exploit[] ListeExploit;
+    private ArrayList<Carte> ListeExploit;
 
 
     public Iles(){
-        ListeExploit=new Exploit[nbExploit];
+
 
 
     }
@@ -23,7 +23,7 @@ public class Iles {
         this.portail=portail;
         this.nbExploit=nbExploit;
         this.idIles=idIles;
-        ListeExploit= new Exploit[nbExploit];
+        ListeExploit =new ArrayList<>();
 
     }
 
@@ -44,6 +44,11 @@ public class Iles {
     public void printLsite(){
         for(int i=0; i<ListeExploit.size(); i++){
             ListeExploit.get(i).afficherCarte();
+        }
+    }
+    public void ajouterCarte(Carte carte,int quantité){
+        for(int i =0; i<quantité; i++){
+            this.ListeExploit.add(carte);
         }
     }
 

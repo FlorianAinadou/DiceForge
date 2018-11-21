@@ -1,8 +1,9 @@
 package main.java.projet_dice_forge.Gestion_du_Jeu;
 
 import main.java.projet_dice_forge.Partie_Bassin.Temple;
+import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
-import main.java.projet_dice_forge.Plateau_Joueur.Joueur;
+import main.java.projet_dice_forge.Bot.Joueur;
 
 import java.util.Random;
 
@@ -10,6 +11,7 @@ public class Tour {
 
     private int nbTour = 9;
     Temple temple = new Temple();
+    PlateauDesIles plateau = new PlateauDesIles();
 
 
     /**

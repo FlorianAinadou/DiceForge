@@ -1,8 +1,11 @@
-package main.java.projet_dice_forge.Plateau_Joueur;
+package main.java.projet_dice_forge.Bot;
 
 import main.java.projet_dice_forge.Partie_Bassin.Bassin;
 import main.java.projet_dice_forge.Partie_Bassin.Temple;
 import main.java.projet_dice_forge.Partie_Iles.Carte;
+import main.java.projet_dice_forge.Plateau_Joueur.De;
+import main.java.projet_dice_forge.Plateau_Joueur.Face;
+import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
 
 import java.util.List;
 
