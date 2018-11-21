@@ -138,6 +138,18 @@ public class Joueur {
         return id;
     }
 
+    public int quelEstLeMeilleurBassin(Temple temple){
+        Bassin meilleurBassin=temple.getBassin(2);
+        int monOr= this.getPlateauDuJoueur().getOr();
+        List<Bassin> bassins= temple.getBassins();
+        for (int i=0; i==bassins.size(); i++) {
+            if(monOr>bassins.get(i).getCout()){
+                meilleurBassin=bassins.get(i);
+            }
+        }
+        return meilleurBassin.getCout();
+    }
+
     public void acheterCarte(Carte carte){
         ListeCarte.add(carte);
     }

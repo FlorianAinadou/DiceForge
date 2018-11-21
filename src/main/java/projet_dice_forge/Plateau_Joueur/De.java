@@ -23,6 +23,7 @@ public class De {
         this.de = new Face[nbFace];
         for(  ; i<4 ;i++){
             this.de[i]= new Face(new int[]{1}, new String[]{"or"});
+
         }
         for(  ; i<6 ;i++){
             this.de[i]= new Face(new int[]{i - 3}, new String[]{"gloire"});
@@ -63,6 +64,8 @@ public class De {
         }
         System.out.println("\n");
     }
+
+    //public Face getFaceAchanger(De de){ }
 
 
 

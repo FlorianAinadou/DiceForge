@@ -12,6 +12,7 @@ public class Emeline extends Bot {
     @Override
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         super.jouer(temple, plateauDesIles);
+
     }
 
 }

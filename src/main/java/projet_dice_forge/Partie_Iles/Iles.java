@@ -52,4 +52,10 @@ public class Iles {
         }
     }
 
+    public void ajouterCarte(Carte carte,int quantité){
+        for(int i =0; i<quantité; i++){
+            this.ListeExploit.add(carte);
+        }
+    }
+
 }

@@ -10,6 +10,7 @@ public class Geraldine extends Bot {
 
     @Override
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
+
         super.jouer(temple, plateauDesIles);
 
     }
