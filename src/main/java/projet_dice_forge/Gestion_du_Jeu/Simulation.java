@@ -1,7 +1,8 @@
-package main.java.projet_dice_forge;
+package main.java.projet_dice_forge.Gestion_du_Jeu;
 
 
-import java.util.Random;
+import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
+import main.java.projet_dice_forge.Plateau_Joueur.Joueur;
 
 public class Simulation {
 
@@ -9,6 +10,7 @@ public class Simulation {
      * Crée une nouvelle partie de Dice Forge
      */
     public Simulation(){
+
         Joueur joueur1 = new Joueur(1);
         Joueur joueur2 = new Joueur(2);
         Tour tour = new Tour(joueur1,joueur2);
@@ -27,9 +29,7 @@ public class Simulation {
         }
 
 
-
-        //tour.AllerAuTemple(joueur1);
-
+    PlateauDesIles plateauDesIles = new PlateauDesIles();
 
 
 

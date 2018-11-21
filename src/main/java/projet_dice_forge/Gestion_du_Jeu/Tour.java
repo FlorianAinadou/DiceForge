@@ -1,4 +1,8 @@
-package main.java.projet_dice_forge;
+package main.java.projet_dice_forge.Gestion_du_Jeu;
+
+import main.java.projet_dice_forge.Partie_Bassin.Temple;
+import main.java.projet_dice_forge.Plateau_Joueur.Face;
+import main.java.projet_dice_forge.Plateau_Joueur.Joueur;
 
 import java.util.Random;
 
@@ -38,21 +42,28 @@ public class Tour {
             if (choixJ1 == GoTemple) {
                 System.out.println("Joueur 1 au temple");
                 AllerAuTemple(joueur1, choixDé, choixDeFaceChanger);
-                gainDeRessources(joueur1);
+                System.out.print(" Le joueur " + joueur1.getIdJoueur() + " lance les dés    ");
+                joueur1.lanceDe();
+                System.out.println("Nombre de points de gloire actuels: " + joueur1.getPlateauDuJoueur().getPointsDeGloire() + "|| et le Nombre d'Or :" + joueur1.getPlateauDuJoueur().getOr());
+
 
             } else {
-                gainDeRessources(joueur1);
+                System.out.print(" Le joueur " + joueur1.getIdJoueur() + " lance les dés    ");
+                joueur1.lanceDe();
+                System.out.println("Nombre de points de gloire actuels: " + joueur1.getPlateauDuJoueur().getPointsDeGloire() + "|| et le Nombre d'Or :" + joueur1.getPlateauDuJoueur().getOr());
             }
 
             if (choixJ2 == GoTemple) {
                 System.out.println("Joueur 2 au temple");
                 AllerAuTemple2(joueur2, choixDé, choixDeFaceChanger);
-                gainDeRessources(joueur2);
+                System.out.print(" Le joueur " + joueur2.getIdJoueur() + " lance les dés    ");
+                joueur2.lanceDe();
+                System.out.println("Nombre de points de gloire actuels: " + joueur2.getPlateauDuJoueur().getPointsDeGloire() + "|| et le Nombre d'Or :" + joueur2.getPlateauDuJoueur().getOr());
 
             } else {
-                gainDeRessources(joueur2);
-
-
+                System.out.print(" Le joueur " + joueur2.getIdJoueur() + " lance les dés    ");
+                joueur2.lanceDe();
+                System.out.println("Nombre de points de gloire actuels: " + joueur2.getPlateauDuJoueur().getPointsDeGloire() + "|| et le Nombre d'Or :" + joueur2.getPlateauDuJoueur().getOr());
             }
 
 /*
@@ -79,8 +90,11 @@ public class Tour {
         Face face1 = joueur.getDe(1).lancerLeDe();
         Face face2 = joueur.getDe(2).lancerLeDe();
 
-        if (face1.isFaceContainsGloire()) {
-            gloire1 = face1.getNb();
+       /* for(int i =0; i<face1.getTypeDeRessource().length; i++){
+            if (face1.isFaceContainsGloire()) {
+                gloire1 = face1.getNb();
+        }
+
         }
 
         if (face2.isFaceContainsGloire()) {
@@ -94,6 +108,7 @@ public class Tour {
         if (face2.isFaceContainsOr()) {
             or2 = face1.getNb();
         }
+        */
 
         joueur.getPlateauDuJoueur().ajouterPointDeGloire(  gloire1 + gloire2);
         joueur.getPlateauDuJoueur().ajouterOr(or1 + or2);
@@ -112,7 +127,7 @@ public class Tour {
      */
 
     void AllerAuTemple(Joueur joueur, int choixDé, int choixDeFaceChanger) {
-        int t[] = {2, 3, 4, 5, 6, 6, 8, 8, 8, 8, 12};
+        int t[] = {2,2,2,3,4,5,6,6,8,8,8,8,12};
         int nbOr = joueur.getPlateauDuJoueur().getOr();
         int taille = 0;
         int indice = 0;
@@ -131,7 +146,7 @@ public class Tour {
 
 
     void AllerAuTemple2(Joueur joueur, int choixDé, int choixDeFaceChanger) {
-        int t[] = {2,2,2,3,4,5,6,6,8,8,8,8,12};
+        int t[] = {2,2,3,4,5,6,6,8,8,8,8,12};
         int nbOr = joueur.getPlateauDuJoueur().getOr();
         int taille=0;
         if (nbOr > 1) {

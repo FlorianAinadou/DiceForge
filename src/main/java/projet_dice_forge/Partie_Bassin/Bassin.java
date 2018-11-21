@@ -1,4 +1,8 @@
-package main.java.projet_dice_forge;
+package main.java.projet_dice_forge.Partie_Bassin;
+
+import main.java.projet_dice_forge.Plateau_Joueur.Face;
+import main.java.projet_dice_forge.Plateau_Joueur.Joueur;
+import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +13,6 @@ import java.util.Random;
  */
 
 public class Bassin {
-
     //C'est la liste des face présentent dans le bassin.
     private ArrayList<Face> ListFace;
     //C'est le cout qu'il faut payer pour acheter une face dans le bassin.
@@ -19,6 +22,7 @@ public class Bassin {
      * Création d'un nouveau bassin avec son coût.
      * @param coutBassin
      */
+
     public Bassin(int coutBassin) {
         ListFace = new ArrayList<>();
         setCout(coutBassin);
@@ -58,13 +62,15 @@ public class Bassin {
     /**
      * Permet d'afficher les faces présentent dans le bassin.
      */
-    public void AfficherBassin() {
+  /*  public void AfficherBassin() {
         System.out.println("Bassin:");
         for (int i = 0; i < this.ListFace.size(); i++) {
             Face face = this.ListFace.get(i);
+
             System.out.println(face.getNb() + face.getTypeDeRessource());
         }
     }
+    */
 
     /**
      * Permet d'enlever une face du bassin.
@@ -90,16 +96,18 @@ public class Bassin {
     public Face FaceAleaBassin(){
         int nbFaceBassin = this.ListFace.size();
 
-        Random r = new Random(nbFaceBassin);
-        int indice = r.nextInt(1);
+        Random r = new Random();
+        int indice = r.nextInt(nbFaceBassin);
         Face face = this.ListFace.get(indice);
         //Face face = new Face(4,"or");
         EnleverFaceBassin(face);
         return face;
     }
+
     public int TailleBassin(){
        return this.ListFace.size();
     }
+
     public ArrayList<Face> getListFace(){
         return this.ListFace;
     }

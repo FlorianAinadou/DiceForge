@@ -1,4 +1,4 @@
-package main.java.projet_dice_forge;
+package main.java.projet_dice_forge.Plateau_Joueur;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -22,10 +22,10 @@ public class De {
         int i=0;
         this.de = new Face[nbFace];
         for(  ; i<4 ;i++){
-            this.de[i]= new Face(1,"or");
+            this.de[i]= new Face(new int[]{1}, new String[]{"or"});
         }
         for(  ; i<6 ;i++){
-            this.de[i]= new Face(i-3,"gloire");
+            this.de[i]= new Face(new int[]{i - 3}, new String[]{"gloire"});
         }
     }
 
@@ -39,14 +39,11 @@ public class De {
     }
 
     public void ajouterToutLesFace(ArrayList list){
-
     }
 
     public Face getface(int i){
         return de[i];
     }
-
-
 
     /**
      * Cette méthode simule un lancement de dé
@@ -57,7 +54,6 @@ public class De {
         int valeur = r.nextInt(6);
         return this.de[valeur];
     }
-
     /**
      * Cette méthode affiche les faces d'un dé
      */
