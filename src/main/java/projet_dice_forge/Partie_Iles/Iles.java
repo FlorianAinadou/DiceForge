@@ -9,7 +9,7 @@ public class Iles {
     private boolean portail;
     private int nbExploit;
     private int idIles;
-    private boolean occupé =true;
+    private boolean occupé =false;
     private ArrayList<Carte> ListeExploit;
 
 

@@ -3,9 +3,12 @@ package main.java.projet_dice_forge.Bot;
 import main.java.projet_dice_forge.Partie_Bassin.Bassin;
 import main.java.projet_dice_forge.Partie_Bassin.Temple;
 import main.java.projet_dice_forge.Partie_Iles.Carte;
+import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Plateau_Joueur.De;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
+import main.java.projet_dice_forge.effet.LesHerbesFolles;
+
 
 import java.util.List;
 
@@ -58,7 +61,20 @@ public class Joueur {
         resetPlateauDuJoueur();
         resetDe();
     }
+///////////////////////////////////////////Partie gère les Cartes du joueur////////////////////////////////////////////////////////////////////////////////////
+    public ArrayList<Carte> getListeCarte() {
+        return ListeCarte;
+    }
+    public int ChercherCarte(int IdCarte) {
+        for (int i = 0; i < ListeCarte.size(); i++) {
+            if (ListeCarte.get(i).getIdCarte() == IdCarte) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void resetPlateauDuJoueur() {
         this.Plateau = new PlateauDuJoueur(this.id);
     }
@@ -150,7 +166,19 @@ public class Joueur {
         return meilleurBassin.getCout();
     }
 
-    public void acheterCarte(Carte carte){
+    public void acheterCarte(Iles iles, Carte carte){
+        carte.activerCarte();
         ListeCarte.add(carte);
+        iles.enleverCarte(carte);
     }
+
+    public void afficherCarteJoueur(){
+        for (Carte carte: ListeCarte){
+            carte.afficherCarte();
+        }
+
+    }
+
+
+
 }

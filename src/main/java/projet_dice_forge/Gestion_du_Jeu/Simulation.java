@@ -1,8 +1,11 @@
 package main.java.projet_dice_forge.Gestion_du_Jeu;
 
 
+import main.java.projet_dice_forge.Partie_Iles.Carte;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 import main.java.projet_dice_forge.Bot.Joueur;
+import main.java.projet_dice_forge.effet.LeMarteauDuForgeron;
+import main.java.projet_dice_forge.effet.LesHerbesFolles;
 
 public class Simulation {
 
@@ -10,6 +13,7 @@ public class Simulation {
      * Crée une nouvelle partie de Dice Forge
      */
     public Simulation(){
+        /*
 
         Joueur joueur1 = new Joueur(1);
         Joueur joueur2 = new Joueur(2);
@@ -28,9 +32,19 @@ public class Simulation {
             System.out.println("Egalité. " +joueur2.getPlateauDuJoueur().getPointsDeGloire() + " points de gloire partout.");
             //System.out.println("or " + joueur1.getPlateauDuJoueur().getOr());
         }
+        */
+
+        Joueur joueur =new Joueur(1);
+        PlateauDesIles plateau = new PlateauDesIles();
+        Carte carte = new LeMarteauDuForgeron();
+        joueur.acheterCarte(plateau.getIlesN1(),carte);
+        joueur.afficherCarteJoueur();
+       // System.out.println(Liste);
+        ((LeMarteauDuForgeron) carte).activerEffetCarte(joueur,3);
+        System.out.println(joueur.getPlateauDuJoueur().getFragmentLunaire());
+        System.out.println(joueur.getPlateauDuJoueur().getOr());
 
 
-    PlateauDesIles plateauDesIles = new PlateauDesIles();
 
 
 
