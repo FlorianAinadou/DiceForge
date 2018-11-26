@@ -32,8 +32,15 @@ public class Simulation {
             System.out.println("Egalité. " +joueur2.getPlateauDuJoueur().getPointsDeGloire() + " points de gloire partout.");
             //System.out.println("or " + joueur1.getPlateauDuJoueur().getOr());
         }
+
         */
 
+
+        /**
+         * Cette partie commenter me permet de tester si mes effets de cartes implémenté marche bien
+         * Carte LeMarteauDuForgeron
+         */
+        /*
         Joueur joueur =new Joueur(1);
         PlateauDesIles plateau = new PlateauDesIles();
         Carte carte = new LeMarteauDuForgeron();
@@ -43,8 +50,7 @@ public class Simulation {
         ((LeMarteauDuForgeron) carte).activerEffetCarte(joueur,3);
         System.out.println(joueur.getPlateauDuJoueur().getFragmentLunaire());
         System.out.println(joueur.getPlateauDuJoueur().getOr());
-
-
+        */
 
 
 

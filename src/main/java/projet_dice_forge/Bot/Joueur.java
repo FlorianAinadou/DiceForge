@@ -13,6 +13,7 @@ import main.java.projet_dice_forge.effet.LesHerbesFolles;
 import java.util.List;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Joueur {
     protected int id = -1;
@@ -65,6 +66,7 @@ public class Joueur {
     public ArrayList<Carte> getListeCarte() {
         return ListeCarte;
     }
+
     public int ChercherCarte(int IdCarte) {
         for (int i = 0; i < ListeCarte.size(); i++) {
             if (ListeCarte.get(i).getIdCarte() == IdCarte) {
@@ -178,6 +180,49 @@ public class Joueur {
         }
 
     }
+
+    /**
+     * Cette méthode nous permet de lancer seulement un seul dé et d'ajouter ces gains aux joueurs concerné.
+     * Ainsi on choisis de manière aléatoire le dée qu'on va lancée.
+     */
+
+
+    public void faveurMineur(){
+        Face sombre, claire;
+        Random Alea = new Random();
+        int nbAlea= Alea.nextInt(2);
+
+        if (nbAlea == 0) {
+            claire = this.DeClaire.lancerLeDe();
+            claire.AnalyseFace();
+
+            if(claire.getPositionGloire()!=-1){
+                this.Plateau.ajouterPointDeGloire(claire.getNb()[claire.getPositionGloire()]);
+            }
+            if(claire.getPostionOr()!=-1) {
+                this.Plateau.ajouterOr(claire.getNb()[claire.getPostionOr()]);
+            }
+            System.out.print("Dé 1: " + claire.AfficherFace() );
+        }
+        else {
+            sombre = this.DeSombre.lancerLeDe();
+            sombre.AnalyseFace();
+
+            if(sombre.getPositionGloire()!=-1) {
+                this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPositionGloire()]);
+            }
+            if(sombre.getPostionOr()!=-1) {
+                this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPostionOr()]);
+            }
+            System.out.print("Dé 2: " + sombre.AfficherFace() );
+
+        }
+
+    }
+
+
+
+
 
 
 
