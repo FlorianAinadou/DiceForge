@@ -14,19 +14,26 @@ public class De {
     private final int nbFace = 6;
 
     /**
-     * Crée un dé avec des faces contenant des points de gloire et de l'or
-     * nous avons donc 4 faces avec de l'or et 2 faces avec des poits de gloire
+     * Crée un dé des dés de base du jeu en fonction du dé voulu
+     * L'un continent 5 faces à 1 or et 1 face à 1 Solaire,
+     * l'autre contient 4 faces à 1 or, 1 face à 2 gloire, 1 face à 1 Lunaire
      */
 
-    public De(){
+    public De(String string){
         int i=0;
         this.de = new Face[nbFace];
-        for(  ; i<4 ;i++){
-            this.de[i]= new Face(new int[]{1}, new String[]{"or"});
-
+        if(string=="claire"){
+            for(  ; i<5 ;i++) {
+                this.de[i] = new Face(new int[]{1}, new String[]{"or"});
+            }
+            this.de[5] = new Face(new int[]{1}, new String[]{"fragementSolaire"});
         }
-        for(  ; i<6 ;i++){
-            this.de[i]= new Face(new int[]{i - 3}, new String[]{"gloire"});
+        if (string=="sombre"){
+            for(  ; i<4 ;i++){
+                this.de[i]= new Face(new int[]{1}, new String[]{"or"});
+            }
+            this.de[4]= new Face(new int[]{1}, new String[]{"fragementLunaire"});
+            this.de[5]= new Face(new int[]{2}, new String[]{"gloire"});
         }
     }
 

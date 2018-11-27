@@ -26,7 +26,7 @@ public class Tour {
             /*Cela me permet de voir si les dés sont bien changer*/
 
 
-            System.out.println("Tour " + (tour + 1));
+            System.out.println("\nTour " + (tour + 1));
             /*
             joueur1.getDe(1).afficherDe();
             joueur1.getDe(2).afficherDe();
@@ -46,35 +46,27 @@ public class Tour {
                 AllerAuTemple(joueur1, choixDé, choixDeFaceChanger);
                 System.out.print(" Le joueur " + joueur1.getIdJoueur() + " lance les dés    ");
                 joueur1.lanceDe();
-                System.out.println("Nombre de points de gloire actuels: " + joueur1.getPlateauDuJoueur().getPointsDeGloire() + "|| et le Nombre d'Or :" + joueur1.getPlateauDuJoueur().getOr());
+                System.out.println("\nNombre de points de gloire actuels: " + joueur1.getPlateauDuJoueur().getPointsDeGloire() + "|| Nombre d'Or :" + joueur1.getPlateauDuJoueur().getOr()+" || Nombre Solaire : " + joueur1.getPlateauDuJoueur().getFragmentSolaire()+"||Nombre Lunaire : "+joueur1.getPlateauDuJoueur().getFragmentLunaire());
 
 
             } else {
-                System.out.print(" Le joueur " + joueur1.getIdJoueur() + " lance les dés    ");
+                System.out.println(" Le joueur " + joueur1.getIdJoueur() + " lance les dés    ");
                 joueur1.lanceDe();
-                System.out.println("Nombre de points de gloire actuels: " + joueur1.getPlateauDuJoueur().getPointsDeGloire() + "|| et le Nombre d'Or :" + joueur1.getPlateauDuJoueur().getOr());
+                System.out.println("\nNombre de points de gloire actuels: " + joueur1.getPlateauDuJoueur().getPointsDeGloire() + "|| Nombre d'Or :" + joueur1.getPlateauDuJoueur().getOr()+" || Nombre Solaire : " + joueur1.getPlateauDuJoueur().getFragmentSolaire()+"||Nombre Lunaire : "+joueur1.getPlateauDuJoueur().getFragmentLunaire());
             }
 
             if (choixJ2 == GoTemple) {
-                System.out.println("Joueur 2 au temple");
+                System.out.println("\nJoueur 2 au temple");
                 AllerAuTemple2(joueur2, choixDé, choixDeFaceChanger);
                 System.out.print(" Le joueur " + joueur2.getIdJoueur() + " lance les dés    ");
                 joueur2.lanceDe();
-                System.out.println("Nombre de points de gloire actuels: " + joueur2.getPlateauDuJoueur().getPointsDeGloire() + "|| et le Nombre d'Or :" + joueur2.getPlateauDuJoueur().getOr());
+                System.out.println("\nNombre de points de gloire actuels: " + joueur2.getPlateauDuJoueur().getPointsDeGloire() + "|| Nombre d'Or :" + joueur2.getPlateauDuJoueur().getOr()+" || Nombre Solaire : " + joueur2.getPlateauDuJoueur().getFragmentSolaire()+"||Nombre Lunaire : "+joueur2.getPlateauDuJoueur().getFragmentLunaire());
 
             } else {
-                System.out.print(" Le joueur " + joueur2.getIdJoueur() + " lance les dés    ");
+                System.out.println("\n Le joueur " + joueur2.getIdJoueur() + " lance les dés    ");
                 joueur2.lanceDe();
-                System.out.println("Nombre de points de gloire actuels: " + joueur2.getPlateauDuJoueur().getPointsDeGloire() + "|| et le Nombre d'Or :" + joueur2.getPlateauDuJoueur().getOr());
+                System.out.println("\nNombre de points de gloire actuels: " + joueur2.getPlateauDuJoueur().getPointsDeGloire() + "|| Nombre d'Or :" + joueur2.getPlateauDuJoueur().getOr()+" || Nombre Solaire : " + joueur2.getPlateauDuJoueur().getFragmentSolaire()+"||Nombre Lunaire : "+joueur2.getPlateauDuJoueur().getFragmentLunaire());
             }
-
-/*
-            AllerAuTemple(joueur1);
-            AllerAuTemple(joueur2);
-            gainDeRessources(joueur2);
-            gainDeRessources(joueur1);
-            */
-
 
         }
     }

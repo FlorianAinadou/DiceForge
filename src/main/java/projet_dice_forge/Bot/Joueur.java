@@ -24,8 +24,8 @@ public class Joueur {
 
     public Joueur(int Idjoueur){
         this.id=Idjoueur;
-        this.DeClaire=new De();
-        this.DeSombre=new De();
+        this.DeClaire=new De("claire");
+        this.DeSombre=new De("sombre");
         this.Plateau=new PlateauDuJoueur(Idjoueur);
         this.ListeCarte=new ArrayList<>();
     }
@@ -85,8 +85,8 @@ public class Joueur {
      * Cette classe reinitialise les dés. On l'utilise quand on veut relancer une partie
      */
     private void resetDe() {
-        this.DeClaire = new De();
-        this.DeSombre = new De();
+        this.DeClaire = new De("claire");
+        this.DeSombre = new De("sombre");
     }
 
     /**
@@ -104,12 +104,26 @@ public class Joueur {
         if(claire.getPostionOr()!=-1) {
             this.Plateau.ajouterOr(claire.getNb()[claire.getPostionOr()]);
         }
+        if(claire.getPositionLune()!=-1) {
+            this.Plateau.ajoutFragLun(claire.getNb()[claire.getPositionLune()]);
+        }
+        if(claire.getPositionSoleil()!=-1) {
+            this.Plateau.ajoutFragSol(claire.getNb()[claire.getPositionSoleil()]);
+        }
+
         if(sombre.getPositionGloire()!=-1) {
             this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPositionGloire()]);
         }
         if(sombre.getPostionOr()!=-1) {
-            this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPostionOr()]);
+            this.Plateau.ajouterOr(sombre.getNb()[sombre.getPostionOr()]);
         }
+        if(sombre.getPositionLune()!=-1) {
+            this.Plateau.ajoutFragLun(sombre.getNb()[sombre.getPositionLune()]);
+        }
+        if(sombre.getPositionSoleil()!=-1) {
+            this.Plateau.ajoutFragSol(sombre.getNb()[sombre.getPositionSoleil()]);
+        }
+
 
         System.out.print("Dé 1: " + claire.AfficherFace() );
         System.out.print("Dé 2: " + sombre.AfficherFace() );

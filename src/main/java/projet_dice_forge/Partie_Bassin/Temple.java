@@ -31,8 +31,10 @@ public class Temple {
      */
     private Bassin Bassin2Or() {
         Bassin bassin2Or = new Bassin(2);
-        Face face = new Face(new int[]{3}, new String[]{"Or"});
+        Face face = new Face(new int[]{3}, new String[]{"0r"});
+        Face face1 = new Face(new int[]{1}, new String[]{"fragementLunaire"});
         bassin2Or.AjouterFaceBassin(face, 4);
+        bassin2Or.AjouterFaceBassin(face1, 4);
         return bassin2Or;
     }
 
@@ -41,7 +43,9 @@ public class Temple {
      */
     private Bassin Bassin3Or() {
         Bassin bassin3Or = new Bassin(3);
-        Face face = new Face(new int[]{4}, new String[]{"Or"});
+        Face face = new Face(new int[]{4}, new String[]{"or"});
+        Face face1 = new Face(new int[]{1}, new String[]{"fragementSolaire"});
+        bassin3Or.AjouterFaceBassin(face1, 4);
         bassin3Or.AjouterFaceBassin(face, 4);
         return bassin3Or;
     }
@@ -51,8 +55,12 @@ public class Temple {
      */
     private Bassin Bassin4Or() {
         Bassin bassin4Or = new Bassin(4);
-        Face face = new Face(new int[]{6}, new String[]{"Or"});
+        Face face = new Face(new int[]{6}, new String[]{"or"});
+        Face face1 = new Face(new int[]{2,1}, new String[]{"or","fragementLunaire"});
+        Face face2 = new Face(new int[]{1,1}, new String[]{"gloire","fragementSolaire"});
         bassin4Or.AjouterFaceBassin(face, 1);
+        bassin4Or.AjouterFaceBassin(face1, 1);
+        bassin4Or.AjouterFaceBassin(face2, 1);
         return bassin4Or;
     }
 
@@ -61,7 +69,7 @@ public class Temple {
      */
     private Bassin Bassin5Or() {
         Bassin bassin5Or = new Bassin(5);
-        Face face = new Face(new int[]{3}, new String[]{"Or"});
+        Face face = new Face(new int[]{3}, new String[]{"or"});
         bassin5Or.AjouterFaceBassin(face, 4);
         return bassin5Or;
     }
@@ -71,7 +79,7 @@ public class Temple {
      */
     private Bassin Bassin6Or() {
         Bassin bassin6Or = new Bassin(6);
-        Face face = new Face(new int[]{3}, new String[]{"Or"});
+        Face face = new Face(new int[]{2}, new String[]{"fragementLunaire"});
         bassin6Or.AjouterFaceBassin(face, 4);
         return bassin6Or;
     }
@@ -82,7 +90,9 @@ public class Temple {
     private Bassin Bassin8Or() {
         Bassin bassin8Or = new Bassin(8);
         Face face = new Face(new int[]{3}, new String[]{"gloire"});
+        Face face1 = new Face(new int[]{2}, new String[]{"fragementSolaire"});
         bassin8Or.AjouterFaceBassin(face, 4);
+        bassin8Or.AjouterFaceBassin(face1, 4);
         return bassin8Or;
     }
 
@@ -92,7 +102,11 @@ public class Temple {
     private Bassin Bassin12Or() {
         Bassin bassin12Or = new Bassin(12);
         Face face = new Face(new int[]{4}, new String[]{"gloire"});
+        Face face1 = new Face(new int[]{1,1,1,1}, new String[]{"gloire","or","fragementSolaire","fragementLunaire"});
+        Face face2 = new Face(new int[]{2,3}, new String[]{"gloire","fragementLunaire"});
         bassin12Or.AjouterFaceBassin(face, 1);
+        bassin12Or.AjouterFaceBassin(face1, 1);
+        bassin12Or.AjouterFaceBassin(face2, 1);
         return bassin12Or;
     }
 

@@ -74,7 +74,7 @@ public class Bassin {
 
     /**
      * Permet d'enlever une face du bassin.
-     * @param FaceJoueur
+     * @param faceJoueur
      */
 
     public void EnleverFaceBassin(Face faceJoueur) {

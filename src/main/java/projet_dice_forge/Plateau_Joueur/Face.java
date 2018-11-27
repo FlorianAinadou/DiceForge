@@ -60,10 +60,10 @@ public class Face {
             if (this.getTypeDeRessource()[i].equals("or")) {
                 this.positionOr = i;
             }
-            if (this.getTypeDeRessource()[i].equals("lune")) {
+            if (this.getTypeDeRessource()[i].equals("fragementLunaire")) {
                 this.positionLune = i;
             }
-            if (this.getTypeDeRessource()[i].equals("soleil")) {
+            if (this.getTypeDeRessource()[i].equals("fragementSolaire")) {
                 this.positionSoleil = i;
             }
         }

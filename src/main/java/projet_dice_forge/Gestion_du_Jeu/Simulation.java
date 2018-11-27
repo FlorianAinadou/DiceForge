@@ -13,7 +13,7 @@ public class Simulation {
      * Crée une nouvelle partie de Dice Forge
      */
     public Simulation(){
-        /*
+
 
         Joueur joueur1 = new Joueur(1);
         Joueur joueur2 = new Joueur(2);
@@ -33,7 +33,7 @@ public class Simulation {
             //System.out.println("or " + joueur1.getPlateauDuJoueur().getOr());
         }
 
-        */
+
 
 
         /**
