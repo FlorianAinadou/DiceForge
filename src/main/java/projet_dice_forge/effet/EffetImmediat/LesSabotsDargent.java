@@ -7,11 +7,16 @@ public class LesSabotsDargent extends Carte {
 
 
     public LesSabotsDargent(){
-        super(4, new int[]{1}, new String[]{"fragementLunaire"}, 2,false);
+        super(4, new int[]{1}, new String[]{"PierredeLune"}, 2,false,1);
     }
 
     public void activerEffetCarte(Joueur joueur) {
-        joueur.faveurMineur();
+        if (this.isActiverOuPas()) {
+            joueur.faveurMineur();
+        }
+        else{
+            System.out.println("je suis bete");
+        }
     }
 
 

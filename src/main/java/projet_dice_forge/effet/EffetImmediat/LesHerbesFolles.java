@@ -7,15 +7,19 @@ public class LesHerbesFolles extends Carte {
 
 
 
+
     public LesHerbesFolles() {
-        super(1,new int[]{1},new String[]{"fragementSolaire"},2,false);
+        super(1,new int[]{1},new String[]{"PierredeSolail"},2,false,1);
     }
     
     public void activerEffetCarte(Joueur joueur) {
-        if(this.isActiverOuPas()){
+        if(!this.isActiverOuPas()){
             joueur.getPlateauDuJoueur().ajouterOr(3);
             joueur.getPlateauDuJoueur().ajoutFragLun(3);
 
+        }
+        else{
+            System.out.println("mouk");
         }
     }
 }

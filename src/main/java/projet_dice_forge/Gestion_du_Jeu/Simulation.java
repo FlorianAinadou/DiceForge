@@ -6,6 +6,7 @@ import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.effet.LeMarteauDuForgeron;
 import main.java.projet_dice_forge.effet.LesHerbesFolles;
+import main.java.projet_dice_forge.effet.LesSabotsDargent;
 
 public class Simulation {
 
@@ -40,17 +41,20 @@ public class Simulation {
          * Cette partie commenter me permet de tester si mes effets de cartes implémenté marche bien
          * Carte LeMarteauDuForgeron
          */
-        /*
+
         Joueur joueur =new Joueur(1);
         PlateauDesIles plateau = new PlateauDesIles();
-        Carte carte = new LeMarteauDuForgeron();
-        joueur.acheterCarte(plateau.getIlesN1(),carte);
-        joueur.afficherCarteJoueur();
-       // System.out.println(Liste);
-        ((LeMarteauDuForgeron) carte).activerEffetCarte(joueur,3);
-        System.out.println(joueur.getPlateauDuJoueur().getFragmentLunaire());
-        System.out.println(joueur.getPlateauDuJoueur().getOr());
-        */
+        Carte carte = new LesHerbesFolles();
+        joueur.acheterCarte(plateau.getIlesN7(),carte);
+        //joueur.afficherCarteJoueur();
+
+
+        joueur.activerEffetCarteImmediat();
+        System.out.println("Lune:"+ joueur.getPlateauDuJoueur().getFragmentLunaire());
+        System.out.println("Solaire:"+joueur.getPlateauDuJoueur().getFragmentSolaire());
+        System.out.println("Or :"+ joueur.getPlateauDuJoueur().getOr());
+        System.out.println("Gloire :"+ joueur.getPlateauDuJoueur().getPointsDeGloire());
+
 
 
 

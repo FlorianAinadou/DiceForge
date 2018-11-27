@@ -7,7 +7,10 @@ import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Plateau_Joueur.De;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
+import main.java.projet_dice_forge.effet.LePasseur;
+import main.java.projet_dice_forge.effet.LecoffreDuForgeron;
 import main.java.projet_dice_forge.effet.LesHerbesFolles;
+import main.java.projet_dice_forge.effet.LesSabotsDargent;
 
 
 import java.util.List;
@@ -21,6 +24,7 @@ public class Joueur {
     protected De DeSombre;
     protected PlateauDuJoueur Plateau;
     protected ArrayList<Carte> ListeCarte;
+    protected int PointDeGloireCarte;
 
     public Joueur(int Idjoueur){
         this.id=Idjoueur;
@@ -181,18 +185,66 @@ public class Joueur {
         }
         return meilleurBassin.getCout();
     }
-
+///////////////////////////////////////////////////////////////////////////Partie Carte ///////////////////////////////////////////////////////////////////////////////////////
     public void acheterCarte(Iles iles, Carte carte){
         carte.activerCarte();
         ListeCarte.add(carte);
+        ajouterPointDeGloire(carte);
         iles.enleverCarte(carte);
     }
 
+    /**
+     * Cette méthode nous permet de stocker les points de gloire de chaque carte acheter dans une varriable int
+     *
+     */
+    public void ajouterPointDeGloire(Carte carte){
+        setPointDeGloireCarte(getPointDeGloireCarte() + carte.getPointDeGloire());
+
+    }
+
+    public int getPointDeGloireCarte() {
+        return PointDeGloireCarte;
+    }
+
+    public void setPointDeGloireCarte(int pointDeGloireCarte) {
+        PointDeGloireCarte = pointDeGloireCarte;
+    }
+
+    /**
+     * Cette méthode nous permet d'afficher les identifiants des cartes qui sont achété par le joueur
+     */
     public void afficherCarteJoueur(){
         for (Carte carte: ListeCarte){
-            carte.afficherCarte();
+            System.out.println(carte.getIdCarte());
         }
 
+    }
+
+    public void activerEffetCarteImmediat(){
+        for (Carte carte: this.getListeCarte()){
+            switch (carte.getIdCarte()){
+                case 1:
+                    LesHerbesFolles c1 = new LesHerbesFolles();
+                    c1.activerEffetCarte(this);
+                    ajouterPointDeGloire(c1);
+                    break;
+                case 2:
+                    LecoffreDuForgeron c2 = new LecoffreDuForgeron();
+                    c2.activerEffetCarte(this);
+                    ajouterPointDeGloire(c2);
+                    break;
+                case 3:
+                    LesSabotsDargent c3 = new LesSabotsDargent();
+                    c3.activerEffetCarte(this);
+                    ajouterPointDeGloire(c3);
+                    break;
+                case 4:
+                    LePasseur c4 = new LePasseur();
+                    c4.activerEffetCarte(this);
+                    ajouterPointDeGloire(c4);
+                    break;
+            }
+        }
     }
 
     /**
@@ -229,6 +281,40 @@ public class Joueur {
                 this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPostionOr()]);
             }
             System.out.print("Dé 2: " + sombre.AfficherFace() );
+
+        }
+
+    }
+
+    public void faveurMineurChoix(int choixDée){
+        Face sombre, claire;
+
+        if (choixDée == 0) {
+            sombre = this.DeSombre.lancerLeDe();
+            sombre.AnalyseFace();
+
+            if(sombre.getPositionGloire()!=-1) {
+                this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPositionGloire()]);
+            }
+            if(sombre.getPostionOr()!=-1) {
+                this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPostionOr()]);
+            }
+            System.out.print("Dé 2: " + sombre.AfficherFace() );
+        }
+        else {
+            claire = this.DeClaire.lancerLeDe();
+            claire.AnalyseFace();
+
+            if(claire.getPositionGloire()!=-1){
+                this.Plateau.ajouterPointDeGloire(claire.getNb()[claire.getPositionGloire()]);
+            }
+            if(claire.getPostionOr()!=-1) {
+                this.Plateau.ajouterOr(claire.getNb()[claire.getPostionOr()]);
+            }
+            System.out.print("Dé 1: " + claire.AfficherFace() );
+
+
+
 
         }
 

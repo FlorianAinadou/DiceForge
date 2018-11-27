@@ -62,6 +62,9 @@ public enum Carte {
 }
 */
 
+import main.java.projet_dice_forge.Bot.Joueur;
+import main.java.projet_dice_forge.effet.LesHerbesFolles;
+
 public class Carte {
     protected String nomDeLexploit;
     protected int[] prix;
@@ -69,6 +72,7 @@ public class Carte {
     protected int pointDeGloire;
     protected int idCarte;
     protected boolean activerOuPas;
+    protected int typeEffet;
 
     public Carte(int idCarte,String nomDeLexploit,int[] prix, String[] Ressource, int pointDeGloire,boolean activerOuPas){
         this.nomDeLexploit=nomDeLexploit;
@@ -78,12 +82,13 @@ public class Carte {
         this.idCarte=idCarte;
         this.activerOuPas=false;
     }
-    public Carte(int idCarte,int[] prix, String[] Ressource, int pointDeGloire,boolean activerOuPas){
+    public Carte(int idCarte,int[] prix, String[] Ressource, int pointDeGloire,boolean activerOuPas,int typeEffet){
         this.idCarte=idCarte;
         this.prix = prix;
         this.Ressource = Ressource;
         this.pointDeGloire=pointDeGloire;
         this.activerOuPas=false;
+        this.typeEffet=0;
     }
 
 
@@ -136,6 +141,10 @@ public class Carte {
     public boolean isActiverOuPas() {
         return activerOuPas;
     }
+
+
+
+
 }
 
 
