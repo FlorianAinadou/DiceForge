@@ -1,6 +1,7 @@
 package main.java.projet_dice_forge.Bot;
 
 import main.java.projet_dice_forge.Partie_Bassin.Temple;
+import main.java.projet_dice_forge.Partie_Iles.Carte;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
 
@@ -12,12 +13,27 @@ public class Emeline extends Bot {
         super(id);
     }
 
+    /**
+     *
+     * @param temple
+     * @param plateauDesIles
+     * Cette réérriture de la méthode jouer permet au Bot de faire des actions réfléchies
+     */
     @Override
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
             super.jouer(temple, plateauDesIles);
 
-            ArrayList<Face> facesDisponibles = new ArrayList<>();
 
+
+            //Avec un fragment lunaire, on achete la carte Le Marteau de Forgeron
+            if(this.getPlateauDuJoueur().getFragmentLunaire()>=1){
+            this.acheterCarte(plateauDesIles.getIlesN1(),plateauDesIles.getIlesN1().getCarte(0));
+            plateauDesIles.getIlesN1().enleverCarte(plateauDesIles.getIlesN1().getCarte(0) );
+            this.getListeCarte().get(0).activerCarte();
+            }
+
+            //On détermine la meilleure face à acheter en fonction de lor
+            ArrayList<Face> facesDisponibles = new ArrayList<>();
 
             int prixDuMeilleurPlateau =this.quelEstLeMeilleurBassin(temple);
 
@@ -54,6 +70,8 @@ public class Emeline extends Bot {
             }
 
         }
+
+
 
 
 

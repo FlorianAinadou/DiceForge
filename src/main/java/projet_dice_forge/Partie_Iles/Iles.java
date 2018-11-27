@@ -52,6 +52,13 @@ public class Iles {
         }
     }
 
+    /**
+    Permet de prendre une carte dans le lot de cartes disponibles
+     */
+    public Carte getCarte(int id){
+        return this.ListeExploit.get(id);
+    }
+
     /*public void ajouterCarte(Carte carte,int quantité){
         for(int i =0; i<quantité; i++){
             this.ListeExploit.add(carte);
