@@ -3,18 +3,14 @@ package main.java.projet_dice_forge.effet;
 import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Partie_Iles.Carte;
 
-public class LesSabotsDargent extends Carte {
-
-
-    public LesSabotsDargent(){
-        super(4, new int[]{1}, new String[]{"fragementLunaire"}, 2,false);
+public class LEnigme extends Carte {
+    public LEnigme(){
+        super(8, new int[]{6}, new String[]{"fragementSolaire"}, 10, false);
     }
-
     public void activerEffetCarte(Joueur joueur) {
         joueur.faveurMineur();
+        joueur.faveurMineur();
+        joueur.faveurMineur();
+        joueur.faveurMineur();
     }
-
-
-
-
 }

@@ -9,7 +9,7 @@ public class LeMarteauDuForgeron extends Carte {
 
 
     public LeMarteauDuForgeron() {
-        super(3, new int[]{1}, new String[]{"PierredeLune"}, 2, false);
+        super(3, new int[]{1}, new String[]{"fragementLunaire"}, 2, false);
     }
 
     public void activerEffetCarte(Joueur joueur,int nbPierreOr) {

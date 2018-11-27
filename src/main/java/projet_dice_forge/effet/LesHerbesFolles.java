@@ -8,7 +8,7 @@ public class LesHerbesFolles extends Carte {
 
 
     public LesHerbesFolles() {
-        super(1,new int[]{1},new String[]{"PierredeSolail"},2,false);
+        super(1,new int[]{1},new String[]{"fragementSolaire"},2,false);
     }
     
     public void activerEffetCarte(Joueur joueur) {

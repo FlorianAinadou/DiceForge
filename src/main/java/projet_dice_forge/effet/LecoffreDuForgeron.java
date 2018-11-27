@@ -6,7 +6,7 @@ import main.java.projet_dice_forge.Partie_Iles.Carte;
 public class LecoffreDuForgeron extends Carte {
 
     public LecoffreDuForgeron() {
-        super(2, new int[]{1}, new String[]{"PierredeLune"}, 2, false);
+        super(2, new int[]{1}, new String[]{"fragementLunaire"}, 2, false);
     }
 
     public void activerEffetCarte(Joueur joueur) {
