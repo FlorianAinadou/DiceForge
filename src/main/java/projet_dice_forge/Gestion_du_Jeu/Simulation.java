@@ -4,9 +4,9 @@ package main.java.projet_dice_forge.Gestion_du_Jeu;
 import main.java.projet_dice_forge.Partie_Iles.Carte;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 import main.java.projet_dice_forge.Bot.Joueur;
-import main.java.projet_dice_forge.effet.LeMarteauDuForgeron;
-import main.java.projet_dice_forge.effet.LesHerbesFolles;
-import main.java.projet_dice_forge.effet.LesSabotsDargent;
+import main.java.projet_dice_forge.Effet.EffetPermanent.LeMarteauDuForgeron;
+import main.java.projet_dice_forge.Effet.EffetImmediat.LesHerbesFolles;
+import main.java.projet_dice_forge.Effet.EffetImmediat.LesSabotsDargent;
 
 public class Simulation {
 

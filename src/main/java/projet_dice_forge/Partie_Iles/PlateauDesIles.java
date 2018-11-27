@@ -2,10 +2,10 @@ package main.java.projet_dice_forge.Partie_Iles;
 
 
 
-import main.java.projet_dice_forge.effet.LeMarteauDuForgeron;
-import main.java.projet_dice_forge.effet.LecoffreDuForgeron;
-import main.java.projet_dice_forge.effet.LesHerbesFolles;
-import main.java.projet_dice_forge.effet.LesSabotsDargent;
+import main.java.projet_dice_forge.Effet.EffetPermanent.LeMarteauDuForgeron;
+import main.java.projet_dice_forge.Effet.EffetImmediat.LecoffreDuForgeron;
+import main.java.projet_dice_forge.Effet.EffetImmediat.LesHerbesFolles;
+import main.java.projet_dice_forge.Effet.EffetImmediat.LesSabotsDargent;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package main.java.projet_dice_forge.effet;
+package main.java.projet_dice_forge.Effet.EffetPermanent;
 
 import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Partie_Iles.Carte;

@@ -7,10 +7,10 @@ import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Plateau_Joueur.De;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
-import main.java.projet_dice_forge.effet.LePasseur;
-import main.java.projet_dice_forge.effet.LecoffreDuForgeron;
-import main.java.projet_dice_forge.effet.LesHerbesFolles;
-import main.java.projet_dice_forge.effet.LesSabotsDargent;
+import main.java.projet_dice_forge.Effet.EffetImmediat.LePasseur;
+import main.java.projet_dice_forge.Effet.EffetImmediat.LecoffreDuForgeron;
+import main.java.projet_dice_forge.Effet.EffetImmediat.LesHerbesFolles;
+import main.java.projet_dice_forge.Effet.EffetImmediat.LesSabotsDargent;
 
 
 import java.util.List;
