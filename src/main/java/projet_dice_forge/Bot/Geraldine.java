@@ -4,7 +4,7 @@ import main.java.projet_dice_forge.Partie_Bassin.Temple;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 
 public class Geraldine extends Bot {
-    Geraldine(int id) {
+    public Geraldine(int id) {
         super(id);
     }
 

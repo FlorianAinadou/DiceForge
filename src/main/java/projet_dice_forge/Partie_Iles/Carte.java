@@ -63,7 +63,7 @@ public enum Carte {
 */
 
 import main.java.projet_dice_forge.Bot.Joueur;
-import main.java.projet_dice_forge.effet.LesHerbesFolles;
+
 
 public class Carte {
     protected String nomDeLexploit;

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Emeline extends Bot {
 
-    Emeline(int id) {
+    public Emeline(int id) {
         super(id);
     }
 

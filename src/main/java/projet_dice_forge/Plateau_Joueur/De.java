@@ -43,7 +43,9 @@ public class De {
      * @param indice --> quelle face du dé
      */
     public void ajouterUneFace(Face f, int indice){
-        this.de[indice]= f;
+        if (indice < 6){
+            this.de[indice]= f;
+        }
     }
 
     public void ajouterToutLesFace(ArrayList list){

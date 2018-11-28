@@ -77,7 +77,7 @@ public class PlateauDuJoueur{
         }
         else {
             System.out.println("Error : Vous avez tenter de retirer trop d'or");
-            System.exit(0);
+
         }
     }
 
