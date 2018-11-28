@@ -1,4 +1,15 @@
 package main.java.projet_dice_forge.Effet.EffetPermanent;
 
-public class LAncien {
+import main.java.projet_dice_forge.Bot.Joueur;
+import main.java.projet_dice_forge.Partie_Iles.Carte;
+import main.java.projet_dice_forge.Partie_Iles.CarteEffetPermanent;
+
+public class LAncien extends CarteEffetPermanent {
+
+    public LAncien(Joueur joueur){
+        super(4, new int[]{1}, new String[]{"PierredeSolail"}, 2,false);
+    }
+}
+
+
 }

@@ -2,14 +2,15 @@ package main.java.projet_dice_forge.Effet.EffetPermanent;
 
 import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Partie_Iles.Carte;
+import main.java.projet_dice_forge.Partie_Iles.CarteEffetPermanent;
 
-public class LeMarteauDuForgeron extends Carte {
+public class LeMarteauDuForgeron extends CarteEffetPermanent {
     private int nbOrDep=0;
 
 
 
     public LeMarteauDuForgeron() {
-        super(3, new int[]{1}, new String[]{"PierredeLune"}, 2, false,2);
+        super(3, new int[]{1}, new String[]{"PierredeLune"}, 2, false);
     }
 
     public void activerEffetCarte(Joueur joueur,int nbPierreOr) {

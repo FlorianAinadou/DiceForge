@@ -3,15 +3,12 @@ package main.java.projet_dice_forge.Bot;
 import main.java.projet_dice_forge.Partie_Bassin.Bassin;
 import main.java.projet_dice_forge.Partie_Bassin.Temple;
 import main.java.projet_dice_forge.Partie_Iles.Carte;
+import main.java.projet_dice_forge.Partie_Iles.CarteEffetImmediat;
+import main.java.projet_dice_forge.Partie_Iles.CarteEffetPermanent;
 import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Plateau_Joueur.De;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
-import main.java.projet_dice_forge.Effet.EffetImmediat.LePasseur;
-import main.java.projet_dice_forge.Effet.EffetImmediat.LecoffreDuForgeron;
-import main.java.projet_dice_forge.Effet.EffetImmediat.LesHerbesFolles;
-import main.java.projet_dice_forge.Effet.EffetImmediat.LesSabotsDargent;
-
 
 import java.util.List;
 
@@ -23,7 +20,8 @@ public class Joueur {
     protected De DeClaire;
     protected De DeSombre;
     protected PlateauDuJoueur Plateau;
-    protected ArrayList<Carte> ListeCarte;
+    protected ArrayList<CarteEffetImmediat> ListeCarteEffetImmediat;
+    protected ArrayList<CarteEffetPermanent> ListeCarteEffetPermanent;
     protected int PointDeGloireCarte;
 
     public Joueur(int Idjoueur){
@@ -31,7 +29,8 @@ public class Joueur {
         this.DeClaire=new De("claire");
         this.DeSombre=new De("sombre");
         this.Plateau=new PlateauDuJoueur(Idjoueur);
-        this.ListeCarte=new ArrayList<>();
+        this.ListeCarteEffetImmediat=new ArrayList<>();
+        this.ListeCarteEffetPermanent=new ArrayList<>();
     }
 
     public Joueur(int Idjoueur, De de1, De de2, PlateauDuJoueur Plateau){
@@ -39,7 +38,8 @@ public class Joueur {
         this.DeClaire=de1;
         this.DeSombre=de2;
         this.Plateau=Plateau;
-        this.ListeCarte=new ArrayList<>();
+        this.ListeCarteEffetImmediat=new ArrayList<>();
+        this.ListeCarteEffetPermanent=new ArrayList<>();
     }
 
     /**
@@ -67,13 +67,13 @@ public class Joueur {
         resetDe();
     }
 ///////////////////////////////////////////Partie gère les Cartes du joueur////////////////////////////////////////////////////////////////////////////////////
-    public ArrayList<Carte> getListeCarte() {
-        return ListeCarte;
+    public ArrayList<CarteEffetImmediat> getListeCarte() {
+        return ListeCarteEffetImmediat;
     }
 
     public int ChercherCarte(int IdCarte) {
-        for (int i = 0; i < ListeCarte.size(); i++) {
-            if (ListeCarte.get(i).getIdCarte() == IdCarte) {
+        for (int i = 0; i < ListeCarteEffetImmediat.size(); i++) {
+            if (ListeCarteEffetImmediat.get(i).getIdCarte() == IdCarte) {
                 return i;
             }
         }
@@ -188,9 +188,19 @@ public class Joueur {
 ///////////////////////////////////////////////////////////////////////////Partie Carte ///////////////////////////////////////////////////////////////////////////////////////
     public void acheterCarte(Iles iles, Carte carte){
         carte.activerCarte();
-        ListeCarte.add(carte);
-        ajouterPointDeGloire(carte);
-        iles.enleverCarte(carte);
+
+        if(carte instanceof CarteEffetImmediat){
+            CarteEffetImmediat carteEffetImmediat=(CarteEffetImmediat)carte;
+            ListeCarteEffetImmediat.add(carteEffetImmediat);
+            iles.enleverCarte(carte);
+            ajouterPointDeGloire(carte);
+        }
+        else if(carte instanceof CarteEffetPermanent){
+            CarteEffetPermanent carteEffetPermanent=(CarteEffetPermanent)carte;
+            ListeCarteEffetPermanent.add(carteEffetPermanent);
+            iles.enleverCarte(carte);
+            ajouterPointDeGloire(carte);
+        }
     }
 
     /**
@@ -214,36 +224,15 @@ public class Joueur {
      * Cette méthode nous permet d'afficher les identifiants des cartes qui sont achété par le joueur
      */
     public void afficherCarteJoueur(){
-        for (Carte carte: ListeCarte){
+        for (Carte carte: ListeCarteEffetImmediat){
             System.out.println(carte.getIdCarte());
         }
 
     }
 
     public void activerEffetCarteImmediat(){
-        for (Carte carte: this.getListeCarte()){
-            switch (carte.getIdCarte()){
-                case 1:
-                    LesHerbesFolles c1 = new LesHerbesFolles();
-                    c1.activerEffetCarte(this);
-                    ajouterPointDeGloire(c1);
-                    break;
-                case 2:
-                    LecoffreDuForgeron c2 = new LecoffreDuForgeron();
-                    c2.activerEffetCarte(this);
-                    ajouterPointDeGloire(c2);
-                    break;
-                case 3:
-                    LesSabotsDargent c3 = new LesSabotsDargent();
-                    c3.activerEffetCarte(this);
-                    ajouterPointDeGloire(c3);
-                    break;
-                case 4:
-                    LePasseur c4 = new LePasseur();
-                    c4.activerEffetCarte(this);
-                    ajouterPointDeGloire(c4);
-                    break;
-            }
+        for (CarteEffetImmediat carte: this.getListeCarte()){
+            carte.activerEffetCarte(this);
         }
     }
 
@@ -252,6 +241,12 @@ public class Joueur {
      * Ainsi on choisis de manière aléatoire le dée qu'on va lancée.
      */
 
+
+
+
+    public void LanceUnDe(){
+
+    }
 
     public void faveurMineur(){
         Face sombre, claire;

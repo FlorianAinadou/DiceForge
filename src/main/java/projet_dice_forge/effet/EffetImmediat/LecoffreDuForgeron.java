@@ -2,11 +2,12 @@ package main.java.projet_dice_forge.Effet.EffetImmediat;
 
 import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Partie_Iles.Carte;
+import main.java.projet_dice_forge.Partie_Iles.CarteEffetImmediat;
 
-public class LecoffreDuForgeron extends Carte {
+public class LecoffreDuForgeron extends CarteEffetImmediat {
 
     public LecoffreDuForgeron() {
-        super(2, new int[]{1}, new String[]{"PierredeLune"}, 2, false,1);
+        super(2, new int[]{1}, new String[]{"PierredeLune"}, 2, false);
     }
 
     public void activerEffetCarte(Joueur joueur) {

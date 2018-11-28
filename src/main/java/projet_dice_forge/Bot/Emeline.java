@@ -49,7 +49,7 @@ public class Emeline extends Bot {
             switch (prixDuMeilleurPlateau) {
                 case 2: {
                     facesDisponibles = temple.getFaceFromBassin(2);
-                    this.acheterFace(temple, facesDisponibles.get(1), quelleFaceChanger(2)), 1);
+                    this.acheterFace(temple, facesDisponibles.get(1), quelleFaceChanger(2), 1);
                 }
                 case 3: {
                     facesDisponibles = temple.getFaceFromBassin(3);
