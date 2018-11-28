@@ -117,6 +117,16 @@ public class Face {
         return string;
     }
 
+    public int getValeurFace(){
+       int valeurFace=0;
+       int nbRessources = this.getNb().length;
+       int[] ressourses= this.getNb();
+            for(int j=0; j<nbRessources;j++){
+                valeurFace+=ressourses[j];
+            }
+    return valeurFace;
+    }
+
 
 
 }
