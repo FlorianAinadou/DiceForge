@@ -15,6 +15,8 @@ public class Bot extends Joueur {
     }
 
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
-        lanceDe();
+        this.lanceDe();
+        setDetailTour ("Joueur "+ super.id + "\ngloire: "+ this.getPtGloire() + " or: "+ this.Plateau.getOr() +" FragementLuanire: " + this.Plateau.getFragmentLunaire() + " FragementSolaire: " + this.Plateau.getFragmentSolaire() +"\n");
     }
+    public void setDetailTour(String detailTour){this.detailTour=detailTour;}
 }

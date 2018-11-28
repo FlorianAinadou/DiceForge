@@ -47,6 +47,7 @@ public class Jeu {
         for(int i = 0; i<nbrManche; i++) {
             for(int j = 0; j < nbrJoueur; j++) {
                 bot[j].jouer(temple, plateauDesIles);
+                System.out.println(bot[j].getDetailTour());
                 if(affichage) {
                     System.out.println(bot[j].getDetailTour());
                 }

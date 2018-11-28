@@ -1,17 +1,11 @@
 package main.java.projet_dice_forge.Bot;
 
-import main.java.projet_dice_forge.Partie_Bassin.Bassin;
-import main.java.projet_dice_forge.Partie_Bassin.Temple;
-import main.java.projet_dice_forge.Partie_Iles.Carte;
-import main.java.projet_dice_forge.Partie_Iles.CarteEffetImmediat;
-import main.java.projet_dice_forge.Partie_Iles.CarteEffetPermanent;
-import main.java.projet_dice_forge.Partie_Iles.Iles;
-import main.java.projet_dice_forge.Plateau_Joueur.De;
-import main.java.projet_dice_forge.Plateau_Joueur.Face;
-import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
-
+import main.java.projet_dice_forge.Partie_Bassin.*;
+import main.java.projet_dice_forge.Partie_Iles.*;
+import main.java.projet_dice_forge.Plateau_Joueur.*;
+import main.java.projet_dice_forge.Ressource.*;
+import main.java.projet_dice_forge.effet.EffetImmediat.*;
 import java.util.List;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -97,40 +91,10 @@ public class Joueur {
      * On lance les dés et on attribue au joueur en fonction du résultat du lancé des ressources
      */
     public void lanceDe() {
-        Face sombre, claire;
-        claire = this.DeClaire.lancerLeDe();
-        sombre = this.DeSombre.lancerLeDe();
-        sombre.AnalyseFace();
-        claire.AnalyseFace();
-        if(claire.getPositionGloire()!=-1){
-            this.Plateau.ajouterPointDeGloire(claire.getNb()[claire.getPositionGloire()]);
-        }
-        if(claire.getPostionOr()!=-1) {
-            this.Plateau.ajouterOr(claire.getNb()[claire.getPostionOr()]);
-        }
-        if(claire.getPositionLune()!=-1) {
-            this.Plateau.ajoutFragLun(claire.getNb()[claire.getPositionLune()]);
-        }
-        if(claire.getPositionSoleil()!=-1) {
-            this.Plateau.ajoutFragSol(claire.getNb()[claire.getPositionSoleil()]);
-        }
-
-        if(sombre.getPositionGloire()!=-1) {
-            this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPositionGloire()]);
-        }
-        if(sombre.getPostionOr()!=-1) {
-            this.Plateau.ajouterOr(sombre.getNb()[sombre.getPostionOr()]);
-        }
-        if(sombre.getPositionLune()!=-1) {
-            this.Plateau.ajoutFragLun(sombre.getNb()[sombre.getPositionLune()]);
-        }
-        if(sombre.getPositionSoleil()!=-1) {
-            this.Plateau.ajoutFragSol(sombre.getNb()[sombre.getPositionSoleil()]);
-        }
-
-
-        System.out.print("Dé 1: " + claire.AfficherFace() );
-        System.out.print("Dé 2: " + sombre.AfficherFace() );
+        Face claire = faveurMineurChoix(0);
+        Face sombre = faveurMineurChoix(1);
+        System.out.print("Dé 1: " + claire.AfficherFace()  );
+        System.out.print("Dé 1: " + sombre.AfficherFace()  );
 
 
     }
@@ -140,7 +104,7 @@ public class Joueur {
         for (int i = 0; i < size; i++) {
             Bassin bas = temp.getBassins().get(i);
             if (bas.faceIsIn(acheter)) {
-                this.Plateau.enleverOr(temp.getBassins().get(i).getCout());
+                //this.Plateau.enleverOr(temp.getBassins().get(i).getCout());
             }
         }
         echangerFace(acheter, echange, idDe);
@@ -227,7 +191,6 @@ public class Joueur {
         for (Carte carte: ListeCarteEffetImmediat){
             System.out.println(carte.getIdCarte());
         }
-
     }
 
     public void activerEffetCarteImmediat(){
@@ -249,76 +212,83 @@ public class Joueur {
     }
 
     public void faveurMineur(){
-        Face sombre, claire;
         Random Alea = new Random();
         int nbAlea= Alea.nextInt(2);
-
-        if (nbAlea == 0) {
-            claire = this.DeClaire.lancerLeDe();
-            claire.AnalyseFace();
-
-            if(claire.getPositionGloire()!=-1){
-                this.Plateau.ajouterPointDeGloire(claire.getNb()[claire.getPositionGloire()]);
+        if(nbAlea==0){
+            Face claire = this.DeClaire.lancerLeDe();
+            for (Ressource ressource:claire.getRessource()){
+                if(ressource.getIdRessource()==1){
+                    this.Plateau.ajouterOr(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==2){
+                    this.Plateau.ajouterPointDeGloire(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==4){
+                    this.Plateau.ajoutFragLun(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==3){
+                    this.Plateau.ajoutFragSol(ressource.getNombre());
+                }
             }
-            if(claire.getPostionOr()!=-1) {
-                this.Plateau.ajouterOr(claire.getNb()[claire.getPostionOr()]);
-            }
-            System.out.print("Dé 1: " + claire.AfficherFace() );
         }
         else {
-            sombre = this.DeSombre.lancerLeDe();
-            sombre.AnalyseFace();
-
-            if(sombre.getPositionGloire()!=-1) {
-                this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPositionGloire()]);
+            Face sombre = this.DeSombre.lancerLeDe();
+            for (Ressource ressource:sombre.getRessource()){
+                if(ressource.getIdRessource()==1){
+                    this.Plateau.ajouterOr(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==2){
+                    this.Plateau.ajouterPointDeGloire(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==4){
+                    this.Plateau.ajoutFragLun(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==3){
+                    this.Plateau.ajoutFragSol(ressource.getNombre());
+                }
             }
-            if(sombre.getPostionOr()!=-1) {
-                this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPostionOr()]);
-            }
-            System.out.print("Dé 2: " + sombre.AfficherFace() );
-
         }
-
     }
 
-    public void faveurMineurChoix(int choixDée){
+    public Face faveurMineurChoix(int choixDée){
         Face sombre, claire;
-
         if (choixDée == 0) {
-            sombre = this.DeSombre.lancerLeDe();
-            sombre.AnalyseFace();
-
-            if(sombre.getPositionGloire()!=-1) {
-                this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPositionGloire()]);
-            }
-            if(sombre.getPostionOr()!=-1) {
-                this.Plateau.ajouterPointDeGloire(sombre.getNb()[sombre.getPostionOr()]);
-            }
-            System.out.print("Dé 2: " + sombre.AfficherFace() );
-        }
-        else {
             claire = this.DeClaire.lancerLeDe();
-            claire.AnalyseFace();
-
-            if(claire.getPositionGloire()!=-1){
-                this.Plateau.ajouterPointDeGloire(claire.getNb()[claire.getPositionGloire()]);
+            for (Ressource ressource:claire.getRessource()){
+                if(ressource.getIdRessource()==1){
+                    this.Plateau.ajouterOr(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==2){
+                    this.Plateau.ajouterPointDeGloire(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==4){
+                    this.Plateau.ajoutFragLun(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==3){
+                    this.Plateau.ajoutFragSol(ressource.getNombre());
+                }
             }
-            if(claire.getPostionOr()!=-1) {
-                this.Plateau.ajouterOr(claire.getNb()[claire.getPostionOr()]);
-            }
-            System.out.print("Dé 1: " + claire.AfficherFace() );
-
-
-
-
+            return claire;
         }
 
+        else {
+            sombre = this.DeClaire.lancerLeDe();
+            for (Ressource ressource:sombre.getRessource()){
+                if(ressource.getIdRessource()==1){
+                    this.Plateau.ajouterOr(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==2){
+                    this.Plateau.ajouterPointDeGloire(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==4){
+                    this.Plateau.ajoutFragLun(ressource.getNombre());
+                }
+                if(ressource.getIdRessource()==3){
+                    this.Plateau.ajoutFragSol(ressource.getNombre());
+                }
+            }
+            return sombre;
+        }
     }
-
-
-
-
-
-
 
 }

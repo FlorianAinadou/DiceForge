@@ -4,6 +4,7 @@ import main.java.projet_dice_forge.Partie_Bassin.Temple;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 import main.java.projet_dice_forge.Plateau_Joueur.De;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
+import main.java.projet_dice_forge.Ressource.Or;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -44,7 +45,10 @@ public class Emeline extends Bot {
         public void accederAuMeilleurBassin(Temple temple) {
             ArrayList<Face> facesDisponibles = new ArrayList<>();
 
-            int prixDuMeilleurPlateau = this.quelEstLeMeilleurBassin(temple);
+            int prixDuMeilleurPlateau =this.quelEstLeMeilleurBassin(temple);
+            Face face = new Face();
+            Or or = new Or(1);
+
 
             switch (prixDuMeilleurPlateau) {
                 case 2: {
@@ -53,27 +57,27 @@ public class Emeline extends Bot {
                 }
                 case 3: {
                     facesDisponibles = temple.getFaceFromBassin(3);
-                    this.acheterFace(temple, facesDisponibles.get(1), new Face(new int[]{1}, new String[]{"Or"}), 1);
+                    this.acheterFace(temple, facesDisponibles.get(1), face, 1);
                 }
                 case 4: {
                     facesDisponibles = temple.getFaceFromBassin(4);
-                    this.acheterFace(temple, facesDisponibles.get(1), new Face(new int[]{1}, new String[]{"Or"}), 1);
+                    this.acheterFace(temple, facesDisponibles.get(1), face, 1);
                 }
                 case 5: {
                     facesDisponibles = temple.getFaceFromBassin(5);
-                    this.acheterFace(temple, facesDisponibles.get(1), new Face(new int[]{1}, new String[]{"Or"}), 1);
+                    this.acheterFace(temple, facesDisponibles.get(1),face, 1);
                 }
                 case 6: {
                     facesDisponibles = temple.getFaceFromBassin(6);
-                    this.acheterFace(temple, facesDisponibles.get(1), new Face(new int[]{1}, new String[]{"Or"}), 1);
+                    this.acheterFace(temple, facesDisponibles.get(1), face, 1);
                 }
                 case 8: {
                     facesDisponibles = temple.getFaceFromBassin(8);
-                    this.acheterFace(temple, facesDisponibles.get(1), new Face(new int[]{1}, new String[]{"Or"}), 1);
+                    this.acheterFace(temple, facesDisponibles.get(1), face, 1);
                 }
                 case 12: {
                     facesDisponibles = temple.getFaceFromBassin(12);
-                    this.acheterFace(temple, facesDisponibles.get(1), new Face(new int[]{1}, new String[]{"Or"}), 1);
+                    this.acheterFace(temple, facesDisponibles.get(1), face, 1);
                 }
 
             }

@@ -1,5 +1,7 @@
 package main.java.projet_dice_forge.Plateau_Joueur;
 
+import main.java.projet_dice_forge.Ressource.*;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -22,18 +24,27 @@ public class De {
     public De(String string){
         int i=0;
         this.de = new Face[nbFace];
+        Or or = new Or(1);
+        Gloire gloire =  new Gloire(2);
+        FragementLunaire fragementLunaire = new FragementLunaire(1);
+        FragementSolaire fragementSolaire = new FragementSolaire(1);
         if(string=="claire"){
             for(  ; i<5 ;i++) {
-                this.de[i] = new Face(new int[]{1}, new String[]{"or"});
+                this.de[i] = new Face();
+                this.de[i].AjouterRessource(or);
             }
-            this.de[5] = new Face(new int[]{1}, new String[]{"fragementSolaire"});
+            this.de[5] = new Face();
+            this.de[5].AjouterRessource(fragementSolaire);
         }
         if (string=="sombre"){
             for(  ; i<4 ;i++){
-                this.de[i]= new Face(new int[]{1}, new String[]{"or"});
+                this.de[i]= new Face();
+                this.de[i].AjouterRessource(or);
             }
-            this.de[4]= new Face(new int[]{1}, new String[]{"fragementLunaire"});
-            this.de[5]= new Face(new int[]{2}, new String[]{"gloire"});
+            this.de[4]= new Face();
+            this.de[4].AjouterRessource(gloire);
+            this.de[5]= new Face();
+            this.de[5].AjouterRessource(fragementLunaire);
         }
     }
 
@@ -69,7 +80,6 @@ public class De {
      */
     public void afficherDe(){
         for(int i=0 ; i<6;i++){
-            System.out.println("Val : " + de[i].getNb()+ " type :" + de[i].getTypeDeRessource() );
         }
         System.out.println("\n");
     }
