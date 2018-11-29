@@ -38,7 +38,7 @@ public class Face {
     public String AfficherFace(){
         String string="";
         for (Ressource ressource:ListeResource) {
-            string= string+ ressource.getNombre() + " " +ressource.getTypeRessource() + " ";
+            string= string+ ressource.getRessources() + " " +ressource.getTypeRessource() + " ";
         }
         return string;
     }

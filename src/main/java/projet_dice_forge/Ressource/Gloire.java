@@ -13,4 +13,8 @@ public class Gloire extends Ressource{
     public String getTypeRessource() {
         return "Gloire";
     }
+
+
 }
+
+
