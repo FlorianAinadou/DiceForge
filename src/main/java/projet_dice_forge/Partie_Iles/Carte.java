@@ -1,30 +1,30 @@
 package main.java.projet_dice_forge.Partie_Iles;
 
 import main.java.projet_dice_forge.Bot.Joueur;
+import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
+
+import java.util.ArrayList;
 
 
 public class Carte {
     protected String nomDeLexploit;
-    protected int[] prix;
-    protected String[] Ressource;
+    protected Ressource[] prix;
     protected int pointDeGloire;
     protected int idCarte;
     protected boolean activerOuPas;
 
 
-    public Carte(int idCarte,String nomDeLexploit,int[] prix, String[] Ressource, int pointDeGloire,boolean activerOuPas){
+    public Carte(int idCarte,String nomDeLexploit,Ressource[] prix, int pointDeGloire,boolean activerOuPas){
         this.nomDeLexploit=nomDeLexploit;
         this.prix = prix;
-        this.Ressource = Ressource;
         this.pointDeGloire=pointDeGloire;
         this.idCarte=idCarte;
         this.activerOuPas=false;
     }
-    public Carte(int idCarte,int[] prix, String[] Ressource, int pointDeGloire,boolean activerOuPas){
+    public Carte(int idCarte,Ressource[] prix,int pointDeGloire,boolean activerOuPas){
         this.idCarte=idCarte;
         this.prix = prix;
-        this.Ressource = Ressource;
         this.pointDeGloire=pointDeGloire;
         this.activerOuPas=false;
 
@@ -42,12 +42,8 @@ public class Carte {
         return idCarte;
     }
 
-    public int getPrix(int i){
-        return this.prix[i];
-    }
-    public String getRessource(int i) {
-        return this.Ressource[i];
-    }
+    public Ressource[] getPrix(){return this.prix;}
+
     public int getPointDeGloire(){
         return this.pointDeGloire;
     }
@@ -64,14 +60,9 @@ public class Carte {
         this.pointDeGloire = pointDeGloire;
     }
 
-    public void setPrix(int[] prix) {
+    public void setPrix(Ressource[] prix) {
         this.prix = prix;
     }
-
-    public void setRessource(String[] ressource) {
-        Ressource = ressource;
-    }
-
 
     public void activerCarte(){
         this.activerOuPas=true;
