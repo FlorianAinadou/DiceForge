@@ -1,10 +1,8 @@
 package main.java.projet_dice_forge.Plateau_Joueur;
 
-import main.java.projet_dice_forge.Ressource.Gloire;
 import main.java.projet_dice_forge.Ressource.Ressource;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Cette classe représente une face d'un dé
@@ -14,9 +12,7 @@ public class Face {
     private ArrayList<Ressource> ListeResource;
 
     /**
-     * Ce constructeur cré une face caractérisée par:
-     *
-     * @param liste
+     * Ce constructeur crée une face avec une nouvelle liste de ressources
      */
 
     public Face() {
@@ -38,7 +34,7 @@ public class Face {
     public String AfficherFace(){
         String string="";
         for (Ressource ressource:ListeResource) {
-            string= string+ ressource.getRessources() + " " +ressource.getTypeRessource() + " ";
+            string+= ressource.getNbRessources() + " " +ressource.getTypeRessource() + " ";
         }
         return string;
     }
@@ -65,7 +61,7 @@ public class Face {
      *
      * @return le type de ressource gagné
      */
-}
+
 /*
     @Override
     public boolean equals(Object other)
@@ -79,18 +75,15 @@ public class Face {
         }
 
     }
-
+*/
     public int getValeurFace(){
-       int valeurFace=0;
-       int nbRessources = this.getNb().length;
-       int[] ressourses= this.getNb();
-            for(int j=0; j<nbRessources;j++){
-                valeurFace+=ressourses[j];
-            }
-    return valeurFace;
+
+    return this.getRessource().stream()
+            .map(ressource->ressource.getNbRessources())
+            .reduce(0, (valeurFace, count) -> valeurFace + count);
     }
 
-*/
+
 
 
 }
