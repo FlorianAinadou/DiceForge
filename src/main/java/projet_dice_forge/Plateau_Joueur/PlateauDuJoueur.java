@@ -9,26 +9,18 @@ import main.java.projet_dice_forge.Ressource.Or;
 /**
 *Cette classe représente le plateau d'un joueur de Dice Forge.
  */
-public class PlateauDuJoueur{
+public class PlateauDuJoueur {
 
-        //l'Identifiant du joueur concerné.
-        private int idJoueur;
-        //Les points de gloire du joueur concerné.
-        private Gloire pointsDeGloire;
-        //L'or dont dispose le joueur concerné.
-        private Or or;
-
-        private FragementSolaire fragmentSolaire;
-
-        private FragementLunaire fragmentLunaire;
-
-        private int maxOr = 12;
-
-        private int maxFragLun =6;
-
-        private int maxFragSol=6;
-
-
+    //l'Identifiant du joueur concerné.
+    private int idJoueur;
+    //Les points de gloire du joueur concerné.
+    private Gloire pointsDeGloire;
+    //L'or dont dispose le joueur concerné.
+    private Or or;
+    //Les fragments solaires dont dispose le joueur concerné.
+    private FragementSolaire fragmentSolaire;
+    //Les fragments lunaire dont dispose le joueur concerné.
+    private FragementLunaire fragmentLunaire;
 
 
     /**
@@ -38,23 +30,23 @@ public class PlateauDuJoueur{
      */
 
 
-
-    PlateauDuJoueur(int idJoueur){
-        this.pointsDeGloire=new Gloire(0);
-        this.idJoueur=idJoueur;
-        this.or=new Or(0);
-        this.fragmentSolaire=new FragementSolaire(0);
-        this.fragmentLunaire=new FragementLunaire(0);
+    public PlateauDuJoueur(int idJoueur) {
+        this.pointsDeGloire = new Gloire(0);
+        this.idJoueur = idJoueur;
+        this.or = new Or(0);
+        this.fragmentSolaire = new FragementSolaire(0);
+        this.fragmentLunaire = new FragementLunaire(0);
 
     }
 
     ////////////////////////////////////////*Traitement Point de gloire *///////////////////////////////////////////////////
+
     /**
      * Retourne les points de gloire du joueur
      */
 
     public int getPointsDeGloire() {
-        return pointsDeGloire.getRessources();
+        return pointsDeGloire.getNbRessources();
     }
 
     public void ajouterOr(int or) {
@@ -62,13 +54,12 @@ public class PlateauDuJoueur{
     }
 
     public void enleverOr(int or) {
-       this.or.enleverRessources(or);
+        this.or.enleverRessources(or);
     }
 
     public void ajouterPointDeGloire(int ptGloire) {
-            this.pointsDeGloire.ajoutRessources(ptGloire);
+        this.pointsDeGloire.ajoutRessources(ptGloire);
     }
-
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -76,23 +67,25 @@ public class PlateauDuJoueur{
     ////////////////////////////////////////*Traitement Point d'Or *///////////////////////////////////////////////////
 
     /**
-     *getter et setter pour la ressource or
+     * getter et setter pour la ressource or
      */
-    public int getOr(){
-        return or.getRessources();
+    public int getOr() {
+        return or.getNbRessources();
     }
 
-    public void setOr(int or){
+    public void setOr(int or) {
         this.or.setRessources(or);
     }
 
-    public void setMaxOr(int maxOr) {
-        this.maxOr = maxOr;
+    public int getMaxOr() {
+        return this.or.getMaxRessources();
     }
 
-    public int getMaxOr() {
-        return maxOr;
+    public void setMaxOr(int or) {
+        this.or.setMaxRessources(or);
     }
+
+
     /////////////////////////////////////////////Taitement Joueur/////////////////////////////////////////////////////
 
     /**
@@ -110,11 +103,11 @@ public class PlateauDuJoueur{
 
 
     public int getFragmentLunaire() {
-        return fragmentLunaire.getRessources();
+        return fragmentLunaire.getNbRessources();
     }
 
     public int getFragmentSolaire() {
-        return fragmentSolaire.getRessources();
+        return fragmentSolaire.getNbRessources();
     }
 
     public void enleverFragmentSolaire(int fragmentSolaire) {
@@ -127,19 +120,19 @@ public class PlateauDuJoueur{
 
 
     public int getMaxFragLun() {
-        return maxFragLun;
+        return this.fragmentLunaire.getMaxRessources();
     }
 
     public int getMaxFragSol() {
-        return maxFragSol;
+        return this.fragmentSolaire.getMaxRessources();
     }
 
     public void setMaxFragSol(int maxFragSol) {
-        this.maxFragSol = maxFragSol;
+        this.fragmentSolaire.setMaxRessources(maxFragSol);
     }
 
     public void setMaxFragLun(int maxFragLun) {
-        this.maxFragLun = maxFragLun;
+        this.fragmentLunaire.setMaxRessources(maxFragLun) ;
     }
 
     public void ajouterFragLun(int fragLun){
@@ -149,6 +142,5 @@ public class PlateauDuJoueur{
     public void ajouterFragSol(int fragSol){
         this.fragmentSolaire.ajoutRessources(fragSol);
     }
-
 
 }
