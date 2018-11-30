@@ -218,16 +218,16 @@ public class Joueur {
             Face claire = this.DeClaire.lancerLeDe();
             for (Ressource ressource:claire.getRessource()){
                 if(ressource.getIdRessource()==1){
-                    this.Plateau.ajouterOr(ressource.getRessources());
+                    this.Plateau.ajouterOr(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==2){
-                    this.Plateau.ajouterPointDeGloire(ressource.getRessources());
+                    this.Plateau.ajouterPointDeGloire(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==4){
-                    this.Plateau.ajouterFragLun(ressource.getRessources());
+                    this.Plateau.ajouterFragLun(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==3){
-                    this.Plateau.ajouterFragSol(ressource.getRessources());
+                    this.Plateau.ajouterFragSol(ressource.getNbRessources());
                 }
             }
         }
@@ -235,16 +235,16 @@ public class Joueur {
             Face sombre = this.DeSombre.lancerLeDe();
             for (Ressource ressource:sombre.getRessource()){
                 if(ressource.getIdRessource()==1){
-                    this.Plateau.ajouterOr(ressource.getRessources());
+                    this.Plateau.ajouterOr(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==2){
-                    this.Plateau.ajouterPointDeGloire(ressource.getRessources());
+                    this.Plateau.ajouterPointDeGloire(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==4){
-                    this.Plateau.ajouterFragLun(ressource.getRessources());
+                    this.Plateau.ajouterFragLun(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==3){
-                    this.Plateau.ajouterFragSol(ressource.getRessources());
+                    this.Plateau.ajouterFragSol(ressource.getNbRessources());
                 }
             }
         }
@@ -256,16 +256,16 @@ public class Joueur {
             claire = this.DeClaire.lancerLeDe();
             for (Ressource ressource:claire.getRessource()){
                 if(ressource.getIdRessource()==1){
-                    this.Plateau.ajouterOr(ressource.getRessources());
+                    this.Plateau.ajouterOr(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==2){
-                    this.Plateau.ajouterPointDeGloire(ressource.getRessources());
+                    this.Plateau.ajouterPointDeGloire(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==4){
-                    this.Plateau.ajouterFragLun(ressource.getRessources());
+                    this.Plateau.ajouterFragLun(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==3){
-                    this.Plateau.ajouterFragSol(ressource.getRessources());
+                    this.Plateau.ajouterFragSol(ressource.getNbRessources());
                 }
             }
             return claire;
@@ -275,16 +275,16 @@ public class Joueur {
             sombre = this.DeClaire.lancerLeDe();
             for (Ressource ressource:sombre.getRessource()){
                 if(ressource.getIdRessource()==1){
-                    this.Plateau.ajouterOr(ressource.getRessources());
+                    this.Plateau.ajouterOr(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==2){
-                    this.Plateau.ajouterPointDeGloire(ressource.getRessources());
+                    this.Plateau.ajouterPointDeGloire(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==4){
-                    this.Plateau.ajouterFragLun(ressource.getRessources());
+                    this.Plateau.ajouterFragLun(ressource.getNbRessources());
                 }
                 if(ressource.getIdRessource()==3){
-                    this.Plateau.ajouterFragSol(ressource.getRessources());
+                    this.Plateau.ajouterFragSol(ressource.getNbRessources());
                 }
             }
             return sombre;
