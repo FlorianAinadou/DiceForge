@@ -1,7 +1,6 @@
 package main.java.projet_dice_forge.effet.EffetImmediat;
 
 import main.java.projet_dice_forge.Bot.Joueur;
-import main.java.projet_dice_forge.Partie_Iles.Carte;
 import main.java.projet_dice_forge.Partie_Iles.CarteEffetImmediat;
 
 public class LesHerbesFolles extends CarteEffetImmediat {

@@ -26,4 +26,9 @@ public class LeMarteauDuForgeron extends CarteEffetPermanent {
             }
         }
     }
+
+    @Override
+    public void activerEffetCarte(Joueur joueur) {
+
+    }
 }

@@ -9,7 +9,11 @@ public class LAncien extends CarteEffetPermanent {
     public LAncien(Joueur joueur){
         super(4, new int[]{1}, new String[]{"PierredeSolail"}, 2,false);
     }
+
+    @Override
+    public void activerEffetCarte(Joueur joueur) {
+
+    }
 }
 
 
-}
