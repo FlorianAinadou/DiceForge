@@ -22,10 +22,6 @@ public class LesHerbesFolles extends CarteEffetImmediat {
         if(!this.isActiverOuPas()){
             joueur.getPlateauDuJoueur().ajouterOr(3);
             joueur.getPlateauDuJoueur().ajouterFragLun(3);
-
-        }
-        else{
-            System.out.println("mouk");
         }
     }
 }
