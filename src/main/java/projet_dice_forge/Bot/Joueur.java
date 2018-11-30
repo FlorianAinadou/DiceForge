@@ -93,8 +93,8 @@ public class Joueur {
     public void lanceDe() {
         Face claire = faveurMineurChoix(0);
         Face sombre = faveurMineurChoix(1);
-        System.out.print("Dé 1: " + claire.AfficherFace()  );
-        System.out.print("Dé 1: " + sombre.AfficherFace()  );
+        System.out.print("Dé 1: " + claire.afficherFace()  );
+        System.out.print("Dé 1: " + sombre.afficherFace()  );
 
 
     }

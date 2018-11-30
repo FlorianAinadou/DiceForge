@@ -31,10 +31,10 @@ public class Face {
         this.ListeResource.add(r);
     }
 
-    public String AfficherFace(){
+    public String afficherFace(){
         String string="";
         for (Ressource ressource:ListeResource) {
-            string+= ressource.getNbRessources() + " " +ressource.getTypeRessource() + " ";
+            string+= ressource.getNbRessources() + " " +ressource.getTypeRessource() + " \n";
         }
         return string;
     }

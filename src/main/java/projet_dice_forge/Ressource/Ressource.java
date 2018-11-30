@@ -5,7 +5,7 @@ public abstract class Ressource {
     int idRessource;
     int maxRessources;
     /**
-     *Ojet correspondant à une resssource servant pour l'hérédité
+     *Ojet correspondant à une resssource servant pour l'héréditage
      */
     public Ressource(){
     }
