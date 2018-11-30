@@ -1,7 +1,7 @@
 package main.java.projet_dice_forge.Partie_Iles;
 
 import main.java.projet_dice_forge.Bot.Joueur;
-import main.java.projet_dice_forge.Effet.EffetImmediat.LesHerbesFolles;
+import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
 
 
 public class Carte {
