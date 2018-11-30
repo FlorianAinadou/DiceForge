@@ -172,7 +172,7 @@ public class Joueur {
      *
      */
     public void ajouterPointDeGloire(Carte carte){
-        setPointDeGloireCarte(getPointDeGloireCarte() + carte.getPointDeGloire());
+        setPointDeGloireCarte(getPointDeGloireCarte() + carte.getPointDeGloire().getNbRessources());
 
     }
 

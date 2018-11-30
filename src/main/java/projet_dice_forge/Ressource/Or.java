@@ -11,9 +11,6 @@ public class Or extends Ressource{
 
     }
 
-    public String getTypreRessource(){
-        return "Or";
-    }
 
     @Override
     public String getTypeRessource() {

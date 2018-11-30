@@ -15,9 +15,9 @@ public class LecoffreDuForgeron extends CarteEffetImmediat {
 
     public void activerEffetCarte(Joueur joueur) {
         if (this.isActiverOuPas()) {
-            int maxOr = joueur.getPlateauDuJoueur().getMaxOr();
-            int maxLun = joueur.getPlateauDuJoueur().getMaxFragLun();
-            int maxSolail = joueur.getPlateauDuJoueur().getMaxFragSol();
+            int maxOr = joueur.getPlateauDuJoueur().getMaxOr()+4;
+            int maxLun = joueur.getPlateauDuJoueur().getMaxFragLun()+3;
+            int maxSolail = joueur.getPlateauDuJoueur().getMaxFragSol()+3;
             joueur.getPlateauDuJoueur().setMaxOr(maxOr);
             joueur.getPlateauDuJoueur().setMaxFragLun(maxLun);
             joueur.getPlateauDuJoueur().setMaxFragSol(maxSolail);
