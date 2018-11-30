@@ -1,6 +1,7 @@
 package main.java.projet_dice_forge.Partie_Iles;
 
 import main.java.projet_dice_forge.Bot.Joueur;
+import main.java.projet_dice_forge.Ressource.Gloire;
 import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
 
@@ -10,22 +11,22 @@ import java.util.ArrayList;
 public class Carte {
     protected String nomDeLexploit;
     protected Ressource[] prix;
-    protected int pointDeGloire;
+    protected Gloire gloire;
     protected int idCarte;
     protected boolean activerOuPas;
 
 
-    public Carte(int idCarte,String nomDeLexploit,Ressource[] prix, int pointDeGloire,boolean activerOuPas){
+    public Carte(int idCarte,String nomDeLexploit,Ressource[] prix, Gloire gloire,boolean activerOuPas){
         this.nomDeLexploit=nomDeLexploit;
         this.prix = prix;
-        this.pointDeGloire=pointDeGloire;
+        this.gloire=gloire;
         this.idCarte=idCarte;
         this.activerOuPas=false;
     }
-    public Carte(int idCarte,Ressource[] prix,int pointDeGloire,boolean activerOuPas){
+    public Carte(int idCarte,Ressource[] prix, Gloire gloire,boolean activerOuPas){
         this.idCarte=idCarte;
         this.prix = prix;
-        this.pointDeGloire=pointDeGloire;
+        this.gloire=gloire;
         this.activerOuPas=false;
 
     }
@@ -44,8 +45,8 @@ public class Carte {
 
     public Ressource[] getPrix(){return this.prix;}
 
-    public int getPointDeGloire(){
-        return this.pointDeGloire;
+    public Gloire getPointDeGloire(){
+        return this.gloire;
     }
 
     public void setIdCarte(int idCarte) {
@@ -56,8 +57,8 @@ public class Carte {
         this.nomDeLexploit = nomDeLexploit;
     }
 
-    public void setPointDeGloire(int pointDeGloire) {
-        this.pointDeGloire = pointDeGloire;
+    public void setPointDeGloire(Gloire gloire) {
+        this.gloire= gloire;
     }
 
     public void setPrix(Ressource[] prix) {
