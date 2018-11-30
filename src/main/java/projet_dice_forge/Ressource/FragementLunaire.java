@@ -8,10 +8,11 @@ public class FragementLunaire extends Ressource{
     public FragementLunaire(int nombre){
         super.nombre=nombre;
         super.idRessource=4;
+        this.maxRessources=6;
     }
-    public String getTypreRessource(){
+    /*public String getTypreRessource(){
         return "FragementLuanire";
-    }
+    }*/
 
     @Override
     public String getTypeRessource() {

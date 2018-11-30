@@ -14,7 +14,10 @@ public class Gloire extends Ressource{
         return "Gloire";
     }
 
-
+    @Override
+    public void ajoutRessources(int ressourcesAjoutées) {
+        this.setRessources(nombre+ressourcesAjoutées);
+    }
 }
 
 

@@ -7,6 +7,7 @@ public class Or extends Ressource{
     public Or(int nombre){
         super.nombre=nombre;
         super.idRessource=1;
+        this.maxRessources=12;
 
     }
 
@@ -18,4 +19,6 @@ public class Or extends Ressource{
     public String getTypeRessource() {
         return "Or";
     }
+
+
 }

@@ -7,6 +7,7 @@ public class FragementSolaire extends Ressource {
     public FragementSolaire(int nombre){
         super.nombre=nombre;
         super.idRessource=3;
+        this.maxRessources=6;
     }
 
     @Override

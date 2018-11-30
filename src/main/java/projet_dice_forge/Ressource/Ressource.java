@@ -10,7 +10,7 @@ public abstract class Ressource {
     public Ressource(){
     }
 
-    public int getRessources(){
+    public int getNbRessources(){
         return this.nombre;
     }
     public abstract String getTypeRessource();
@@ -24,7 +24,7 @@ public abstract class Ressource {
      * @param ressourcesAjoutées
      */
     public void ajoutRessources(int ressourcesAjoutées){
-        if((this.getRessources() + ressourcesAjoutées)> this.maxRessources) {
+        if((this.getNbRessources() + ressourcesAjoutées)> this.maxRessources) {
             this.setRessources(this.maxRessources);
         }
         else {
@@ -40,6 +40,14 @@ public abstract class Ressource {
             System.out.println("Error : Vous avez tenter de retirer trop d'"+ this.getTypeRessource());
 
         }
+    }
+
+    public void setMaxRessources(int maxRessources) {
+        this.maxRessources = maxRessources;
+    }
+
+    public int getMaxRessources() {
+        return maxRessources;
     }
 
 
