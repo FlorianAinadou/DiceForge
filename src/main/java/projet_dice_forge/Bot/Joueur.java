@@ -17,6 +17,7 @@ public class Joueur {
     protected ArrayList<CarteEffetImmediat> ListeCarteEffetImmediat;
     protected ArrayList<CarteEffetPermanent> ListeCarteEffetPermanent;
     protected int PointDeGloireCarte;
+    int tour=1;
 
     public Joueur(int Idjoueur){
         this.id=Idjoueur;
