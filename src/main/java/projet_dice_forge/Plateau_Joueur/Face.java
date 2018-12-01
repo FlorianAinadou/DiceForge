@@ -49,14 +49,15 @@ public class Face {
      * @return boolean
      */
 
-   /* public boolean isFaceContainsOr(){
+    public boolean laFaceNeContientQueDeLOr(){
         boolean testeur=false;
-        if(this.getTypeDeRessource().equals("or")){
+
+        if(this.getRessource().size()==1 && this.getRessource().get(0).getTypeRessource().equals("or")){
             testeur=true;
         }
         return testeur;
     }
-*/
+
     /**
      *
      * @return le type de ressource gagné

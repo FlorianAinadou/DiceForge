@@ -3,6 +3,7 @@ package main.java.projet_dice_forge.Plateau_Joueur;
 import main.java.projet_dice_forge.Ressource.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -84,7 +85,22 @@ public class De {
         System.out.println("\n");
     }
 
-    //public Face getFaceAchanger(De de){ }
+    public Face[] toutesLesFaces(){
+        return this.de;
+    }
+
+    /**
+     * Détermine la valeur du dé en fonction du nombre de ressources qu'elle apporte
+     * @return
+     */
+    public int getValeurDe(){
+
+        ArrayList<Face> listeDeFaces = new ArrayList<Face>(Arrays.asList(this.toutesLesFaces()));
+
+        return listeDeFaces.stream()
+                .map(face -> face.getValeurFace())
+                .reduce(0, (total, count)-> total+count);
+    }
 
 
 
