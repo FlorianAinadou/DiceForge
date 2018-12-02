@@ -1,34 +1,45 @@
 package main.java.projet_dice_forge.effet_test.EffetImmediat;
+
+
 import main.java.projet_dice_forge.Bot.Joueur;
-import main.java.projet_dice_forge.Partie_Iles.CarteEffetImmediat;
-import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
+import main.java.projet_dice_forge.Partie_Iles.Iles;
+import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.Assert.*;
 
 public class TestLesHerbesFolles {
-    public Joueur joueur1;
-    public Joueur joueur2;
-    public PlateauDesIles plateauDesIles;
-    public (LesHerbesFolles).CarteEffetImmediat carte = new CarteEffetImmediat;
-
-
 
 
     @Test
-    public void activerEffetCarte(){
+    public void LesHerbesFolles(){
+        LesHerbesFolles lesHerbesFolles = new LesHerbesFolles();
+        Ressource[] ressources = lesHerbesFolles.getPrix();
 
-        joueur1.getListeCarteEffetImmediat().add(carte);
-        /*
-        joueur1.activerEffetCarteImmediat();
-        assertNotEquals(joueur1.getPlateauDuJoueur().getFragmentLunaire(),joueur2.getPlateauDuJoueur().getFragmentLunaire());
-        assertNotEquals(joueur1.getPlateauDuJoueur().getOr(),joueur2.getPlateauDuJoueur().getOr());
-        */
+        assertEquals(ressources[0].getTypeRessource(),"FragementSolaire" );
+        assertEquals(ressources[0].getNbRessources(), 1);
+        assertEquals(lesHerbesFolles.getPointDeGloire().getNbRessources(),2);
+    }
+
+    @Test
+    public void activerEffetCarte(){
+        Joueur joueur = new Joueur(1);
+        LesHerbesFolles lesHerbesFolles = new LesHerbesFolles();
+        Iles ile = new Iles();
+
+        ile.ajouterCarte(lesHerbesFolles,2);
+        assertEquals(lesHerbesFolles.isActiverOuPas(),false);
+
+        joueur.acheterCarte(ile,lesHerbesFolles);
+        joueur.activerEffetCarteImmediat();
+        assertEquals(3,joueur.getPlateauDuJoueur().getOr());
+        assertEquals(3,joueur.getPlateauDuJoueur().getFragmentLunaire());
+
+        assertEquals(lesHerbesFolles.isActiverOuPas(),true);
+        assertEquals(2,joueur.getPointDeGloireCarte());
 
 
     }
-
-
 
 }

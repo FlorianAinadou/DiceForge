@@ -2,10 +2,12 @@ package main.java.projet_dice_forge.Gestion_du_Jeu;
 
 
 import main.java.projet_dice_forge.Bot.Bot;
+import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Partie_Bassin.Temple;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Jeu {
     private final Bot[] bot;
@@ -14,13 +16,14 @@ public class Jeu {
     private int nbrManche = 9;
     private int nbrJoueur = 2;
 
-    Jeu(int nbrJoueur, Bot[] b) {
+    public Jeu(int nbrJoueur, Bot[] b) {
         this.nbrJoueur = nbrJoueur;
         bot = new Bot[nbrManche];
         for(int i = 0; i<nbrJoueur; i++)
         {
             bot[i] = b[i];
         }
+        setAdversaires();
     }
 
     /**
@@ -104,5 +107,33 @@ public class Jeu {
         for(int j = 0; j<nbrJoueur; j++) {
             System.out.println("Le joueur " + bot[j].getIdJoueur() + " a gagné " + gagnant[bot[j].getIdJoueur()]);
         }
+    }
+
+    ////////////////////////////////////////Méthodes qui permet d'activer les effets sur les autres joueurs////////////////////////////////////////////////////////////////////
+
+
+    public Bot[] getBot() {
+        return bot;
+    }
+
+    public int getNbrJoueur() {
+        return nbrJoueur;
+    }
+
+    private void setAdversaires(){
+        for(Bot bot1 : bot ){
+            ArrayList<Joueur> list = new ArrayList<>();
+            for( Bot bot2 : bot){
+                if(bot1 != bot2){
+                    list.add(bot2);
+                }
+            }
+            bot1.setAdversaires(list);
+        }
+
+    }
+
+    public PlateauDesIles getPlateauDesIles() {
+        return plateauDesIles;
     }
 }

@@ -7,9 +7,8 @@ import main.java.projet_dice_forge.Ressource.FragementSolaire;
 import main.java.projet_dice_forge.Ressource.Or;
 import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetImmediat.LesSabotsDargent;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 class LesSabotsDargentTest {
 

@@ -6,17 +6,14 @@ import main.java.projet_dice_forge.Ressource.Gloire;
 import main.java.projet_dice_forge.Ressource.Ressource;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public abstract class CarteEffetImmediat extends Carte {
+public abstract class CarteEffetImmediatRelJoueur extends Carte {
 
-    public CarteEffetImmediat(int idCarte, Ressource[] prix , Gloire gloire, boolean activerOuPas){
+    public CarteEffetImmediatRelJoueur(int idCarte, Ressource[] prix , Gloire gloire, boolean activerOuPas){
         super(idCarte,prix,gloire,activerOuPas);
     }
 
-    public abstract void activerEffetCarte(Joueur joueur);
-
-
+    public abstract void activerEffetImmCarteRealJoueur(Joueur joueur);
 
 
 }

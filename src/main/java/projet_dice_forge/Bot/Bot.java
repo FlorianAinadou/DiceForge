@@ -6,7 +6,7 @@ import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 public class Bot extends Joueur {
     protected String detailTour;
 
-    Bot(int id) {
+    public Bot(int id) {
         super(id);
     }
 

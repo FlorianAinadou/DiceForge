@@ -6,9 +6,7 @@ import main.java.projet_dice_forge.Plateau_Joueur.De;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Ressource.Or;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Emeline extends Bot {
 
@@ -32,6 +30,12 @@ public class Emeline extends Bot {
             }
 
 
+            //Avec un fragment lunaire, on achete la carte Le Marteau de Forgeron
+            if(this.getPlateauDuJoueur().getFragmentLunaire()>=1){
+            this.acheterCarte(plateauDesIles.getIlesN1(),plateauDesIles.getIlesN1().getCarte(0));
+            plateauDesIles.getIlesN1().enleverCarte(plateauDesIles.getIlesN1().getCarte(0) );
+            this.getListeCarteEffetImmediat().get(0).activerCarte();
+            }
 
 
 

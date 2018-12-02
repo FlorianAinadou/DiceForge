@@ -1,8 +1,7 @@
 package main.java.projet_dice_forge.Partie_Iles;
 
 
-
-import main.java.projet_dice_forge.effet.EffetPermanent.LeMarteauDuForgeron;
+import main.java.projet_dice_forge.effet.EffetImmediat.LeMinotaure;
 import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
 import main.java.projet_dice_forge.effet.EffetImmediat.LesSabotsDargent;
@@ -18,8 +17,8 @@ public class PlateauDesIles {
         /*
         Iles IlesN3;
         Iles IlesN4;
-        Iles IlesN5;
-        Iles IlesN6;*/
+        Iles IlesN5;*/
+        Iles IlesN6;
         Iles IlesN7;
 
     public PlateauDesIles(){
@@ -30,8 +29,8 @@ public class PlateauDesIles {
         /*
         IlesN3();
         IlesN4();
-        IlesN5();
-        IlesN6();*/
+        IlesN5();*/
+        IlesN6();
         IlesN7();
         //IlesN7.printLsite();
 
@@ -40,9 +39,9 @@ public class PlateauDesIles {
 
     private void IlesN1(){
         Iles iles = new Iles(1,false,2 );
-        Carte carte = new LeMarteauDuForgeron();
+        //Carte carte = new LeMarteauDuForgeron();
         Carte carte1= new LecoffreDuForgeron();
-        iles.ajouterCarte(carte, 2);
+        //iles.ajouterCarte(carte, 2);
         iles.ajouterCarte(carte1, 2);
         this.IlesN1=iles;
 
@@ -92,17 +91,17 @@ public class PlateauDesIles {
         this.IlesN5=iles;
 
     }
-
+*/
     private void IlesN6(){
         Iles iles = new Iles(6,false,2 );
-        Carte carte = new Carte(12,"Le minotaure",new int[]{3},new String[]{"PierredeSoleil"},8);
-        Carte carte1 = new Carte(13,"Les ailes de la gardienne",new int[] {2},new String[]{"PierredeSoleil"},4);
+        Carte carte = new LeMinotaure();
+        //Carte carte1 = new
         iles.ajouterCarte(carte, 2);
-        iles.ajouterCarte(carte1, 2);
+       //iles.ajouterCarte(carte1, 2);
         this.IlesN6=iles;
 
     }
-    */
+
 
     private void IlesN7(){
         Iles iles = new Iles(7,false,2 );
@@ -125,5 +124,9 @@ public class PlateauDesIles {
 
     public Iles getIlesN2() {
         return IlesN2;
+    }
+
+    public Iles getIlesN6() {
+        return IlesN6;
     }
 }

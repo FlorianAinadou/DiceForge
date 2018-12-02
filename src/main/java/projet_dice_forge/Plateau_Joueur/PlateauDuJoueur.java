@@ -118,6 +118,10 @@ public class PlateauDuJoueur {
         this.fragmentLunaire.enleverRessources(fragmentLunaire);
     }
 
+    public void enleverPointDeGloire(int PtGloire){
+        this.pointsDeGloire.enleverRessources(PtGloire);
+    }
+
 
     public int getMaxFragLun() {
         return this.fragmentLunaire.getMaxRessources();
