@@ -20,7 +20,7 @@ public class LeMinotaure extends CarteEffetImmediatRelJoueur {
 
     public void activerEffetImmCarteRealJoueur(Joueur joueur) {
 
-        if (this.isActiverOuPas()) {
+
             for (Joueur joueur1 : joueur.getAdversaires()) {
 
                 Face claire = joueur1.lanceLeDeClaire();
@@ -40,8 +40,6 @@ public class LeMinotaure extends CarteEffetImmediatRelJoueur {
 
                 }
             }
-        } else {
-            System.out.println("lol");
-        }
+
     }
 }

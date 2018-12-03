@@ -18,13 +18,13 @@ public class LEnigme extends CarteEffetImmediat {
 
 
     public void activerEffetCarte(Joueur joueur) {
-        if (this.isActiverOuPas()) {
+
             for (i = 0; i < 4; i++) {
                 Random random = new Random();
                 int nbAlea = random.nextInt(2);
                 joueur.faveurMineurChoix(nbAlea);
             }
-        }
+
     }
 
     //////////////////////////////méthode qui nous permet de vérifier ///////////////////////////////////

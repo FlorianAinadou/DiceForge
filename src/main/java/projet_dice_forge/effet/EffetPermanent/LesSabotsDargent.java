@@ -16,12 +16,7 @@ public class LesSabotsDargent extends CarteEffetPermanent {
     }
 
     public void activerEffetCartePerm(Joueur joueur) {
-        if (this.isActiverOuPas()) {
             joueur.faveurMineur();
-        }
-        else{
-            System.out.println("La carte les Sabots d'argent n'est pas activé");
-        }
     }
 
 

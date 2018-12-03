@@ -72,6 +72,10 @@ public class Carte {
     public boolean isActiverOuPas() {
         return activerOuPas;
     }
+    public void desactiverCarte(){
+        this.activerOuPas=false;
+
+    }
 
 
 

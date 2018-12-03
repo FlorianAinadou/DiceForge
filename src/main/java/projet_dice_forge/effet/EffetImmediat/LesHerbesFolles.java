@@ -19,9 +19,8 @@ public class LesHerbesFolles extends CarteEffetImmediat {
 
     @Override
     public void activerEffetCarte(Joueur joueur) {
-        if(this.isActiverOuPas()){
             joueur.getPlateauDuJoueur().ajouterOr(3);
             joueur.getPlateauDuJoueur().ajouterFragLun(3);
-        }
+
     }
 }

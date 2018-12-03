@@ -5,6 +5,7 @@ import main.java.projet_dice_forge.Partie_Bassin.*;
 import main.java.projet_dice_forge.Partie_Iles.*;
 import main.java.projet_dice_forge.Plateau_Joueur.*;
 import main.java.projet_dice_forge.Ressource.*;
+import main.java.projet_dice_forge.effet.EffetPermanent.LeMarteauDuForgeron;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -18,8 +19,10 @@ public class Joueur {
     protected ArrayList<CarteEffetImmediat> ListeCarteEffetImmediat;
     protected ArrayList<CarteEffetPermanent> ListeCarteEffetPermanent;
     protected ArrayList<CarteEffetImmediatRelJoueur> ListeCarteEffetImmRealJoueur;
+    protected ArrayList<CarteEffetImmediatRelRessource> ListeCarteEffetImmediatRelRessource;
     protected int PointDeGloireCarte;
     protected ArrayList<Joueur> adversaires;
+    protected boolean ActiverEffetLeMarteauDuForgeron=false;
     int tour=1;
 
 
@@ -95,7 +98,9 @@ public class Joueur {
         return ListeCarteEffetPermanent;
     }
 
-
+    public ArrayList<CarteEffetImmediatRelRessource> getListeCarteEffetImmediatRelRessource() {
+        return ListeCarteEffetImmediatRelRessource;
+    }
 
     /*
     public int ChercherCarte(int IdCarte) {
@@ -200,6 +205,7 @@ public class Joueur {
 
     /**
      * Cette méthode nous permet d'acheter une carte d'une ile et de la stocker dans une des listes de carte du joueur.
+     * et d'ajouter dans un attribut de la classe joueur les points de gloire rapportée par chaque carte.
      * @param iles
      * @param carte
      */
@@ -223,6 +229,12 @@ public class Joueur {
         else if (carte instanceof CarteEffetImmediatRelJoueur){
             CarteEffetImmediatRelJoueur carteEffetImmediatRelJoueur =(CarteEffetImmediatRelJoueur)carte;
             ListeCarteEffetImmRealJoueur.add(carteEffetImmediatRelJoueur);
+            iles.enleverCarte(carte);
+            ajouterPointDeGloire(carte);
+        }
+        else if (carte instanceof CarteEffetImmediatRelRessource){
+            CarteEffetImmediatRelRessource carteEffetImmediatRelRessource=(CarteEffetImmediatRelRessource)carte;
+            ListeCarteEffetImmediatRelRessource.add(carteEffetImmediatRelRessource);
             iles.enleverCarte(carte);
             ajouterPointDeGloire(carte);
         }
@@ -269,13 +281,35 @@ public class Joueur {
         }
     }
 
+
     /**
-     * Cette méthode nous permet de parcourir la liste de carte que le Joueur possède à effet Immediat et d'appliquer les effets de chaque carte.
+     *
+     *Cette méthode nous permet d'activer l'effet le marteau du forgeron.
+     */
+
+    public void setActiverEffetLeMarteauDuForgeron(boolean activerEffetLeMarteauDuForgeron) {
+        ActiverEffetLeMarteauDuForgeron = activerEffetLeMarteauDuForgeron;
+    }
+
+
+
+    public boolean isActiverEffetLeMarteauDuForgeron() {
+        return ActiverEffetLeMarteauDuForgeron;
+    }
+
+
+    /**
+     * Cette méthode nous permet de parcourir la liste de carte que le Joueur possède à effet Immediat et d'appliquer les effets de chaque carte  et ensuite de
+     * les désactiver en mettant une valeur false dans le boolean.
      */
     public void activerEffetCarteImmediat(){
         for (CarteEffetImmediat carte: this.getListeCarteEffetImmediat()){
-            carte.activerEffetCarte(this);
+            if(carte.isActiverOuPas()){
+                carte.activerEffetCarte(this);
+                carte.desactiverCarte();
+            }
         }
+
     }
 
 
@@ -286,18 +320,30 @@ public class Joueur {
 
     public void activerEffetCarteImmRealJoueur(){
         for (CarteEffetImmediatRelJoueur carte: this.getListeCarteEffetImmRealJoueur()){
-            carte.activerEffetImmCarteRealJoueur(this);
+            if(carte.isActiverOuPas()){
+                carte.activerEffetImmCarteRealJoueur(this);
+            }
+            carte.desactiverCarte();
         }
     }
 
-
     /**
-     *
+     *Cette méthode nous permet de parcourir la liste de carte que le Joueur possède à effet Permanent en relation avec
+     * les autres joueurs et d'appliquer les effets de chaque carte.
      *
      */
 
     public void activerEffetCartePermanent(){
+        for (CarteEffetPermanent carte: this.getListeCarteEffetPermanent()){
+            carte.activerEffetCartePerm(this);
+        }
+    }
 
+
+    public void activerEffetCarteImmRealRessource(){
+        for(CarteEffetImmediatRelRessource carte: this.getListeCarteEffetImmediatRelRessource()){
+            carte.activerEffetCarteImmRelRessource(this);
+        }
     }
 
 
@@ -330,7 +376,24 @@ public class Joueur {
         int nbAlea= Alea.nextInt(2);
         if(nbAlea==0){
             Face claire = this.DeClaire.lancerLeDe();
-            ajouterRessource(claire);
+
+            if(ActiverEffetLeMarteauDuForgeron){
+                int choixOrQuete=  Alea.nextInt(claire.getValeurFace()+1);
+                int choixOrStoker= claire.getValeurFace() - choixOrQuete;
+                if((claire.getRessource().contains(new Or()))&& (choixOrQuete != 0)){
+                    CarteEffetImmediatRelRessource LeMarteauDuForgeron=this.getListeCarteEffetImmediatRelRessource().get(0);
+                    LeMarteauDuForgeron.
+
+
+
+
+                }
+            }
+            else{
+                ajouterRessource(claire);
+
+            }
+
         }
         else {
             Face sombre = this.DeSombre.lancerLeDe();
