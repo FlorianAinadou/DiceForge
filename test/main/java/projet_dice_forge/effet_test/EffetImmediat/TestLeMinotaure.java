@@ -1,18 +1,19 @@
 
 
 package main.java.projet_dice_forge.effet_test.EffetImmediat;
-
 import main.java.projet_dice_forge.Bot.Bot;
-import main.java.projet_dice_forge.Bot.Joueur;
+import main.java.projet_dice_forge.Bot.Emeline;
+
 import main.java.projet_dice_forge.Gestion_du_Jeu.Jeu;
 import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Ressource.Ressource;
-import main.java.projet_dice_forge.effet.EffetImmediat.LaPince;
-import main.java.projet_dice_forge.effet.EffetImmediat.LeMinotaure;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import main.java.projet_dice_forge.effet.EffetImmediat.LeMinotaure;
+import org.junit.Test;
+
+import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertEquals;
+
 
 public class TestLeMinotaure {
     @Test
@@ -28,20 +29,26 @@ public class TestLeMinotaure {
 
     @Test
     public void activerEffetCarte(){
-        Bot joueur1 = new Bot(1);
-        Bot joueur2 = new Bot(2);
-        Bot joueur3 = new Bot(3);
-        Bot listJoueurs[]={joueur1,joueur2,joueur3};
-        Jeu jeu = new Jeu(3,listJoueurs);
+        Bot joueur1 = new Emeline(1);
+        Bot joueur2 = new Emeline(2);
+
+        Bot listJoueurs[]={joueur1,joueur2};
+        Jeu jeu = new Jeu(2,listJoueurs);
         LeMinotaure leMinotaure = new LeMinotaure();
         Iles ile = new Iles();
         ile.ajouterCarte(leMinotaure,2);
+
+        joueur2.getPlateauDuJoueur().ajouterPointDeGloire(20);
+
 
         assertTrue(!leMinotaure.isActiverOuPas());
         joueur1.acheterCarte(ile,leMinotaure);
 
         joueur1.activerEffetCarteImmRealJoueur();
-
+        /*
+        System.out.println(joueur1.getPlateauDuJoueur().getOr());
+        */
+        System.out.println(joueur2.getPlateauDuJoueur().getPointsDeGloire());
 
         assertTrue(leMinotaure.isActiverOuPas());
 

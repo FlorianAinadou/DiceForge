@@ -13,6 +13,9 @@ public class LePasseur extends CarteEffetImmediat {
     }
 
     public void activerEffetCarte(Joueur joueur) {
+        if (this.isActiverOuPas()) {
+
+        }
     }
 
 

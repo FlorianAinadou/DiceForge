@@ -291,6 +291,16 @@ public class Joueur {
     }
 
 
+    /**
+     *
+     *
+     */
+
+    public void activerEffetCartePermanent(){
+
+    }
+
+
 
 
     /**

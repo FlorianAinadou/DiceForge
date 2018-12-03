@@ -18,7 +18,9 @@ public class LaPince extends CarteEffetImmediat {
         super(7, new Ressource[] {new FragementLunaire(6) },new Gloire(8), false);
     }
     public void activerEffetCarte(Joueur joueur) {
-        joueur.lanceDe();
-        joueur.lanceDe();
+        if (this.isActiverOuPas()) {
+            joueur.lanceDe();
+            joueur.lanceDe();
+        }
     }
 }

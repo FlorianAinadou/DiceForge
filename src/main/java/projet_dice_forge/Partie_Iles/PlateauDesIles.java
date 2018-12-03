@@ -4,10 +4,7 @@ package main.java.projet_dice_forge.Partie_Iles;
 import main.java.projet_dice_forge.effet.EffetImmediat.LeMinotaure;
 import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
-import main.java.projet_dice_forge.effet.EffetImmediat.LesSabotsDargent;
-
-import java.util.ArrayList;
-import java.util.List;
+import main.java.projet_dice_forge.effet.EffetPermanent.LesSabotsDargent;
 
 public class PlateauDesIles {
 

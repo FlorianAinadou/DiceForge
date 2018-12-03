@@ -11,5 +11,5 @@ public abstract class CarteEffetPermanent extends Carte {
         super(idCarte,prix,gloire,activerOuPas);
     }
 
-    public abstract void activerEffetCarte(Joueur joueur, Jeu jeu);
+    public abstract void activerEffetCartePerm(Joueur joueur);
 }
