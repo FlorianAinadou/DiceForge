@@ -18,7 +18,7 @@ public class Jeu {
 
     public Jeu(int nbrJoueur, Bot[] b) {
         this.nbrJoueur = nbrJoueur;
-        bot = new Bot[nbrManche];
+        bot = new Bot[nbrJoueur];
         for(int i = 0; i<nbrJoueur; i++)
         {
             bot[i] = b[i];
@@ -124,7 +124,7 @@ public class Jeu {
         for(Bot bot1 : bot ){
             ArrayList<Joueur> list = new ArrayList<>();
             for( Bot bot2 : bot){
-                if(bot1 != bot2){
+                if(bot1.getIdJoueur() != bot2.getIdJoueur()){
                     list.add(bot2);
                 }
             }

@@ -31,6 +31,7 @@ public class Joueur {
         this.ListeCarteEffetImmediat=new ArrayList<>();
         this.ListeCarteEffetPermanent=new ArrayList<>();
         this.ListeCarteEffetImmRealJoueur=new ArrayList<>();
+        this.adversaires=new ArrayList<>();
     }
 
     public Joueur(int Idjoueur, De de1, De de2, PlateauDuJoueur Plateau){
@@ -41,6 +42,7 @@ public class Joueur {
         this.ListeCarteEffetImmediat=new ArrayList<>();
         this.ListeCarteEffetPermanent=new ArrayList<>();
         this.ListeCarteEffetImmRealJoueur=new ArrayList<>();
+        this.adversaires=new ArrayList<>();
     }
 
     /**
