@@ -382,10 +382,6 @@ public class Joueur {
                 int choixOrStoker= claire.getValeurFace() - choixOrQuete;
                 if((claire.getRessource().contains(new Or()))&& (choixOrQuete != 0)){
                     CarteEffetImmediatRelRessource LeMarteauDuForgeron=this.getListeCarteEffetImmediatRelRessource().get(0);
-                    LeMarteauDuForgeron.
-
-
-
 
                 }
             }

@@ -6,13 +6,13 @@ import main.java.projet_dice_forge.Bot.Emeline;
 
 import main.java.projet_dice_forge.Gestion_du_Jeu.Jeu;
 import main.java.projet_dice_forge.Partie_Iles.Iles;
+
 import main.java.projet_dice_forge.Ressource.Ressource;
-
 import main.java.projet_dice_forge.effet.EffetImmediat.LeMinotaure;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class TestLeMinotaure {

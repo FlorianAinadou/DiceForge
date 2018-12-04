@@ -3,10 +3,10 @@ package main.java.projet_dice_forge.Plateau_Joueur;
 import main.java.projet_dice_forge.Ressource.FragementLunaire;
 import main.java.projet_dice_forge.Ressource.FragementSolaire;
 import main.java.projet_dice_forge.Ressource.Or;
+import org.junit.jupiter.api.Test;
 
 
-import static junit.framework.TestCase.assertNotNull;
-import static org.junit.Assert.assertEquals;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class FaceTest {
@@ -19,12 +19,6 @@ class FaceTest {
         assertNotNull(face.getRessource());
     }
 
-    @Test
-    void afficherFace() {
-        Face face= new Face();
-        face.AjouterRessource(new Or(2));
-        assertEquals("2 Or \n", face.afficherFace());
-    }
 
     @Test
     void getValeurFace() {

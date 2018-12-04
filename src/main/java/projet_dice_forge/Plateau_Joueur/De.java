@@ -60,8 +60,6 @@ public class De {
         }
     }
 
-    public void ajouterToutLesFace(ArrayList list){
-    }
 
     public Face getface(int i){
         return de[i];

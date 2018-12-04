@@ -5,80 +5,79 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlateauDuJoueurTest {
+    PlateauDuJoueur plateauDuJoueur = new PlateauDuJoueur(9);
 
 
     @Test
     void ajouterOr() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.ajouterOr(14);
-        assertEquals(12, plateau.getOr());
+        plateauDuJoueur.ajouterOr(6);
+        assertEquals(6, plateauDuJoueur.getOr());
+        plateauDuJoueur.ajouterOr(14);
+        assertEquals(12, plateauDuJoueur.getOr());
     }
 
     @Test
     void enleverOr() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.enleverOr(5);
-        assertEquals(0,plateau.getOr());
+        plateauDuJoueur.ajouterOr(6);
+        plateauDuJoueur.enleverOr(5);
+        assertEquals(1, plateauDuJoueur.getOr());
+
     }
 
     @Test
     void ajouterPointDeGloire() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.ajouterPointDeGloire(5);
-        assertEquals(5,plateau.getPointsDeGloire());
+        plateauDuJoueur.ajouterPointDeGloire(5);
+        assertEquals(5,plateauDuJoueur.getPointsDeGloire());
     }
 
 
     @Test
     void setMaxOr() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.setMaxOr(5);
-        assertEquals(5,plateau.getMaxOr());
+        plateauDuJoueur.setMaxOr(5);
+        assertEquals(5,plateauDuJoueur.getMaxOr());
     }
 
 
     @Test
     void enleverFragmentSolaire() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.ajouterFragSol(6);
-        plateau.enleverFragmentSolaire(5);
-        assertEquals(1,plateau.getFragmentSolaire());
+        plateauDuJoueur.ajouterFragSol(6);
+        plateauDuJoueur.enleverFragmentSolaire(5);
+        assertEquals(1,plateauDuJoueur.getFragmentSolaire());
     }
 
     @Test
     void enleverFragmentLunaire() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.ajouterFragLun(6);
-        plateau.enleverFragmentLunaire(5);
-        assertEquals(1,plateau.getFragmentLunaire());
+        plateauDuJoueur.ajouterFragLun(6);
+        plateauDuJoueur.enleverFragmentLunaire(5);
+        assertEquals(1,plateauDuJoueur.getFragmentLunaire());
     }
 
 
     @Test
     void setMaxFragSol() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.setMaxFragSol(5);
-        assertEquals(5,plateau.getMaxFragSol());
+        plateauDuJoueur.setMaxFragSol(5);
+        assertEquals(5,plateauDuJoueur.getMaxFragSol());
     }
 
     @Test
     void setMaxFragLun() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.setMaxFragLun(5);
-        assertEquals(5,plateau.getMaxFragLun());
+        plateauDuJoueur.setMaxFragLun(5);
+        assertEquals(5,plateauDuJoueur.getMaxFragLun());
     }
 
     @Test
     void ajouterFragLun() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.ajouterFragLun(6);
-        assertEquals(6,plateau.getFragmentLunaire());
+        plateauDuJoueur.ajouterFragLun(3);
+        assertEquals(3,plateauDuJoueur.getFragmentLunaire());
+        plateauDuJoueur.ajouterFragLun(6);
+        assertEquals(6,plateauDuJoueur.getFragmentLunaire());
     }
 
     @Test
     void ajouterFragSol() {
-        PlateauDuJoueur plateau= new PlateauDuJoueur(1);
-        plateau.ajouterFragSol(6);
-        assertEquals(6,plateau.getFragmentSolaire());
+        plateauDuJoueur.ajouterFragSol(3);
+        assertEquals(3,plateauDuJoueur.getFragmentSolaire());
+        plateauDuJoueur.ajouterFragSol(6);
+        assertEquals(6,plateauDuJoueur.getFragmentSolaire());
     }
 }

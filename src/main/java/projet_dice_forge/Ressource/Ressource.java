@@ -33,7 +33,7 @@ public abstract class Ressource {
     }
 
     public void enleverRessources(int or) {
-        if((this.nombre - or) >= 0 ) {
+        if((this.nombre - or) >=0 ) {
             this.setRessources(this.nombre-or);
         }
         else {
