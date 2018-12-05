@@ -73,7 +73,7 @@ public class LeMarteauDuForgeron extends CarteEffetImmediatRelRessource {
 
     public void donnerLesPointsDeGloire(Joueur joueur){
         if(isPremierTour() && (CursseurTour1 == 0)){
-            joueur.getPlateauDuJoueur().ajouterPointDeGloire(15);
+            joueur.getPlateauDuJoueur().ajouterPointDeGloire(10);
             this.CursseurTour1=1;
         }
         else if (isDeuxiemeTour() && (CursseurTour2 ==0)){
