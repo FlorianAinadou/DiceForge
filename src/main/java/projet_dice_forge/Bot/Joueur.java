@@ -1,11 +1,11 @@
 package main.java.projet_dice_forge.Bot;
 
-import main.java.projet_dice_forge.Gestion_du_Jeu.Jeu;
+
 import main.java.projet_dice_forge.Partie_Bassin.*;
 import main.java.projet_dice_forge.Partie_Iles.*;
 import main.java.projet_dice_forge.Plateau_Joueur.*;
 import main.java.projet_dice_forge.Ressource.*;
-import main.java.projet_dice_forge.effet.EffetPermanent.LeMarteauDuForgeron;
+
 
 import java.util.List;
 import java.util.ArrayList;
@@ -22,9 +22,12 @@ public class Joueur {
     protected ArrayList<CarteEffetImmediatRelRessource> ListeCarteEffetImmediatRelRessource;
     protected int PointDeGloireCarte;
     protected ArrayList<Joueur> adversaires;
+
+
     protected boolean ActiverEffetLeMarteauDuForgeron=false;
     public Face claire;  //C'est pas beau je sais revoir autre méthode
     public Face sombre;   //C'est pas beau je sais revoir autre méthode
+    public int nbAlea;
     int tour=1;
 
 
@@ -88,6 +91,8 @@ public class Joueur {
     }
 
     ///////////////////////////////////////////Partie gère les Cartes du joueur////////////////////////////////////////////////////////////////////////////////////
+
+
     public ArrayList<CarteEffetImmediat> getListeCarteEffetImmediat() {
         return ListeCarteEffetImmediat;
     }
@@ -104,16 +109,6 @@ public class Joueur {
         return ListeCarteEffetImmediatRelRessource;
     }
 
-    /*
-    public int ChercherCarte(int IdCarte) {
-        for (int i = 0; i < ListeCarteEffetImmediat.size(); i++) {
-            if (ListeCarteEffetImmediat.get(i).getIdCarte() == IdCarte) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    */
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void resetPlateauDuJoueur() {
@@ -143,6 +138,7 @@ public class Joueur {
 
     /**
      * On lance les dés et on attribue au joueur en fonction du résultat du lancé des ressources
+     * Donc ce qui représente les Faveur des dieux
      */
     public void lanceDe() {
         Face claire = faveurMineurChoix(0);
@@ -262,7 +258,8 @@ public class Joueur {
      *
      */
     public void ajouterPointDeGloire(Carte carte){
-        setPointDeGloireCarte(getPointDeGloireCarte() + carte.getPointDeGloire().getNbRessources());
+        int pointDeGloireGagnerAvecCarte = carte.getPointDeGloire().getNbRessources();
+        this.getPlateauDuJoueur().ajouterPointDeGloire(pointDeGloireGagnerAvecCarte);
 
     }
 
@@ -304,6 +301,24 @@ public class Joueur {
      * Cette méthode nous permet de parcourir la liste de carte que le Joueur possède à effet Immediat et d'appliquer les effets de chaque carte  et ensuite de
      * les désactiver en mettant une valeur false dans le boolean.
      */
+
+    public void activerToutLesCartes(){
+        if(!(getListeCarteEffetImmediat().isEmpty())){
+            activerEffetCarteImmediat();
+        }
+        else if (!(getListeCarteEffetPermanent().isEmpty())){
+            activerEffetCartePermanent();
+        }
+        else if (!(getListeCarteEffetImmRealJoueur().isEmpty())){
+            activerEffetCarteImmRealJoueur();
+        }
+        else if(!(getListeCarteEffetImmediatRelRessource().isEmpty())){
+            activerEffetCarteImmRealRessource();
+        }
+    }
+
+
+
     public void activerEffetCarteImmediat(){
         for (CarteEffetImmediat carte: this.getListeCarteEffetImmediat()){
             if(carte.isActiverOuPas()){
@@ -326,9 +341,9 @@ public class Joueur {
                 carte.activerEffetImmCarteRealJoueur(this);
                 carte.desactiverCarte();
             }
-
         }
     }
+
 
     /**
      *Cette méthode nous permet de parcourir la liste de carte que le Joueur possède à effet Permanent en relation avec
@@ -379,30 +394,54 @@ public class Joueur {
 
     }
 
-    public void effetMarteau(Joueur joueur){
-        if((claire.getRessource().contains(new Or()))){
+    /**
+     * Cette méthode nous permet de vérifier si le lancé du  Dé claire contient bien de l'or pour ensuite activer l'effet de la carte
+     * Le marteau du forgeron
+     * @param joueur
+     */
+    public void effetMarteauDeClaire(Joueur joueur){
+        if(claire.getRessource().contains(new Or())){
             CarteEffetImmediatRelRessource LeMarteauDuForgeron=this.getListeCarteEffetImmediatRelRessource().get(0);
             LeMarteauDuForgeron.activerEffetCarteImmRelRessource(this);
         }
     }
+
+
+    /**
+     * Cette méthode nous permet de vérifier si le lancé du  Dé Sombre contient bien de l'or pour ensuite activer l'effet de la carte
+     * Le marteau du forgeron
+     * @param joueur
+     */
+    public void effetMarteauDeSombre(Joueur joueur){
+        if(sombre.getRessource().contains(new Or())){
+            CarteEffetImmediatRelRessource LeMarteauDuForgeron=this.getListeCarteEffetImmediatRelRessource().get(0);
+            LeMarteauDuForgeron.activerEffetCarteImmRelRessource(this);
+        }
+    }
+
+
+    /**
+     * Cette méthode nous permet de Lancer un des deux Dés du joueur(Random) et d'attribuer les resssources gagnées par le lancé de dé
+     * De plus si le joueur a achetée la Carte Le marteau du forgeron cela influ (implique une modification)
+     * sur le stockage des pièce d'or : choix de stocker les pièces d'or ou de les utiliser pour la quète.
+     */
     public void faveurMineur(){
         Random Alea = new Random();
-        int nbAlea= Alea.nextInt(2);
+        this.nbAlea= Alea.nextInt(2);
         if(nbAlea==0){
             this.claire = this.DeClaire.lancerLeDe();
 
             if(ActiverEffetLeMarteauDuForgeron){
-                effetMarteau(this);
+                effetMarteauDeClaire(this);
             }
             else{
                 ajouterRessource(claire);
             }
-
         }
         else {
-            this.sombre = this.DeSombre.lancerLeDe();
+            this.sombre =this.DeSombre.lancerLeDe();
             if(ActiverEffetLeMarteauDuForgeron){
-                effetMarteau(this);
+                effetMarteauDeSombre(this);
             }
             else {
                 ajouterRessource(sombre);
@@ -410,19 +449,46 @@ public class Joueur {
         }
     }
 
+    /**
+     * Cette méthode est la même que la précédente sauf que le joueur a la choix sur le choix du dée a lancer.
+     * Soit le Dé Claire ,soit le Dé Sombre
+     * @param choixDée
+     * @return
+     */
+
     public Face faveurMineurChoix(int choixDée){
         Face sombre, claire;
         if (choixDée == 0) {
             claire = this.DeClaire.lancerLeDe();
-            ajouterRessource(claire);
-            return claire;
+
+            if(ActiverEffetLeMarteauDuForgeron){
+                effetMarteauDeClaire(this);
+                return claire;
+
+            }
+            else{
+                ajouterRessource(claire);
+                return claire;
+
+            }
+
         }
 
         else {
             sombre = this.DeSombre.lancerLeDe();
-            ajouterRessource(sombre);
-            return sombre;
+            if(ActiverEffetLeMarteauDuForgeron){
+                effetMarteauDeSombre(this);
+                return sombre;
+            }
+
+
+            else{
+                ajouterRessource(sombre);
+                return sombre;
+            }
+
         }
+
     }
 
     public void setDe(De de1, De de2){
@@ -430,5 +496,7 @@ public class Joueur {
         this.DeSombre = de2;
     }
 
-
+    public int getNbAlea() {
+        return nbAlea;
+    }
 }

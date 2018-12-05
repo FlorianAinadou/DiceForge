@@ -1,6 +1,7 @@
 package main.java.projet_dice_forge.Partie_Iles;
 
 import main.java.projet_dice_forge.Bot.Joueur;
+import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Ressource.Gloire;
 import main.java.projet_dice_forge.Ressource.Ressource;
 

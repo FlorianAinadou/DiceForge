@@ -100,8 +100,8 @@ public class PlateauDesIles {
         }
         return iles;
     }
-    
 
+//ICI UNE ERREUR
     public Iles getIlesNb(int nb){
         return iles.get(nb-1);
     }

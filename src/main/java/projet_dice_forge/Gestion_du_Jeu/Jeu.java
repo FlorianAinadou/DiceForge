@@ -14,7 +14,7 @@ public class Jeu {
     private Temple temple;
     private PlateauDesIles plateauDesIles;
     private int nbrManche = 9;
-    private int nbrJoueur = 2;
+    private int nbrJoueur=2;
 
     public Jeu(int nbrJoueur, Bot[] b) {
         this.nbrJoueur = nbrJoueur;
@@ -33,7 +33,7 @@ public class Jeu {
     private void initJeu()
     {
         temple = new Temple();
-        plateauDesIles = new PlateauDesIles(nbrJoueur);
+        plateauDesIles = new PlateauDesIles(this.nbrJoueur);
         for(int i = 0; i<nbrJoueur; i++)
         {
             bot[i].reset();
