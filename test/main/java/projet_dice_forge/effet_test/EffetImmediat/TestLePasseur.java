@@ -23,7 +23,7 @@ public class TestLePasseur {
         }
 
         @Test
-        public void activerEffetCarte() throws CloneNotSupportedException {
+        public void activerEffetCarte(){
             Joueur joueur = new Joueur(1);
             LePasseur lePasseur  = new LePasseur();
             Iles ile = new Iles();

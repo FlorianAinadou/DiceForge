@@ -23,7 +23,7 @@ public class TestLEnigme {
     }
 
     @Test
-    public void activerEffetCarte() throws CloneNotSupportedException {
+    public void activerEffetCarte(){
         Joueur joueur = new Joueur(1);
         LEnigme enigme = new LEnigme();
         Iles ile = new Iles();

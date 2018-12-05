@@ -16,7 +16,7 @@ public class FragmentLunaireTest {
 
     @Test
     void getTypeRessourceTest(){
-        assertEquals(fragementLunaire.getTypeRessource(),"FragementLunaire");
+        assertEquals(fragementLunaire.getTypeRessource(),"FrgamentLunaire");
         assertFalse(fragementLunaire.getTypeRessource().equals("Bonjour"));
     }
 
