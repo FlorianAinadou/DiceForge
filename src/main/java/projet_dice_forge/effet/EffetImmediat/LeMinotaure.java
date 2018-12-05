@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class LeMinotaure extends CarteEffetImmediatRelJoueur {
     public LeMinotaure() {
-        super(9, new Ressource[]{new FragementSolaire(3)}, new Gloire(8), false);
+        super(4, new Ressource[]{new FragementSolaire(3)}, new Gloire(8), false);
     }
 
     public void activerEffetImmCarteRealJoueur(Joueur joueur) {

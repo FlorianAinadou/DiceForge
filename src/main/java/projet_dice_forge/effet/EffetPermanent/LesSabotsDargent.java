@@ -12,7 +12,7 @@ public class LesSabotsDargent extends CarteEffetPermanent {
 
 
     public LesSabotsDargent(){
-        super(4,new Ressource[] {new FragementLunaire(2) }, new Gloire(2),false);
+        super(13,new Ressource[] {new FragementLunaire(2) }, new Gloire(2),false);
     }
 
     public void activerEffetCartePerm(Joueur joueur) {

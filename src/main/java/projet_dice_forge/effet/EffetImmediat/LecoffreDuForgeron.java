@@ -10,7 +10,7 @@ import main.java.projet_dice_forge.Ressource.Ressource;
 public class LecoffreDuForgeron extends CarteEffetImmediat {
 
     public LecoffreDuForgeron() {
-        super(2, new Ressource[] {new FragementLunaire(1) }, new Gloire(2), false);
+        super(3, new Ressource[] {new FragementLunaire(1) }, new Gloire(2), false);
     }
 
     public void activerEffetCarte(Joueur joueur) {
