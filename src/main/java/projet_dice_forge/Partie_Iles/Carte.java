@@ -109,6 +109,16 @@ public class Carte implements Cloneable {
         return 0;
     }
 
+    public String getTypeRessourcesRéclamées(){
+        if(this.getPrixSolaire()!=0 && this.getPrixLunaire()==0) return "FragementSolaire";
+
+        if(this.getPrixSolaire()==0 && this.getPrixLunaire()!=0) return "FragementLunaire";
+
+        if (this.getPrixSolaire()!=0 && this.getPrixLunaire()!=0) return "all";
+
+        return "";
+    }
+
 
 
 }

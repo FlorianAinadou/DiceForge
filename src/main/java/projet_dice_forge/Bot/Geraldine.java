@@ -12,6 +12,6 @@ public class Geraldine extends Bot {
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
 
         super.jouer(temple, plateauDesIles);
-
+        tour++;
     }
 }

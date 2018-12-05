@@ -63,4 +63,10 @@ public class Iles {
         }
     }*/
 
+    public ArrayList<Carte> getListCartes() {
+        return ListeExploit;
+    }
+
+
+
 }
