@@ -50,5 +50,20 @@ public abstract class Ressource {
         return maxRessources;
     }
 
+    @Override
+    public boolean equals(Object other){
+        if(other instanceof  Ressource){
+            Ressource ressource = (Ressource) other;
+            boolean nombre = ressource.nombre == this.nombre;
+            boolean idRessource = ressource.idRessource == this.idRessource;
+            boolean maxRessource = this.maxRessources == ressource.maxRessources;
+            if(nombre && idRessource && maxRessource) return true;
+            return false;
+        }
+        else {
+            return false;
+        }
+
+    }
 
 }

@@ -3,6 +3,7 @@ package main.java.projet_dice_forge.Plateau_Joueur;
 import main.java.projet_dice_forge.Ressource.Ressource;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Cette classe représente une face d'un dé
@@ -63,20 +64,34 @@ public class Face {
      * @return le type de ressource gagné
      */
 
-/*
+
     @Override
     public boolean equals(Object other)
     {
         if(other instanceof Face && other != null) {
             Face face = (Face) other;
-            return (this.getNb() == face.getNb() && this.typeDeRessource.equals(face.getTypeDeRessource()));
+            if(face.ListeResource.size() != this.ListeResource.size()) return false;
+            ArrayList<Ressource> ressources = face.ListeResource;
+            for(Ressource res : ressources)
+            {
+                boolean isIn = false;
+                for(Ressource res2 : this.ListeResource)
+                {
+                    if(res.equals(res2)){
+                        isIn = true;
+                        break;
+                    }
+                }
+                if(!isIn) return false;
+            }
+            return true;
         } else
         {
             return false;
         }
 
     }
-*/
+
     public int getValeurFace(){
 
     return this.getRessource().stream()
