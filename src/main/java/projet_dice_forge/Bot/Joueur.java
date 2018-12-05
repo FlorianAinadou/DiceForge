@@ -23,6 +23,8 @@ public class Joueur {
     protected int PointDeGloireCarte;
     protected ArrayList<Joueur> adversaires;
     protected boolean ActiverEffetLeMarteauDuForgeron=false;
+    public Face claire;  //C'est pas beau je sais revoir autre méthode
+    public Face sombre;   //C'est pas beau je sais revoir autre méthode
     int tour=1;
 
 
@@ -322,8 +324,9 @@ public class Joueur {
         for (CarteEffetImmediatRelJoueur carte: this.getListeCarteEffetImmRealJoueur()){
             if(carte.isActiverOuPas()){
                 carte.activerEffetImmCarteRealJoueur(this);
+                carte.desactiverCarte();
             }
-            carte.desactiverCarte();
+
         }
     }
 
@@ -334,15 +337,19 @@ public class Joueur {
      */
 
     public void activerEffetCartePermanent(){
-        for (CarteEffetPermanent carte: this.getListeCarteEffetPermanent()){
-            carte.activerEffetCartePerm(this);
+        for (CarteEffetPermanent carte: this.getListeCarteEffetPermanent()) {
+            if (carte.isActiverOuPas()) {
+                carte.activerEffetCartePerm(this);
+            }
         }
     }
 
 
     public void activerEffetCarteImmRealRessource(){
-        for(CarteEffetImmediatRelRessource carte: this.getListeCarteEffetImmediatRelRessource()){
-            carte.activerEffetCarteImmRelRessource(this);
+        for(CarteEffetImmediatRelRessource carte: this.getListeCarteEffetImmediatRelRessource()) {
+            if (carte.isActiverOuPas()) {
+                carte.activerEffetCarteImmRelRessource(this);
+            }
         }
     }
 
@@ -371,19 +378,21 @@ public class Joueur {
         }
 
     }
+
+    public void effetMarteau(Joueur joueur){
+        if((claire.getRessource().contains(new Or()))){
+            CarteEffetImmediatRelRessource LeMarteauDuForgeron=this.getListeCarteEffetImmediatRelRessource().get(0);
+            LeMarteauDuForgeron.activerEffetCarteImmRelRessource(this);
+        }
+    }
     public void faveurMineur(){
         Random Alea = new Random();
         int nbAlea= Alea.nextInt(2);
         if(nbAlea==0){
-            Face claire = this.DeClaire.lancerLeDe();
+            this.claire = this.DeClaire.lancerLeDe();
 
             if(ActiverEffetLeMarteauDuForgeron){
-                int choixOrQuete=  Alea.nextInt(claire.getValeurFace()+1);
-                int choixOrStoker= claire.getValeurFace() - choixOrQuete;
-                if((claire.getRessource().contains(new Or()))&& (choixOrQuete != 0)){
-                    CarteEffetImmediatRelRessource LeMarteauDuForgeron=this.getListeCarteEffetImmediatRelRessource().get(0);
-
-                }
+                effetMarteau(this);
             }
             else{
                 ajouterRessource(claire);
@@ -392,8 +401,12 @@ public class Joueur {
 
         }
         else {
-            Face sombre = this.DeSombre.lancerLeDe();
-            ajouterRessource(sombre);
+            if(ActiverEffetLeMarteauDuForgeron){
+                effetMarteau(this);
+            }
+            else {
+                ajouterRessource(sombre);
+            }
         }
     }
 
