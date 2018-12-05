@@ -33,7 +33,7 @@ public class Jeu {
     private void initJeu()
     {
         temple = new Temple();
-        plateauDesIles = new PlateauDesIles();
+        plateauDesIles = new PlateauDesIles(nbrJoueur);
         for(int i = 0; i<nbrJoueur; i++)
         {
             bot[i].reset();
@@ -98,14 +98,17 @@ public class Jeu {
     public void lancerNPartie(int nbrPartie) {
         int[] gagnant = new int[nbrJoueur];
         ArrayList<Integer> win;
+        boolean affichage = nbrPartie > 1 ? false : true;
         for(int i = 0; i<nbrPartie; i++ )
         {
-            lancerUnePartie(false);
+            lancerUnePartie(affichage);
             win = quiQuiCestLesGagnant();
-            win.forEach(nb -> gagnant[bot[nb].getIdJoueur()]++);
+            for(Integer gagn : win){
+                gagnant[bot[gagn].getIdJoueur()]++;
+            }
         }
         for(int j = 0; j<nbrJoueur; j++) {
-            System.out.println("Le joueur " + bot[j].getIdJoueur() + " a gagné " + gagnant[bot[j].getIdJoueur()]);
+            System.out.println("Le joueur " + (bot[j].getIdJoueur()+1) + " a gagné " + gagnant[bot[j].getIdJoueur()]);
         }
     }
 

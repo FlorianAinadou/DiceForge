@@ -37,10 +37,10 @@ public class Scanning {
             player[i] = scan.nextInt();
             switch (player[i]) {
                 case 1:
-                    joueurs[i] = new Emeline(i+1);
+                    joueurs[i] = new Emeline(i);
                     break;
                 case 2:
-                    joueurs[i] = new Geraldine(i+1);
+                    joueurs[i] = new Geraldine(i);
                     break;
                 default:
                     System.exit(0);
