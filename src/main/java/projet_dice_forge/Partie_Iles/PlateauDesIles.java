@@ -6,8 +6,11 @@ import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
 import main.java.projet_dice_forge.effet.EffetPermanent.LesSabotsDargent;
 
+import java.util.ArrayList;
+
 public class PlateauDesIles {
 
+        ArrayList<Iles> iles;
         Iles IlesN1;
 
         Iles IlesN2;
@@ -19,38 +22,32 @@ public class PlateauDesIles {
         Iles IlesN7;
 
     public PlateauDesIles(){
-        IlesN1();
-        //IlesN1.printLsite();
-
-        IlesN2();
-        /*
-        IlesN3();
-        IlesN4();
-        IlesN5();*/
-        IlesN6();
-        IlesN7();
-        //IlesN7.printLsite();
+        iles = new ArrayList<>();
+        iles.add(IlesN1());
+        iles.add(IlesN2());
+        iles.add(IlesN6());
+        iles.add(IlesN7());
 
       }
 
 
-    private void IlesN1(){
+    private Iles IlesN1(){
         Iles iles = new Iles(1,false,2 );
         //Carte carte = new LeMarteauDuForgeron();
         Carte carte1= new LecoffreDuForgeron();
         //iles.ajouterCarte(carte, 2);
         iles.ajouterCarte(carte1, 2);
-        this.IlesN1=iles;
+        return iles;
 
     }
 
-    private void IlesN2(){
+    private Iles IlesN2(){
         Iles iles = new Iles(2,false,2 );
         Carte carte = new LesSabotsDargent();
         //Carte carte1 = new Carte(4,"Les satyres",new int[] {3},new String[]{"PierredeLune"},6);
         iles.ajouterCarte(carte, 2);
        // iles.ajouterCarte(carte1, 2);
-        this.IlesN2=iles;
+        return iles;
 
     }
 
@@ -89,41 +86,34 @@ public class PlateauDesIles {
 
     }
 */
-    private void IlesN6(){
+    private Iles IlesN6(){
         Iles iles = new Iles(6,false,2 );
         Carte carte = new LeMinotaure();
         //Carte carte1 = new
         iles.ajouterCarte(carte, 2);
        //iles.ajouterCarte(carte1, 2);
-        this.IlesN6=iles;
+        return iles;
 
     }
 
 
-    private void IlesN7(){
+    private Iles IlesN7(){
         Iles iles = new Iles(7,false,2 );
         Carte carte = new LesHerbesFolles();
        // Carte carte = new Carte(14,"Les herbes folles",new int[]{1},new String[]{"PierredeLune"},2,false,new LesHerbesFolles());
         //LesHerbesFolles(
         iles.ajouterCarte(carte, 2);
         //iles.ajouterCarte(carte1, 2);
-        this.IlesN7=iles;
+        return iles;
 
     }
 
-    public Iles getIlesN7() {
-        return IlesN7;
+    public Iles getIlesNb(int nb){
+        return iles.get(nb-1);
     }
 
     public Iles getIlesN1() {
-        return IlesN1;
+        return getIlesNb(1);
     }
 
-    public Iles getIlesN2() {
-        return IlesN2;
-    }
-
-    public Iles getIlesN6() {
-        return IlesN6;
-    }
 }
