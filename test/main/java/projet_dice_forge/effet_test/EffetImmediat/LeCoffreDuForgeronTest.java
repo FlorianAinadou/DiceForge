@@ -5,10 +5,9 @@ import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
-
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 
 public class LeCoffreDuForgeronTest {

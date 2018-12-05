@@ -24,7 +24,7 @@ public class TestLHydre {
     }
 
     @Test
-    public void activerEffetCarte() throws CloneNotSupportedException {
+    public void activerEffetCarte(){
         Joueur joueur = new Joueur(1);
         LHydre hydre = new LHydre();
         Iles ile = new Iles();
