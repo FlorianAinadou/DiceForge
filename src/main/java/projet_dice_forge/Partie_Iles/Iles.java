@@ -46,10 +46,8 @@ public class Iles {
             ListeExploit.get(i).afficherCarte();
         }
     }
-    public void ajouterCarte(Carte carte,int quantité){
-        for(int i =0; i<quantité; i++){
+    public void ajouterCarte(Carte carte) {
             this.ListeExploit.add(carte);
-        }
     }
 
     /**

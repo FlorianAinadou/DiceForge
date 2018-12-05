@@ -425,5 +425,10 @@ public class Joueur {
         }
     }
 
+    public void setDe(De de1, De de2){
+        this.DeClaire = de1;
+        this.DeSombre = de2;
+    }
+
 
 }

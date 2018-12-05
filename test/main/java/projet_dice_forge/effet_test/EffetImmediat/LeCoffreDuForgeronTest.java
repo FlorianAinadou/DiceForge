@@ -26,7 +26,7 @@ public class LeCoffreDuForgeronTest {
         Joueur joueur = new Joueur(1);
         LecoffreDuForgeron lecoffreDuForgeron = new LecoffreDuForgeron();
         Iles ile = new Iles();
-        ile.ajouterCarte(lecoffreDuForgeron,2);
+        ile.ajouterCarte(lecoffreDuForgeron);
         assertEquals(lecoffreDuForgeron.isActiverOuPas(),false);
         joueur.acheterCarte(ile,lecoffreDuForgeron);
         joueur.activerEffetCarteImmediat();

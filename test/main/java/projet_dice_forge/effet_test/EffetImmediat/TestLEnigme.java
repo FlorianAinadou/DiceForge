@@ -23,12 +23,12 @@ public class TestLEnigme {
     }
 
     @Test
-    public void activerEffetCarte(){
+    public void activerEffetCarte() throws CloneNotSupportedException {
         Joueur joueur = new Joueur(1);
         LEnigme enigme = new LEnigme();
         Iles ile = new Iles();
 
-        ile.ajouterCarte(enigme,2);
+        ile.ajouterCarte(enigme);
         assertEquals(enigme.isActiverOuPas(),false);
 
         joueur.acheterCarte(ile,enigme);

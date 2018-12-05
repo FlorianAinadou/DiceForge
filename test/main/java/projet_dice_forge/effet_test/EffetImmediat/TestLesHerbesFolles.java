@@ -29,7 +29,7 @@ public class TestLesHerbesFolles {
         LesHerbesFolles lesHerbesFolles = new LesHerbesFolles();
         Iles ile = new Iles();
 
-        ile.ajouterCarte(lesHerbesFolles,2);
+        ile.ajouterCarte(lesHerbesFolles);
         assertEquals(lesHerbesFolles.isActiverOuPas(),false);
 
         joueur.acheterCarte(ile,lesHerbesFolles);

@@ -24,12 +24,12 @@ public class TestLHydre {
     }
 
     @Test
-    public void activerEffetCarte(){
+    public void activerEffetCarte() throws CloneNotSupportedException {
         Joueur joueur = new Joueur(1);
         LHydre hydre = new LHydre();
         Iles ile = new Iles();
 
-        ile.ajouterCarte(hydre,2);
+        ile.ajouterCarte(hydre);
         assertEquals(hydre.isActiverOuPas(),false);
 
         joueur.acheterCarte(ile,hydre);

@@ -38,8 +38,9 @@ public class PlateauDesIles {
         Iles iles = new Iles(1,false,2 );
         //Carte carte = new LeMarteauDuForgeron();
         Carte carte1= new LecoffreDuForgeron();
+        Carte carte2= new LecoffreDuForgeron();
         //iles.ajouterCarte(carte, 2);
-        iles.ajouterCarte(carte1, 2);
+        iles.ajouterCarte(carte1);iles.ajouterCarte(carte2);
         this.IlesN1=iles;
 
     }
@@ -47,8 +48,9 @@ public class PlateauDesIles {
     private void IlesN2(){
         Iles iles = new Iles(2,false,2 );
         Carte carte = new LesSabotsDargent();
+        Carte carte1 = new LesSabotsDargent();
         //Carte carte1 = new Carte(4,"Les satyres",new int[] {3},new String[]{"PierredeLune"},6);
-        iles.ajouterCarte(carte, 2);
+        iles.ajouterCarte(carte);iles.ajouterCarte(carte1);
        // iles.ajouterCarte(carte1, 2);
         this.IlesN2=iles;
 
@@ -93,7 +95,7 @@ public class PlateauDesIles {
         Iles iles = new Iles(6,false,2 );
         Carte carte = new LeMinotaure();
         //Carte carte1 = new
-        iles.ajouterCarte(carte, 2);
+        iles.ajouterCarte(carte);
        //iles.ajouterCarte(carte1, 2);
         this.IlesN6=iles;
 
@@ -105,7 +107,7 @@ public class PlateauDesIles {
         Carte carte = new LesHerbesFolles();
        // Carte carte = new Carte(14,"Les herbes folles",new int[]{1},new String[]{"PierredeLune"},2,false,new LesHerbesFolles());
         //LesHerbesFolles(
-        iles.ajouterCarte(carte, 2);
+        iles.ajouterCarte(carte);
         //iles.ajouterCarte(carte1, 2);
         this.IlesN7=iles;
 
