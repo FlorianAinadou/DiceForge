@@ -12,6 +12,7 @@ import main.java.projet_dice_forge.effet.EffetImmediat.LeMinotaure;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -50,7 +51,7 @@ public class TestLeMinotaure {
         */
         System.out.println(joueur2.getPlateauDuJoueur().getPointsDeGloire());
 
-        assertTrue(leMinotaure.isActiverOuPas());
+        assertFalse(leMinotaure.isActiverOuPas());
 
 
         assertEquals(8,joueur1.getPointDeGloireCarte());

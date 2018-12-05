@@ -33,7 +33,7 @@ public class Jeu {
     private void initJeu()
     {
         temple = new Temple();
-        plateauDesIles = new PlateauDesIles();
+        plateauDesIles = new PlateauDesIles(nbrJoueur);
         for(int i = 0; i<nbrJoueur; i++)
         {
             bot[i].reset();

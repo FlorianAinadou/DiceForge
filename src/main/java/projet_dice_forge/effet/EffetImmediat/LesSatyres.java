@@ -30,8 +30,8 @@ public class LesSatyres extends CarteEffetImmediatRelJoueur {
 
     void choisirDeuxFacesAlea(){
         Random random= new Random();
-        int rand1 = random.nextInt(ListeFace.size()+1);
-        int rand2 = random.nextInt(ListeFace.size()+1);
+        int rand1 = random.nextInt(ListeFace.size());
+        int rand2 = random.nextInt(ListeFace.size());
         Face face1=ListeFace.get(rand1);
         Face face2=ListeFace.get(rand2);
         ListeFaceAppliquer.add(face1);

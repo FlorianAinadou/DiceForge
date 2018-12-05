@@ -32,10 +32,10 @@ public class TestLePasseur {
             assertEquals(lePasseur.isActiverOuPas(),false);
 
             joueur.acheterCarte(ile,lePasseur);
-
+            assertEquals(lePasseur.isActiverOuPas(),true);
             joueur.activerEffetCarteImmediat();
 
-            assertEquals(lePasseur.isActiverOuPas(),true);
+            assertEquals(lePasseur.isActiverOuPas(),false);
             assertEquals(12,joueur.getPointDeGloireCarte());
 
 

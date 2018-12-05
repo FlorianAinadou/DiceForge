@@ -396,11 +396,11 @@ public class Joueur {
             }
             else{
                 ajouterRessource(claire);
-
             }
 
         }
         else {
+            this.sombre = this.DeSombre.lancerLeDe();
             if(ActiverEffetLeMarteauDuForgeron){
                 effetMarteau(this);
             }

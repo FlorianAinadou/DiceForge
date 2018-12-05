@@ -7,6 +7,7 @@ import main.java.projet_dice_forge.effet.EffetImmediat.LEnigme;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 public class TestLEnigme {
@@ -29,10 +30,10 @@ public class TestLEnigme {
         Iles ile = new Iles();
 
         ile.ajouterCarte(enigme);
-        assertEquals(enigme.isActiverOuPas(),false);
+
 
         joueur.acheterCarte(ile,enigme);
-
+        assertEquals(enigme.isActiverOuPas(),true);
         joueur.activerEffetCarteImmediat();
 
         /*
@@ -40,7 +41,7 @@ public class TestLEnigme {
         fixé des dé
          */
 
-        assertEquals(enigme.isActiverOuPas(),true);
+        assertFalse(enigme.isActiverOuPas());
         assertEquals(10,joueur.getPointDeGloireCarte());
 
 
