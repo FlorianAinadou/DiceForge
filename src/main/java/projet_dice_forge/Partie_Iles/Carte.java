@@ -78,6 +78,36 @@ public class Carte implements Cloneable {
 
     }
 
+    /**
+     * retourne le nombre de pierres lunaires que necessite l'achat de la carte
+     * @return int prix
+     */
+    public int getPrixLunaire(){
+        Ressource[] prix= this.getPrix();
+        if (prix.length==1 && prix[0].getTypeRessource().equals("FragementLunaire")) return prix[0].getNbRessources();
+
+        if (prix.length==2 && prix[0].getTypeRessource().equals("FragementLunaire")) return prix[0].getNbRessources();
+
+        if (prix.length==2 && prix[1].getTypeRessource().equals("FragementLunaire")) return prix[1].getNbRessources();
+
+        return 0;
+    }
+
+
+    /**
+     * retourne le nombre de pierres solaires que necessite l'achat de la carte
+     * @return int prix
+     */
+    public int getPrixSolaire(){
+        Ressource[] prix= this.getPrix();
+        if (prix.length==1 && prix[0].getTypeRessource().equals("FragementSolaire")) return prix[0].getNbRessources();
+
+        if (prix.length==2 && prix[0].getTypeRessource().equals("FragementSolaire")) return prix[0].getNbRessources();
+
+        if (prix.length==2 && prix[1].getTypeRessource().equals("FragementSolaire")) return prix[1].getNbRessources();
+
+        return 0;
+    }
 
 
 
