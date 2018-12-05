@@ -38,7 +38,7 @@ public class TestLesSatyres {
         Jeu jeu = new Jeu(2,listJoueurs);
         LesSatyres lesSatyres = new LesSatyres();
         Iles ile = new Iles();
-        ile.ajouterCarte(lesSatyres,2);
+        ile.ajouterCarte(lesSatyres);
         assertTrue(!lesSatyres.isActiverOuPas());
 
         joueur1.acheterCarte(ile,lesSatyres);

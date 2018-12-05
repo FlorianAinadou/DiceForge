@@ -15,7 +15,7 @@ public class LesSatyres extends CarteEffetImmediatRelJoueur {
     private ArrayList<Face> ListeFaceAppliquer = new ArrayList<>();
 
     public LesSatyres() {
-        super(10, new Ressource[]{new FragementLunaire(3)}, new Gloire(6), false);
+        super(8, new Ressource[]{new FragementLunaire(3)}, new Gloire(6), false);
     }
 
     void remplirLaListeResultat(Joueur joueur){

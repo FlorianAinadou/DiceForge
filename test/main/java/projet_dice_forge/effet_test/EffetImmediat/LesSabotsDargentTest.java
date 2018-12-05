@@ -25,7 +25,7 @@ class LesSabotsDargentTest {
          Joueur joueur = new Joueur(1);
          LesSabotsDargent lesSabotsDargent = new LesSabotsDargent();
          Iles ile = new Iles();
-         ile.ajouterCarte(lesSabotsDargent,2);
+         ile.ajouterCarte(lesSabotsDargent);
          assertEquals(lesSabotsDargent.isActiverOuPas(),false);
          joueur.acheterCarte(ile,lesSabotsDargent);
          joueur.activerEffetCarteImmediat();

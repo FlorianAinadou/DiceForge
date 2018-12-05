@@ -13,7 +13,7 @@ public class LesAilesDeLaGardienne extends CarteEffetPermanent {
 
 
     public LesAilesDeLaGardienne(){
-        super(4,new Ressource[] {new FragementSolaire(2) }, new Gloire(2),false);
+        super(12,new Ressource[] {new FragementSolaire(2) }, new Gloire(2),false);
     }
 
 

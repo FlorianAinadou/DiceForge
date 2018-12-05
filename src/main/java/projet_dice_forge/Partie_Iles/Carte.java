@@ -8,7 +8,8 @@ import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
 import java.util.ArrayList;
 
 
-public class Carte {
+public class Carte implements Cloneable {
+
     protected String nomDeLexploit;
     protected Ressource[] prix;
     protected Gloire gloire;

@@ -13,7 +13,7 @@ public class LesHerbesFolles extends CarteEffetImmediat {
 
 
     public LesHerbesFolles() {
-        super(1,new Ressource[] {new FragementSolaire(1) },new Gloire(2),false);
+        super(7,new Ressource[] {new FragementSolaire(1) },new Gloire(2),false);
     }
 
 

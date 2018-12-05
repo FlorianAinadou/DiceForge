@@ -36,7 +36,7 @@ public class TestLeMinotaure {
         Jeu jeu = new Jeu(2,listJoueurs);
         LeMinotaure leMinotaure = new LeMinotaure();
         Iles ile = new Iles();
-        ile.ajouterCarte(leMinotaure,2);
+        ile.ajouterCarte(leMinotaure);
 
         joueur2.getPlateauDuJoueur().ajouterPointDeGloire(20);
 

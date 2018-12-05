@@ -8,7 +8,7 @@ import main.java.projet_dice_forge.Ressource.Ressource;
 
 public class LaMeduse extends CarteEffetImmediat {
     public LaMeduse(){
-        super(8, new Ressource[] {new FragementSolaire(4)}, new Gloire(14), false);
+        super(1, new Ressource[] {new FragementSolaire(4)}, new Gloire(14), false);
     }
 
     public void activerEffetCarte(Joueur joueur) {

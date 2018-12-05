@@ -11,15 +11,7 @@ import java.util.ArrayList;
 public class PlateauDesIles {
 
         ArrayList<Iles> iles;
-        Iles IlesN1;
 
-        Iles IlesN2;
-        /*
-        Iles IlesN3;
-        Iles IlesN4;
-        Iles IlesN5;*/
-        Iles IlesN6;
-        Iles IlesN7;
 
     public PlateauDesIles(){
         iles = new ArrayList<>();
@@ -35,17 +27,20 @@ public class PlateauDesIles {
         Iles iles = new Iles(1,false,2 );
         //Carte carte = new LeMarteauDuForgeron();
         Carte carte1= new LecoffreDuForgeron();
+        Carte carte2= new LecoffreDuForgeron();
         //iles.ajouterCarte(carte, 2);
-        iles.ajouterCarte(carte1, 2);
+        iles.ajouterCarte(carte1);
+		iles.ajouterCarte(carte2);
         return iles;
-
     }
 
     private Iles IlesN2(){
         Iles iles = new Iles(2,false,2 );
         Carte carte = new LesSabotsDargent();
+        Carte carte1 = new LesSabotsDargent();
         //Carte carte1 = new Carte(4,"Les satyres",new int[] {3},new String[]{"PierredeLune"},6);
-        iles.ajouterCarte(carte, 2);
+        iles.ajouterCarte(carte);
+		iles.ajouterCarte(carte1);
        // iles.ajouterCarte(carte1, 2);
         return iles;
 
@@ -90,7 +85,7 @@ public class PlateauDesIles {
         Iles iles = new Iles(6,false,2 );
         Carte carte = new LeMinotaure();
         //Carte carte1 = new
-        iles.ajouterCarte(carte, 2);
+        iles.ajouterCarte(carte);
        //iles.ajouterCarte(carte1, 2);
         return iles;
 
@@ -102,7 +97,7 @@ public class PlateauDesIles {
         Carte carte = new LesHerbesFolles();
        // Carte carte = new Carte(14,"Les herbes folles",new int[]{1},new String[]{"PierredeLune"},2,false,new LesHerbesFolles());
         //LesHerbesFolles(
-        iles.ajouterCarte(carte, 2);
+        iles.ajouterCarte(carte);
         //iles.ajouterCarte(carte1, 2);
         return iles;
 

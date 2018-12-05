@@ -147,4 +147,6 @@ public class PlateauDuJoueur {
         this.fragmentSolaire.ajoutRessources(fragSol);
     }
 
+
+
 }

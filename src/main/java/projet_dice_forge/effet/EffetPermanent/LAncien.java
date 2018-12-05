@@ -12,12 +12,10 @@ import java.util.Random;
 
 public class LAncien extends CarteEffetPermanent {
 
-    public LAncien(Joueur joueur){
+    public LAncien(){
         super(10, new Ressource[]{new FragementSolaire(1)}, new Gloire(0), false);
 
     }
-
-
 
     public void activerEffetCartePerm(Joueur joueur) {
         Random random = new Random();

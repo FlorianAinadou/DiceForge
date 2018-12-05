@@ -23,12 +23,12 @@ public class TestLePasseur {
         }
 
         @Test
-        public void activerEffetCarte(){
+        public void activerEffetCarte() throws CloneNotSupportedException {
             Joueur joueur = new Joueur(1);
             LePasseur lePasseur  = new LePasseur();
             Iles ile = new Iles();
 
-            ile.ajouterCarte(lePasseur,2);
+            ile.ajouterCarte(lePasseur);
             assertEquals(lePasseur.isActiverOuPas(),false);
 
             joueur.acheterCarte(ile,lePasseur);
