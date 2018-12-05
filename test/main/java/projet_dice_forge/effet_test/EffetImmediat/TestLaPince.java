@@ -7,6 +7,7 @@ import main.java.projet_dice_forge.effet.EffetImmediat.LaPince;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -32,15 +33,13 @@ public class TestLaPince {
 
         assertTrue(!laPince.isActiverOuPas());
         joueur.acheterCarte(ile,laPince);
-
+        assertTrue(laPince.isActiverOuPas());
         joueur.activerEffetCarteImmediat();
-
+        assertFalse(laPince.isActiverOuPas());
         /*
         Nous Reste à prouver si cela marche bien
         fixé des dé
          */
-
-        assertTrue(laPince.isActiverOuPas());
 
 
         assertEquals(8,joueur.getPointDeGloireCarte());

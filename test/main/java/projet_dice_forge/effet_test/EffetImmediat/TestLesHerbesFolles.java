@@ -33,11 +33,12 @@ public class TestLesHerbesFolles {
         assertEquals(lesHerbesFolles.isActiverOuPas(),false);
 
         joueur.acheterCarte(ile,lesHerbesFolles);
+        assertEquals(lesHerbesFolles.isActiverOuPas(),true);
         joueur.activerEffetCarteImmediat();
         assertEquals(3,joueur.getPlateauDuJoueur().getOr());
         assertEquals(3,joueur.getPlateauDuJoueur().getFragmentLunaire());
 
-        assertEquals(lesHerbesFolles.isActiverOuPas(),true);
+        assertEquals(lesHerbesFolles.isActiverOuPas(),false);
         assertEquals(2,joueur.getPointDeGloireCarte());
 
 

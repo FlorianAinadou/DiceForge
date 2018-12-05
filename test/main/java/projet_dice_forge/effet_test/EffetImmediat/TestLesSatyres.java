@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -42,8 +43,9 @@ public class TestLesSatyres {
         assertTrue(!lesSatyres.isActiverOuPas());
 
         joueur1.acheterCarte(ile,lesSatyres);
-        joueur1.activerEffetCarteImmRealJoueur();
         assertTrue(lesSatyres.isActiverOuPas());
+        joueur1.activerEffetCarteImmRealJoueur();
+        assertFalse(lesSatyres.isActiverOuPas());
 
 
         assertEquals(6,joueur1.getPointDeGloireCarte());
