@@ -33,6 +33,8 @@ public class Iles {
 
 
 
+
+
     public void enleverCarte(Carte carte){
         for(int i=0; i<ListeExploit.size(); i++){
             if(carte.equals(ListeExploit.get(i))){
@@ -41,6 +43,21 @@ public class Iles {
             }
         }
     }
+
+
+
+
+
+/*
+    public void enleverCarteV2(Carte carte){
+        for(int i=0; i<ListeExploit.size(); i++){
+            if(carte instanceof (ListeExploit.get(i))){
+                ListeExploit.remove(i);
+                break;
+            }
+        }
+    }
+    */
     public void printLsite(){
         for(int i=0; i<ListeExploit.size(); i++){
             ListeExploit.get(i).afficherCarte();

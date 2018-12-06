@@ -216,12 +216,14 @@ public class Joueur {
             ListeCarteEffetImmediat.add(carteEffetImmediat);
             iles.enleverCarte(carte);
             ajouterPointDeGloire(carte);
+            iles.joueurEstSurIle();
         }
         else if(carte instanceof CarteEffetPermanent){
             CarteEffetPermanent carteEffetPermanent=(CarteEffetPermanent)carte;
             ListeCarteEffetPermanent.add(carteEffetPermanent);
             iles.enleverCarte(carte);
             ajouterPointDeGloire(carte);
+            iles.joueurEstSurIle();
         }
 
         else if (carte instanceof CarteEffetImmediatRelJoueur){
@@ -229,29 +231,17 @@ public class Joueur {
             ListeCarteEffetImmRealJoueur.add(carteEffetImmediatRelJoueur);
             iles.enleverCarte(carte);
             ajouterPointDeGloire(carte);
+            iles.joueurEstSurIle();
         }
         else if (carte instanceof CarteEffetImmediatRelRessource){
             CarteEffetImmediatRelRessource carteEffetImmediatRelRessource=(CarteEffetImmediatRelRessource)carte;
             ListeCarteEffetImmediatRelRessource.add(carteEffetImmediatRelRessource);
             iles.enleverCarte(carte);
             ajouterPointDeGloire(carte);
+            iles.joueurEstSurIle();
         }
     }
 
-    public void acheterCarteDirect(Carte carte){
-        carte.activerCarte();
-
-        if(carte instanceof CarteEffetImmediat){
-            CarteEffetImmediat carteEffetImmediat=(CarteEffetImmediat)carte;
-            ListeCarteEffetImmediat.add(carteEffetImmediat);
-            ajouterPointDeGloire(carte);
-        }
-        else if(carte instanceof CarteEffetPermanent){
-            CarteEffetPermanent carteEffetPermanent=(CarteEffetPermanent)carte;
-            ListeCarteEffetPermanent.add(carteEffetPermanent);
-            ajouterPointDeGloire(carte);
-        }
-    }
 
     /**
      * Cette méthode nous permet de stocker les points de gloire de chaque carte acheter dans une varriable int
@@ -318,7 +308,7 @@ public class Joueur {
     }
 
 
-
+/*
     public void activerEffetCarteImmediat(){
         for (CarteEffetImmediat carte: this.getListeCarteEffetImmediat()){
             if(carte.isActiverOuPas()){
@@ -328,6 +318,19 @@ public class Joueur {
         }
 
     }
+    */
+
+    public void activerEffetCarteImmediat(){
+        for(int i=0;i<getListeCarteEffetImmediat().size();i++){
+            if(ListeCarteEffetImmediat.get(i).isActiverOuPas()){
+                ListeCarteEffetImmediat.get(i).activerEffetCarte(this);
+                ListeCarteEffetImmediat.remove(i);
+            }
+
+        }
+
+    }
+
 
 
     /**
@@ -335,6 +338,7 @@ public class Joueur {
      * les autres joueurs et d'appliquer les effets de chaque carte.
      */
 
+    /*
     public void activerEffetCarteImmRealJoueur(){
         for (CarteEffetImmediatRelJoueur carte: this.getListeCarteEffetImmRealJoueur()){
             if(carte.isActiverOuPas()){
@@ -343,6 +347,17 @@ public class Joueur {
             }
         }
     }
+
+    */
+    public void activerEffetCarteImmRealJoueur(){
+        for(int i=0;i<getListeCarteEffetImmRealJoueur().size();i++){
+            if(ListeCarteEffetImmRealJoueur.get(i).isActiverOuPas()){
+                ListeCarteEffetImmRealJoueur.get(i).activerEffetImmCarteRealJoueur(this);
+                ListeCarteEffetImmRealJoueur.remove(i);
+            }
+        }
+    }
+
 
 
     /**
@@ -355,6 +370,7 @@ public class Joueur {
         for (CarteEffetPermanent carte: this.getListeCarteEffetPermanent()) {
             if (carte.isActiverOuPas()) {
                 carte.activerEffetCartePerm(this);
+
             }
         }
     }
