@@ -4,15 +4,12 @@ import main.java.projet_dice_forge.Partie_Bassin.Temple;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 
 public class Bot extends Joueur {
-    protected String detailTour;
+
 
     public Bot(int id) {
         super(id);
     }
 
-    public String getDetailTour() {
-        return detailTour;
-    }
 
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         this.lanceDe();

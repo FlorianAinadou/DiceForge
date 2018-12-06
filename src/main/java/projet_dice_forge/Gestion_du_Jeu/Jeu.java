@@ -48,12 +48,15 @@ public class Jeu {
     {
         initJeu();
         for(int i = 0; i<nbrManche; i++) {
+            if(affichage){
+                System.out.println("Tour " + (i+1) + " :");
+            }
             for(int j = 0; j < nbrJoueur; j++) {
                 bot[j].jouer(temple, plateauDesIles);
-                System.out.println(bot[j].getDetailTour());
                 if(affichage) {
                     System.out.println(bot[j].getDetailTour());
                 }
+                bot[j].resetDetailTour();
             }
         }
         if(affichage) {
@@ -98,7 +101,7 @@ public class Jeu {
     public void lancerNPartie(int nbrPartie) {
         int[] gagnant = new int[nbrJoueur];
         ArrayList<Integer> win;
-        boolean affichage = nbrPartie > 1 ? false : true;
+        boolean affichage = nbrPartie <= 1;
         for(int i = 0; i<nbrPartie; i++ )
         {
             lancerUnePartie(affichage);

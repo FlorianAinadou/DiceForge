@@ -6,7 +6,7 @@ import main.java.projet_dice_forge.Bot.Bot;
 import java.util.Scanner;
 
 public class Scanning {
-    private Bot[] joueurs;
+    private final Bot[] joueurs;
     private int numPlayer = 4;
     private String bot = "Emeline(1), Geraldine(2)";
 

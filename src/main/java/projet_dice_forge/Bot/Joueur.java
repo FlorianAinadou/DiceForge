@@ -22,6 +22,7 @@ public class Joueur {
     protected ArrayList<CarteEffetImmediatRelRessource> ListeCarteEffetImmediatRelRessource;
     protected int PointDeGloireCarte;
     protected ArrayList<Joueur> adversaires;
+    protected String detailTour;
 
 
     protected boolean ActiverEffetLeMarteauDuForgeron=false;
@@ -76,6 +77,10 @@ public class Joueur {
     public void reset() {
         resetPlateauDuJoueur();
         resetDe();
+    }
+
+    public void resetDetailTour(){
+        detailTour ="";
     }
 
     /**
@@ -143,9 +148,11 @@ public class Joueur {
     public void lanceDe() {
         Face claire = faveurMineurChoix(0);
         Face sombre = faveurMineurChoix(1);
-        System.out.print("Dé 1: " + claire.afficherFace()  );
-        System.out.print("Dé 1: " + sombre.afficherFace()  );
-
+        StringBuilder s1= new StringBuilder();
+        s1.append(detailTour);
+        s1.append("Dé 1: " + claire.afficherFace() + "\n");
+        s1.append("Dé 1: " + sombre.afficherFace() + "\n");
+        detailTour = s1.toString();
 
     }
 
@@ -186,6 +193,10 @@ public class Joueur {
     
     public int getIdJoueur(){
         return id;
+    }
+
+    public String getDetailTour() {
+        return detailTour;
     }
 
     public int quelEstLeMeilleurBassin(Temple temple){
@@ -240,8 +251,10 @@ public class Joueur {
             ajouterPointDeGloire(carte);
             iles.joueurEstSurIle();
         }
-
-        System.out.println("Le joueur "+ this.getIdJoueur()+1 + " achete la carte "+ carte.getIdCarte());
+        StringBuilder s1 = new StringBuilder();
+        s1.append(detailTour);
+        s1.append("Le joueur "+ (this.getIdJoueur()+1) + " achete la carte "+ carte.getIdCarte() + "\n");
+        detailTour = s1.toString();
     }
 
 
