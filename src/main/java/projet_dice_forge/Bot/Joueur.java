@@ -240,6 +240,8 @@ public class Joueur {
             ajouterPointDeGloire(carte);
             iles.joueurEstSurIle();
         }
+
+        System.out.println("Le joueur "+ this.getIdJoueur()+1 + " achete la carte "+ carte.getIdCarte());
     }
 
 
