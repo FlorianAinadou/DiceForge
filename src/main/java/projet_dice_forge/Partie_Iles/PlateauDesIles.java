@@ -16,17 +16,7 @@ public class PlateauDesIles {
         ArrayList<Iles> iles;
 
 
-    public PlateauDesIles(int nbJoueur){
-        iles = new ArrayList<>();
-        iles.add(IlesN1());
-        iles.add(IlesN2());
-        iles.add(IlesN3());
-        iles.add(IlesN4());
-        iles.add(IlesN5());
-        iles.add(IlesN6());
-        iles.add(IlesN7());
 
-      }
 
 
     private Iles IlesN1(){
@@ -105,6 +95,18 @@ public class PlateauDesIles {
 
     public Iles getIlesNb(int nb){
         return iles.get(nb-1);
+    }
+
+    public PlateauDesIles(int nbJoueur){
+        iles = new ArrayList<>();
+        iles.add(IlesN1());
+        iles.add(IlesN2());
+        iles.add(IlesN3());
+        iles.add(IlesN4());
+        iles.add(IlesN5());
+        iles.add(IlesN6());
+        iles.add(IlesN7());
+
     }
 
     public Iles getIlesN1() {

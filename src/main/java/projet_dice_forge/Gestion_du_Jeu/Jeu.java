@@ -106,6 +106,7 @@ public class Jeu {
             for(Integer gagn : win){
                 gagnant[bot[gagn].getIdJoueur()]++;
             }
+            initJeu();
         }
         for(int j = 0; j<nbrJoueur; j++) {
             System.out.println("Le joueur " + (bot[j].getIdJoueur()+1) + " a gagné " + gagnant[bot[j].getIdJoueur()]);
