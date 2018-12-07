@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Scanning {
     private final Bot[] joueurs;
     private int numPlayer = 4;
-    private String bot = "Emeline(1), Geraldine(2)";
+    private final String bot = "Emeline(1), Geraldine(2)";
 
     Scanning(){
         setNumPlayer();

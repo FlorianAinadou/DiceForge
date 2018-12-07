@@ -40,6 +40,7 @@ public class Joueur {
         this.ListeCarteEffetImmediat=new ArrayList<>();
         this.ListeCarteEffetPermanent=new ArrayList<>();
         this.ListeCarteEffetImmRealJoueur=new ArrayList<>();
+        this.ListeCarteEffetImmediatRelRessource = new ArrayList<>();
         this.adversaires=new ArrayList<>();
     }
 
@@ -51,6 +52,7 @@ public class Joueur {
         this.ListeCarteEffetImmediat=new ArrayList<>();
         this.ListeCarteEffetPermanent=new ArrayList<>();
         this.ListeCarteEffetImmRealJoueur=new ArrayList<>();
+        this.ListeCarteEffetImmediatRelRessource = new ArrayList<>();
         this.adversaires=new ArrayList<>();
     }
 
@@ -221,7 +223,6 @@ public class Joueur {
 
     public void acheterCarte(Iles iles, Carte carte){
         carte.activerCarte();
-
         if(carte instanceof CarteEffetImmediat){
             CarteEffetImmediat carteEffetImmediat=(CarteEffetImmediat)carte;
             ListeCarteEffetImmediat.add(carteEffetImmediat);
