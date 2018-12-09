@@ -8,6 +8,7 @@ import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Bot extends Joueur {
 protected   int tour=0;
 
