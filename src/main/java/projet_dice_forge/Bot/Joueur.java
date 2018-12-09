@@ -534,4 +534,34 @@ public class Joueur {
     public int getNbAlea() {
         return nbAlea;
     }
+
+    /**
+     * Vérifie si la liste contient une carte spécifique
+     * @param idCarte
+     * @return
+     */
+
+    public boolean contientCarte(int idCarte){
+        boolean exist=false;
+
+        for(CarteEffetImmediat carte: this.ListeCarteEffetImmediat){
+            if(carte.getIdCarte()== idCarte) exist=true;
+        }
+
+        for (CarteEffetImmediatRelJoueur carte1: this.ListeCarteEffetImmRealJoueur){
+            if(carte1.getIdCarte()== idCarte) exist=true;
+        }
+
+        for(CarteEffetPermanent carte2: this.ListeCarteEffetPermanent){
+            if(carte2.getIdCarte()== idCarte) exist=true;
+        }
+
+        for (CarteEffetImmediatRelRessource carte3: this.ListeCarteEffetImmediatRelRessource){
+            if(carte3.getIdCarte()== idCarte) exist=true;
+        }
+        return exist;
+
+    }
+
+
 }

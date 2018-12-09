@@ -9,6 +9,7 @@ import main.java.projet_dice_forge.Plateau_Joueur.De;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
 import main.java.projet_dice_forge.Ressource.Or;
+import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -16,9 +17,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Emeline extends Bot {
-
+protected  boolean rejouer;
     public Emeline(int id) {
         super(id);
+        rejouer=true;
     }
 
     /**
@@ -31,14 +33,15 @@ public class Emeline extends Bot {
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         tour++;
         int monOr=this.getPlateauDuJoueur().getOr();
+        int mesSolaires=this.getPlateauDuJoueur().getFragmentSolaire();
         super.jouer(temple,plateauDesIles);
-        this.getListeCarteEffetPermanent().forEach(carteEffetPermanent -> carteEffetPermanent.activerEffetCartePerm(this));
+        //this.getListeCarteEffetPermanent().forEach(carteEffetPermanent -> carteEffetPermanent.activerEffetCartePerm(this));
 
-        if (tour<5) {
+        if (tour<6) {
 
             if (quelEstLeMeilleurBassin(temple) != 0)
-                while( quelEstLeMeilleurBassin( temple)!=0)this.accederAuMeilleurBassin(temple);
-            else if (this.puisJeAcheterLeCoffre(plateauDesIles)) {
+                this.accederAuMeilleurBassin(temple);
+            else if (this.puisJeAcheterLeCoffre(plateauDesIles) && !this.contientCarte(3)) {
                     this.acheterCarte(plateauDesIles.getIlesNb(7), plateauDesIles.getIlesNb(1).getCarte(0));
                 }
             }
@@ -47,7 +50,7 @@ public class Emeline extends Bot {
 
 
             if (puisjeAcheterLaCarteLaaPlusChere(plateauDesIles) && plateauDesIles.getIlesNb(4).getListCartes().size()!=0){
-                acheterCarte(plateauDesIles.getIlesNb(4), quelleCarteAcheter(plateauDesIles.getIlesNb(4)));
+                acheterCarte(plateauDesIles.getIlesNb(4), plateauDesIles.getIlesNb(4).getCarte(1));
             }
             if(puisJeAcheterUneCarte(plateauDesIles)) {
                 Iles ileAAtteindre= plateauDesIles.getIlesNb(dansQuelleIleAller(plateauDesIles));
@@ -57,9 +60,14 @@ public class Emeline extends Bot {
             }
             else{
                 if (quelEstLeMeilleurBassin(temple) != 0)
-                    while( quelEstLeMeilleurBassin( temple)!=0)this.accederAuMeilleurBassin(temple);
+                    this.accederAuMeilleurBassin(temple);
             }
         }
+
+       /* if(mesSolaires>2 && rejouer){
+            this.jouer(temple, plateauDesIles );
+            rejouer=false;
+        }*/
 
 
 
@@ -211,7 +219,7 @@ public class Emeline extends Bot {
      */
     public boolean puisjeAcheterLaCarteLaaPlusChere(PlateauDesIles plateauDesIles){
         Iles ile = plateauDesIles.getIlesNb(1);
-        if (this.getPlateauDuJoueur().getFragmentSolaire()>=6 && this.getPlateauDuJoueur().getFragmentLunaire()>=6){
+        if (this.getPlateauDuJoueur().getFragmentSolaire()>=5 && this.getPlateauDuJoueur().getFragmentLunaire()>=5){
             return true;
         }
         else return false;
