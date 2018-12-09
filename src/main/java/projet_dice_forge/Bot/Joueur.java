@@ -201,7 +201,7 @@ public class Joueur {
         return detailTour;
     }
 
-    public int quelEstLeMeilleurBassin(Temple temple){
+    /*public int quelEstLeMeilleurBassin(Temple temple){
         Bassin meilleurBassin=temple.getBassin(2);
         int monOr= this.getPlateauDuJoueur().getOr();
         List<Bassin> bassins= temple.getBassins();
@@ -211,7 +211,7 @@ public class Joueur {
             }
         }
         return meilleurBassin.getCout();
-    }
+    }*/
 ///////////////////////////////////////////////////////////////////////////Partie Carte ///////////////////////////////////////////////////////////////////////////////////////
 
     /**
