@@ -176,4 +176,33 @@ public class Temple {
         return this.bassins;
     }
 
+    /**
+     * Return the list of bassin you can use according to the gold you pass on parameter
+     */
+    public ArrayList<Bassin> getBassinYouNeed(int or){
+        ArrayList<Bassin> listOfBassin = new ArrayList();
+        int gold = or - 2;
+        for(int i = 0; i<7; i++){
+            if(gold >= 0){
+                listOfBassin.add(bassins.get(i));
+            }
+            else
+            {
+                break;
+            }
+            if(i>=4){
+                if(i>=5){
+                    gold -= 4;
+                } else {
+                    gold -= 2;
+                }
+            }
+            else {
+                gold--;
+            }
+
+        }
+        return listOfBassin;
+    }
+
 }

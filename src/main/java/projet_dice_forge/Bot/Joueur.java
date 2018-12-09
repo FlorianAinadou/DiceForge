@@ -75,6 +75,9 @@ public class Joueur {
     public int getPtGloire() {
         return Plateau.getPointsDeGloire();
     }
+    public int getPtOr(){
+        return Plateau.getOr();
+    }
 
     public void reset() {
         resetPlateauDuJoueur();

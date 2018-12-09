@@ -2,13 +2,14 @@ package main.java.projet_dice_forge.Gestion_du_Jeu;
 import main.java.projet_dice_forge.Bot.Emeline;
 import main.java.projet_dice_forge.Bot.Geraldine;
 import main.java.projet_dice_forge.Bot.Bot;
+import main.java.projet_dice_forge.Bot.Josseline;
 
 import java.util.Scanner;
 
 public class Scanning {
     private final Bot[] joueurs;
     private int numPlayer = 4;
-    private final String bot = "Emeline(1), Geraldine(2)";
+    private final String bot = "Emeline(1), Geraldine(2), Josseline(3)";
 
     Scanning(){
         setNumPlayer();
@@ -23,7 +24,7 @@ public class Scanning {
             this.numPlayer = num;
         }
         else {
-            System.out.println("Fuck You");
+            System.out.println("Number must be strictly positive");
             System.exit(0);
         }
     }
@@ -42,7 +43,11 @@ public class Scanning {
                 case 2:
                     joueurs[i] = new Geraldine(i);
                     break;
+                case 3:
+                    joueurs[i] = new Josseline(i);
+                    break;
                 default:
+                    System.out.println("Number not allowed");
                     System.exit(0);
             }
         }
