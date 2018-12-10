@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class PlateauDesIles {
 
         private int nbJoueur=2;
+        private int nbIle = 7;
 
         ArrayList<Iles> iles;
 
@@ -111,6 +112,10 @@ public class PlateauDesIles {
 
     public Iles getIlesN1() {
         return getIlesNb(1);
+    }
+
+    public int getNbIle(){
+        return this.nbIle;
     }
 
 }

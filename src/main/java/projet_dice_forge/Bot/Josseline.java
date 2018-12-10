@@ -2,6 +2,7 @@ package main.java.projet_dice_forge.Bot;
 
 import main.java.projet_dice_forge.Partie_Bassin.Bassin;
 import main.java.projet_dice_forge.Partie_Bassin.Temple;
+import main.java.projet_dice_forge.Partie_Iles.Carte;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
 
@@ -17,10 +18,17 @@ public class Josseline extends Bot {
     @Override
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         super.jouer(temple, plateauDesIles);
-        aleaFace(temple);
+        Random rand = new Random();
+        int randChoix = rand.nextInt(2);
+        if(randChoix == 0){
+            acheterAleaFace(temple);
+        }
+        if(randChoix == 1){
+            acheterAleaCarte(plateauDesIles);
+        }
     }
 
-    private void aleaFace(Temple temple) {
+    private void acheterAleaFace(Temple temple) {
         Random rand = new Random();
         ArrayList<Bassin> bassins = getBassin(temple);
         if(bassins.size() > 0){
@@ -44,5 +52,14 @@ public class Josseline extends Bot {
 
     }
 
+    private void acheterAleaCarte(PlateauDesIles plateauDesIles) {
+        ArrayList<Carte> cartes = getCarte(plateauDesIles);
+
+        Random rand = new Random();
+        if (cartes.size() > 0) {
+            int randCarte = cartes.size() > 1 ? rand.nextInt(cartes.size() - 1) : 0;
+            acheterCarte(getIleFromCarte(cartes.get(randCarte), plateauDesIles), cartes.get(randCarte));
+        }
+    }
 
 }

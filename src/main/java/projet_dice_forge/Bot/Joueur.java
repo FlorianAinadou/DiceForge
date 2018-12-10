@@ -79,6 +79,14 @@ public class Joueur {
         return Plateau.getOr();
     }
 
+    public int getPtLunaire(){
+        return Plateau.getFragmentLunaire();
+    }
+
+    public int getPtSolaire(){
+        return Plateau.getFragmentSolaire();
+    }
+
     public void reset() {
         resetPlateauDuJoueur();
         resetDe();
