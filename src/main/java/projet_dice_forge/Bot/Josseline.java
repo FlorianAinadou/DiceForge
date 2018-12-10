@@ -19,21 +19,27 @@ public class Josseline extends Bot {
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         super.jouer(temple, plateauDesIles);
         Random rand = new Random();
-        int randChoix = rand.nextInt(2);
+        int randChoix = rand.nextInt(3);
         if(randChoix == 0){
-            acheterAleaFace(temple);
+            int size;
+            int randRelance;
+            do {
+                size  = acheterAleaFace(temple);
+                randRelance = rand.nextInt(2);
+            } while(size > 0 && randRelance == 0);
+
         }
         if(randChoix == 1){
             acheterAleaCarte(plateauDesIles);
         }
     }
 
-    private void acheterAleaFace(Temple temple) {
+    private int acheterAleaFace(Temple temple) {
         Random rand = new Random();
         ArrayList<Bassin> bassins = getBassin(temple);
         if(bassins.size() > 0){
-            int randomBassin = bassins.size()>1 ? rand.nextInt(bassins.size()-1) : 0;
-            int randomDeNumber = 1 + rand.nextInt(1);
+            int randomBassin = rand.nextInt(bassins.size());
+            int randomDeNumber = 1 + rand.nextInt(2);
 
             ArrayList<Face> facesAcheter = bassins.get(randomBassin).getFace();
             if(facesAcheter.size() > 0){
@@ -49,6 +55,7 @@ public class Josseline extends Bot {
                 acheterFace(temple, randomFaceBought, randomFaceExchange, randomDeNumber);
             }
         }
+        return bassins.size();
 
     }
 
@@ -57,7 +64,7 @@ public class Josseline extends Bot {
 
         Random rand = new Random();
         if (cartes.size() > 0) {
-            int randCarte = cartes.size() > 1 ? rand.nextInt(cartes.size() - 1) : 0;
+            int randCarte = rand.nextInt(cartes.size());
             acheterCarte(getIleFromCarte(cartes.get(randCarte), plateauDesIles), cartes.get(randCarte));
         }
     }

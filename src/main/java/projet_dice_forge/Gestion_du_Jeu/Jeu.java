@@ -100,19 +100,26 @@ public class Jeu {
 
     public void lancerNPartie(int nbrPartie) {
         int[] gagnant = new int[nbrJoueur];
+        int[] egalite = new int[nbrJoueur];
         ArrayList<Integer> win;
         boolean affichage = nbrPartie <= 1;
         for(int i = 0; i<nbrPartie; i++ )
         {
             lancerUnePartie(affichage);
             win = quiQuiCestLesGagnant();
-            for(Integer gagn : win){
-                gagnant[bot[gagn].getIdJoueur()]++;
+            if(win.size() == 1){
+                gagnant[bot[win.get(0)].getIdJoueur()]++;
+            }
+            else {
+                for(Integer gagn : win){
+                    egalite[bot[gagn].getIdJoueur()]++;
+                }
             }
             initJeu();
         }
         for(int j = 0; j<nbrJoueur; j++) {
-            System.out.println("Le joueur " + (bot[j].getIdJoueur()+1) + " a gagné " + gagnant[bot[j].getIdJoueur()]);
+            System.out.print("Le joueur " + (bot[j].getIdJoueur()+1) + " a gagné " + gagnant[bot[j].getIdJoueur()]);
+            System.out.println(" égalité " + egalite[bot[j].getIdJoueur()]);
         }
     }
 
