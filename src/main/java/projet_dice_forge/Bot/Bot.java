@@ -22,6 +22,8 @@ protected   int tour=0;
 
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         tour++;
+        ListeCarteEffetImmediat.forEach(Carte::activerCarte);
+        ListeCarteEffetPermanent.forEach(Carte::activerCarte);
         this.lanceDe();
         setDetailTour ("Joueur "+ (super.id+1) + "\ngloire: "+ this.getPtGloire() + " or: "+ this.Plateau.getOr() +" FragementLuanire: " + this.Plateau.getFragmentLunaire() + " FragementSolaire: " + this.Plateau.getFragmentSolaire() +"\n");
     }
