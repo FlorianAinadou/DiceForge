@@ -46,7 +46,16 @@ public class Face {
     public boolean laFaceNeContientQueDeLOr(){
         boolean testeur=false;
 
-        if(this.getRessource().size()==1 && this.getRessource().get(0).getTypeRessource().equals("or")){
+        if(this.getRessource().size()==1 && this.getRessource().get(0).getTypeRessource().equals("Or")){
+            testeur=true;
+        }
+        return testeur;
+    }
+
+    public boolean laFaceNeContientQueDeLaGloire(){
+        boolean testeur=false;
+
+        if(this.getRessource().size()==1 && this.getRessource().get(0).getTypeRessource().equals("Gloire")){
             testeur=true;
         }
         return testeur;

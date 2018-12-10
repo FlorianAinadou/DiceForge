@@ -37,15 +37,14 @@ public class Emeline extends Bot {
         super.jouer(temple,plateauDesIles);
         //this.getListeCarteEffetPermanent().forEach(carteEffetPermanent -> carteEffetPermanent.activerEffetCartePerm(this));
 
-        if (tour<6) {
+        if (tour<4) {
 
-            if (quelEstLeMeilleurBassin(temple) != 0)
-                while (monOr>=2){
+            if (quelEstLeMeilleurBassin(temple) != 0) {
                     if (quelEstLeMeilleurBassin(temple) != 0) {
                         this.accederAuMeilleurBassin(temple);
                         monOr = this.getPlateauDuJoueur().getOr();
                     }
-                    else break;
+                  //  else break;
                 }
             else if (this.puisJeAcheterLeCoffre(plateauDesIles) && !this.contientCarte(3)) {
                 this.acheterCarte(plateauDesIles.getIlesNb(7), plateauDesIles.getIlesNb(1).getCarte(3));
@@ -55,27 +54,35 @@ public class Emeline extends Bot {
         else {
 
 
-            if (puisjeAcheterLaCarteLaaPlusChere(plateauDesIles) && plateauDesIles.getIlesNb(4).getListCartes().size()!=0){
+            if (puisjeAcheterLaCarteLaaPlusChere(plateauDesIles) && plateauDesIles.getIlesNb(4).getCarte(9)!=null){
                 acheterCarte(plateauDesIles.getIlesNb(4), plateauDesIles.getIlesNb(4).getCarte(9));
             }
-            if(puisJeAcheterUneCarte(plateauDesIles)) {
+            else if(puisJeAcheterUneCarte(plateauDesIles)) {
                     Iles ileAAtteindre = plateauDesIles.getIlesNb(dansQuelleIleAller(plateauDesIles));
                     if (ileAAtteindre.getListCartes().size() != 0 && quelleCarteAcheter(ileAAtteindre)!=null)
                         this.acheterCarte(ileAAtteindre, quelleCarteAcheter(ileAAtteindre));
 
-                else{
-                    if (quelEstLeMeilleurBassin(temple) != 0)
-                        while (monOr>=2){
+                else if(getPlateauDuJoueur().getFragmentSolaire()>=4 && plateauDesIles.getIlesNb(5).getCarte(1)!=null) {
+                        this.acheterCarte(plateauDesIles.getIlesNb(5), plateauDesIles.getIlesNb(5).getCarte(1));
+                    }
+                     else if(getPlateauDuJoueur().getFragmentLunaire()>=4 && plateauDesIles.getIlesNb(3).getCarte(6)!= null){
+                        this.acheterCarte(plateauDesIles.getIlesNb(3), plateauDesIles.getIlesNb(3).getCarte(6));
+                    }
+                    else {
+
+
+                        if (quelEstLeMeilleurBassin(temple) != 0)
+
                             if (quelEstLeMeilleurBassin(temple) != 0) {
                                 this.accederAuMeilleurBassin(temple);
-                                monOr = this.getPlateauDuJoueur().getOr();
-                            }
-                            else break;
+                                // }
+                                // else break;
 
-                        }
+                            }
+                    }
                 }
 
-            }
+
             else{
                 if (quelEstLeMeilleurBassin(temple) != 0)
                     this.accederAuMeilleurBassin(temple);
@@ -138,8 +145,8 @@ public class Emeline extends Bot {
         if (facesDisponibles.size() != 0) {
             Face face = facesDisponibles.get(0);
             for (Face face1 : facesDisponibles) {
-                boolean act1 = face1.getValeurFace() > face.getValeurFace() && face1.laFaceNeContientQueDeLOr();
-                boolean act2 = face1.getValeurFace() >= 1 && !face1.laFaceNeContientQueDeLOr();
+                boolean act1 = face1.getValeurFace() > face.getValeurFace() ;
+                boolean act2 = !(face1.laFaceNeContientQueDeLOr()) &&!(face1.laFaceNeContientQueDeLaGloire());
                 if (act2) face = face1;
             }
             return face;
@@ -241,7 +248,7 @@ public class Emeline extends Bot {
      * @return
      */
     public boolean puisjeAcheterLaCarteLaaPlusChere(PlateauDesIles plateauDesIles){
-        Iles ile = plateauDesIles.getIlesNb(1);
+
         if (this.getPlateauDuJoueur().getFragmentSolaire()>=5 && this.getPlateauDuJoueur().getFragmentLunaire()>=5){
             return true;
         }
@@ -264,7 +271,7 @@ public class Emeline extends Bot {
         // else {
 
         if(mesSolaires>mesLunaires) {
-            for (int i = 1; i < 6; i++) {
+            for (int i = 1; i < 7; i++) {
                 if(plateauDesIles.getIlesNb(i).getListCartes().size()-1>0) {
                     boolean act1 = plateauDesIles.getIlesNb(i).getListCartes().get(plateauDesIles.getIlesNb(i).getListCartes().size() - 1).getPrixSolaire() > prixIle;
                     boolean act2 = plateauDesIles.getIlesNb(i).getListCartes().get(plateauDesIles.getIlesNb(i).getListCartes().size() - 1).getPrixSolaire() < mesSolaires;
@@ -279,10 +286,10 @@ public class Emeline extends Bot {
 
 
         if(mesSolaires<mesLunaires) {
-            for (int j = 1; j < 6; j++) {
+            for (int j = 1; j < 7; j++) {
                 if(plateauDesIles.getIlesNb(j).getListCartes().size()-1>0) {
                     boolean act1 = plateauDesIles.getIlesNb(j).getListCartes().get(plateauDesIles.getIlesNb(j).getListCartes().size() - 1).getPrixLunaire() > prixIle;
-                    boolean act2 = plateauDesIles.getIlesNb(j).getListCartes().get(plateauDesIles.getIlesNb(j).getListCartes().size() - 1).getPrixLunaire() < mesSolaires;
+                    boolean act2 = plateauDesIles.getIlesNb(j).getListCartes().get(plateauDesIles.getIlesNb(j).getListCartes().size() - 1).getPrixLunaire() < mesLunaires;
                     if (act1 && act2 &&  plateauDesIles.getIlesNb(j).getListCartes().size()!=0 )
                         prixIle = plateauDesIles.getIlesNb(j).getListCartes().get(plateauDesIles.getIlesNb(j).getListCartes().size() - 1).getPrixLunaire();
                     ile2 = j;
@@ -305,11 +312,11 @@ public class Emeline extends Bot {
         return true;
     }
 
-    public boolean puisJeAcheterLeMarteau(PlateauDesIles plateauDesIles){
+   /* public boolean puisJeAcheterLeMarteau(PlateauDesIles plateauDesIles){
         if(this.getPlateauDuJoueur().getFragmentLunaire()>=1 && plateauDesIles.getIlesNb(1).getCarte(1)!=null) return true;
 
         return false;
-    }
+    }*/
 
     public boolean puisJeAcheterLeCoffre(PlateauDesIles plateauDesIles){
         if(this.getPlateauDuJoueur().getFragmentLunaire()>=1 && plateauDesIles.getIlesNb(4).getCarte(3)!=null) return true;

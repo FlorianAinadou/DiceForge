@@ -22,10 +22,13 @@ protected   int tour=0;
 
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         tour++;
-        ListeCarteEffetImmediat.forEach(Carte::activerCarte);
-        ListeCarteEffetPermanent.forEach(Carte::activerCarte);
+        //ListeCarteEffetImmediat.forEach(Carte::activerCarte);
+       // ListeCarteEffetPermanent.forEach(Carte::activerCarte);
+        //ListeCarteEffetImmRealJoueur.forEach(Carte::afficherCarte);
+        //ListeCarteEffetImmediatRelRessource.forEach(Carte::activerCarte);
         setDetailTour("Joueur "+ (super.id+1) +"\n");
         this.lanceDe();
+        this.adversaires.forEach(Joueur::lanceDe);
         setDetailTour ("gloire: "+ this.getPtGloire() + " or: "+ this.Plateau.getOr() +" FragementLuanire: " + this.Plateau.getFragmentLunaire() + " FragementSolaire: " + this.Plateau.getFragmentSolaire() +"\n");
     }
     public void setDetailTour(String detailTour){this.detailTour += detailTour;}
