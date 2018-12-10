@@ -52,7 +52,13 @@ public class Jeu {
                 System.out.println("Tour " + (i+1) + " :");
             }
             for(int j = 0; j < nbrJoueur; j++) {
+                bot[j].lanceDe();
+                bot[j].getAdversaires().forEach(Joueur::lanceDe);
                 bot[j].jouer(temple, plateauDesIles);
+                if(bot[j].isRejouer()){
+                    bot[j].jouer(temple, plateauDesIles);
+                    bot[j].déjaJouer();
+                }
                 if(affichage) {
                     System.out.println(bot[j].getDetailTour());
                 }

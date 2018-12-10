@@ -14,6 +14,7 @@ import java.util.List;
 
 public class Bot extends Joueur {
 protected   int tour=0;
+protected boolean rejouer=false;
 
     public Bot(int id) {
         super(id);
@@ -23,12 +24,12 @@ protected   int tour=0;
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         tour++;
         //ListeCarteEffetImmediat.forEach(Carte::activerCarte);
-       // ListeCarteEffetPermanent.forEach(Carte::activerCarte);
+          ListeCarteEffetPermanent.forEach(Carte::activerCarte);
         //ListeCarteEffetImmRealJoueur.forEach(Carte::afficherCarte);
-        //ListeCarteEffetImmediatRelRessource.forEach(Carte::activerCarte);
+        ListeCarteEffetImmediatRelRessource.forEach(Carte::activerCarte);
         setDetailTour("Joueur "+ (super.id+1) +"\n");
-        this.lanceDe();
-        this.adversaires.forEach(Joueur::lanceDe);
+        //this.lanceDe();
+        //this.adversaires.forEach(Joueur::lanceDe);
         setDetailTour ("gloire: "+ this.getPtGloire() + " or: "+ this.Plateau.getOr() +" FragementLuanire: " + this.Plateau.getFragmentLunaire() + " FragementSolaire: " + this.Plateau.getFragmentSolaire() +"\n");
     }
     public void setDetailTour(String detailTour){this.detailTour += detailTour;}
@@ -76,5 +77,13 @@ protected   int tour=0;
             }
         }
         return null;
+    }
+
+    public boolean isRejouer(){
+        return rejouer;
+    }
+
+    public void déjaJouer(){
+        rejouer=false;
     }
 }
