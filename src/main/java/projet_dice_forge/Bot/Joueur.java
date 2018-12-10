@@ -22,7 +22,7 @@ public class Joueur {
     protected ArrayList<CarteEffetImmediatRelRessource> ListeCarteEffetImmediatRelRessource;
     protected int PointDeGloireCarte;
     protected ArrayList<Joueur> adversaires;
-    protected String detailTour;
+    protected String detailTour = "";
 
 
     protected boolean ActiverEffetLeMarteauDuForgeron=false;
@@ -163,8 +163,10 @@ public class Joueur {
         Face sombre = faveurMineurChoix(1);
         StringBuilder s1= new StringBuilder();
         s1.append(detailTour);
-        s1.append("Dé 1: " + claire.afficherFace() + "\n");
-        s1.append("Dé 1: " + sombre.afficherFace() + "\n");
+        s1.append("Dé 1: " + claire.toString());
+        s1.append("\n");
+        s1.append("Dé 2: " + sombre.toString());
+        s1.append("\n");
         detailTour = s1.toString();
 
     }
@@ -179,6 +181,13 @@ public class Joueur {
         }
         echangerFace(acheter, echange, idDe);
         temp.deleteFace(echange);
+        StringBuilder stringBuilder = new StringBuilder(detailTour);
+        stringBuilder.append("Face : ");
+        stringBuilder.append(acheter);
+        stringBuilder.append(" remplace : ");
+        stringBuilder.append(echange);
+        stringBuilder.append("\n");
+        detailTour = stringBuilder.toString();
     }
 
     /**

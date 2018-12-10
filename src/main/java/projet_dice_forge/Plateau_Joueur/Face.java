@@ -32,13 +32,6 @@ public class Face {
         this.ListeResource.add(r);
     }
 
-    public String afficherFace(){
-        String string="";
-        for (Ressource ressource:ListeResource) {
-            string+= ressource.getNbRessources() + " " +ressource.getTypeRessource() + " \n";
-        }
-        return string;
-    }
 
     /**
      * Cette methode vérifie si le type de ressource de cette face est la gloire
@@ -97,6 +90,18 @@ public class Face {
     return this.getRessource().stream()
             .map(ressource->ressource.getNbRessources())
             .reduce(0, (valeurFace, count) -> valeurFace + count);
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(Ressource r : this.ListeResource){
+            stringBuilder.append(r.getNbRessources());
+            stringBuilder.append(" ");
+            stringBuilder.append(r.getTypeRessource());
+            stringBuilder.append(" ");
+        }
+        return stringBuilder.toString();
     }
 
 

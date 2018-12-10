@@ -24,10 +24,11 @@ protected   int tour=0;
         tour++;
         ListeCarteEffetImmediat.forEach(Carte::activerCarte);
         ListeCarteEffetPermanent.forEach(Carte::activerCarte);
+        setDetailTour("Joueur "+ (super.id+1) +"\n");
         this.lanceDe();
-        setDetailTour ("Joueur "+ (super.id+1) + "\ngloire: "+ this.getPtGloire() + " or: "+ this.Plateau.getOr() +" FragementLuanire: " + this.Plateau.getFragmentLunaire() + " FragementSolaire: " + this.Plateau.getFragmentSolaire() +"\n");
+        setDetailTour ("gloire: "+ this.getPtGloire() + " or: "+ this.Plateau.getOr() +" FragementLuanire: " + this.Plateau.getFragmentLunaire() + " FragementSolaire: " + this.Plateau.getFragmentSolaire() +"\n");
     }
-    public void setDetailTour(String detailTour){this.detailTour=detailTour;}
+    public void setDetailTour(String detailTour){this.detailTour += detailTour;}
 
     /**
      * @return Une List de tout les bassins contenant toutes les faces achetable par le joueur
