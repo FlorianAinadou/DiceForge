@@ -110,10 +110,7 @@ public class Jeu {
         int[] egalite = new int[nbrJoueur];
         int[] ptGloireMoy = new int[nbrJoueur];
         int[] ptGloireMax = new int[nbrJoueur];
-        int[] ptGloireMin = new int[nbrJoueur];
-        for(int l = 0; l < nbrJoueur; l++){
-            ptGloireMin[l] = 1000;
-        }
+
         ArrayList<Integer> win;
         boolean affichage = nbrPartie <= 1;
         for(int i = 0; i<nbrPartie; i++ )
@@ -132,7 +129,6 @@ public class Jeu {
                 int ptGLoire = bot[k].getPtGloire();
                 ptGloireMoy[k] += ptGLoire;
                 ptGloireMax[k] = ptGloireMax[k] < ptGLoire ? ptGLoire : ptGloireMax[k];
-                ptGloireMin[k] = ptGloireMin[k] > ptGLoire ? ptGLoire : ptGloireMin[k];
             }
             initJeu();
         }
@@ -140,7 +136,6 @@ public class Jeu {
             System.out.print("Le joueur " + (bot[j].getIdJoueur()+1) + " a gagné " + gagnant[bot[j].getIdJoueur()]);
             System.out.println(" égalité " + egalite[bot[j].getIdJoueur()]);
             System.out.print("Avec une moyenne de " + (ptGloireMoy[j]/nbrPartie) + " Un max de : " + ptGloireMax[j]);
-            System.out.println(" Un min de : " + ptGloireMin[j]);
         }
     }
 

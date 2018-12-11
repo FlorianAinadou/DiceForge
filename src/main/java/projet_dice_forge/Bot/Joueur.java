@@ -290,7 +290,7 @@ public class Joueur {
         }
         StringBuilder s1 = new StringBuilder();
         s1.append(detailTour);
-        s1.append("Le joueur "+ (this.getIdJoueur()+1) + " achete la carte "+ carte.getIdCarte() + "\n");
+        s1.append("Le joueur "+ (this.getIdJoueur()+1) + " achete la carte "+ carte.toString() + "\n");
         detailTour = s1.toString();
     }
 

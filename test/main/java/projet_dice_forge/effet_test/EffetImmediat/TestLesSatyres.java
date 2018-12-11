@@ -7,10 +7,14 @@ import main.java.projet_dice_forge.Gestion_du_Jeu.Jeu;
 import main.java.projet_dice_forge.Partie_Iles.Iles;
 
 
+import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetImmediat.LesSatyres;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -45,8 +49,20 @@ public class TestLesSatyres {
         joueur1.activerEffetCarteImmRealJoueur();
         assertFalse(lesSatyres.isActiverOuPas());
 
+        ArrayList<Face> faces = lesSatyres.getListeFaceAppliquer();
+        ArrayList<Ressource> ressources = new ArrayList<>();
+        for(Face face : faces){
+            ressources.addAll(face.getRessource());
+        }
 
-        assertEquals(6,joueur1.getPlateauDuJoueur().getPointsDeGloire());
+        int num = 0;
+        for(Ressource res : ressources){
+            if(res.getTypeRessource().equals("Gloire")){
+                num += res.getNbRessources();
+            }
+        }
+
+        assertEquals((num+6),joueur1.getPtGloire());
     }
 
     /**
