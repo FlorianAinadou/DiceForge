@@ -16,6 +16,7 @@ public class De {
     // C'est un int qui définit le nombre de face d'un dé
     private final int nbFace = 6;
     private int id;
+    private Face faceactive;
 
     /**
      * Crée un dé des dés de base du jeu en fonction du dé voulu
@@ -38,6 +39,7 @@ public class De {
             this.de[5] = new Face();
             this.de[5].AjouterRessource(fragementSolaire);
             id=1;
+            this.faceactive=de[1];
         }
         if (string=="sombre"){
             for(  ; i<4 ;i++){
@@ -49,6 +51,7 @@ public class De {
             this.de[5]= new Face();
             this.de[5].AjouterRessource(fragementLunaire);
             id=2;
+            this.faceactive=de[1];
         }
     }
 
@@ -106,6 +109,10 @@ public class De {
     public int getIdDe(){
         return this.id;
     }
+
+    public void setFaceactive(Face face){this.faceactive=face;}
+
+    public Face getFaceactive(){return this.faceactive;}
 
 
 }

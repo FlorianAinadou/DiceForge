@@ -107,6 +107,7 @@ public class PlateauDesIles {
         iles.add(IlesN5());
         iles.add(IlesN6());
         iles.add(IlesN7());
+        this.nbJoueur=nbJoueur;
 
     }
 
