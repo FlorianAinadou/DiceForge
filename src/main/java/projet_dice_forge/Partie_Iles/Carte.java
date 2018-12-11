@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Carte implements Cloneable {
 
-    protected String nomDeLexploit;
+    protected final String nomDeLexploit;
     protected Ressource[] prix;
     protected Gloire gloire;
     protected int idCarte;
@@ -24,13 +24,14 @@ public class Carte implements Cloneable {
         this.idCarte=idCarte;
         this.activerOuPas=false;
     }
+    /*
     public Carte(int idCarte,Ressource[] prix, Gloire gloire,boolean activerOuPas){
         this.idCarte=idCarte;
         this.prix = prix;
         this.gloire=gloire;
         this.activerOuPas=false;
-
     }
+    */
 
 //    public abstract void activerEffetCarte(Joueur joueur);
 
@@ -54,9 +55,7 @@ public class Carte implements Cloneable {
         this.idCarte = idCarte;
     }
 
-    public void setNomDeLexploit(String nomDeLexploit) {
-        this.nomDeLexploit = nomDeLexploit;
-    }
+
 
     public void setPointDeGloire(Gloire gloire) {
         this.gloire= gloire;
@@ -117,6 +116,11 @@ public class Carte implements Cloneable {
         if (this.getPrixSolaire()!=0 && this.getPrixLunaire()!=0) return "all";
 
         return "";
+    }
+
+    @Override
+    public String toString(){
+        return nomDeLexploit;
     }
 
 

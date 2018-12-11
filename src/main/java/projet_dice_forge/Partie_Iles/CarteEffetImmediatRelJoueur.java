@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public abstract class CarteEffetImmediatRelJoueur extends Carte {
 
-    public CarteEffetImmediatRelJoueur(int idCarte, Ressource[] prix , Gloire gloire, boolean activerOuPas){
-        super(idCarte,prix,gloire,activerOuPas);
+    public CarteEffetImmediatRelJoueur(int idCarte,String nomDeLexploit, Ressource[] prix , Gloire gloire, boolean activerOuPas){
+        super(idCarte,nomDeLexploit,prix,gloire,activerOuPas);
     }
 
     public abstract void activerEffetImmCarteRealJoueur(Joueur joueur);

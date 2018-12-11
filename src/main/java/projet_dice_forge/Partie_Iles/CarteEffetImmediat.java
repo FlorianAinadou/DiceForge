@@ -10,8 +10,8 @@ import java.util.List;
 
 public abstract class CarteEffetImmediat extends Carte {
 
-    public CarteEffetImmediat(int idCarte, Ressource[] prix , Gloire gloire, boolean activerOuPas){
-        super(idCarte,prix,gloire,activerOuPas);
+    public CarteEffetImmediat(int idCarte,String nomDeLexploit, Ressource[] prix , Gloire gloire, boolean activerOuPas){
+        super(idCarte,nomDeLexploit,prix,gloire,activerOuPas);
     }
 
     public abstract void activerEffetCarte(Joueur joueur);

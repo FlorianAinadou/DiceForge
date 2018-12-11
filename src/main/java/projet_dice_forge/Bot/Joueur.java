@@ -244,33 +244,48 @@ public class Joueur {
     public void acheterCarte(Iles iles, Carte carte){
         carte.activerCarte();
         if(carte instanceof CarteEffetImmediat){
-            CarteEffetImmediat carteEffetImmediat=(CarteEffetImmediat)carte;
-            ListeCarteEffetImmediat.add(carteEffetImmediat);
-            iles.enleverCarte(carte);
-            ajouterPointDeGloire(carte);
-            iles.joueurEstSurIle();
+            if(iles.getListCartes().contains(carte)){
+                CarteEffetImmediat carteEffetImmediat=(CarteEffetImmediat)carte;
+                ListeCarteEffetImmediat.add(carteEffetImmediat);
+                iles.enleverCarte(carte);
+                ajouterPointDeGloire(carte);
+                iles.joueurEstSurIle();
+            }
+
+
         }
         else if(carte instanceof CarteEffetPermanent){
-            CarteEffetPermanent carteEffetPermanent=(CarteEffetPermanent)carte;
-            ListeCarteEffetPermanent.add(carteEffetPermanent);
-            iles.enleverCarte(carte);
-            ajouterPointDeGloire(carte);
-            iles.joueurEstSurIle();
+
+            if(iles.getListCartes().contains(carte)){
+                CarteEffetPermanent carteEffetPermanent = (CarteEffetPermanent) carte;
+                ListeCarteEffetPermanent.add(carteEffetPermanent);
+                iles.enleverCarte(carte);
+                ajouterPointDeGloire(carte);
+                iles.joueurEstSurIle();
+            }
+           
         }
 
         else if (carte instanceof CarteEffetImmediatRelJoueur){
-            CarteEffetImmediatRelJoueur carteEffetImmediatRelJoueur =(CarteEffetImmediatRelJoueur)carte;
-            ListeCarteEffetImmRealJoueur.add(carteEffetImmediatRelJoueur);
-            iles.enleverCarte(carte);
-            ajouterPointDeGloire(carte);
-            iles.joueurEstSurIle();
+            if(iles.getListCartes().contains(carte)){
+                CarteEffetImmediatRelJoueur carteEffetImmediatRelJoueur = (CarteEffetImmediatRelJoueur) carte;
+                ListeCarteEffetImmRealJoueur.add(carteEffetImmediatRelJoueur);
+                iles.enleverCarte(carte);
+                ajouterPointDeGloire(carte);
+                iles.joueurEstSurIle();
+            }
+
         }
         else if (carte instanceof CarteEffetImmediatRelRessource){
-            CarteEffetImmediatRelRessource carteEffetImmediatRelRessource=(CarteEffetImmediatRelRessource)carte;
-            ListeCarteEffetImmediatRelRessource.add(carteEffetImmediatRelRessource);
-            iles.enleverCarte(carte);
-            ajouterPointDeGloire(carte);
-            iles.joueurEstSurIle();
+            if(iles.getListCartes().contains(carte)) {
+                CarteEffetImmediatRelRessource carteEffetImmediatRelRessource = (CarteEffetImmediatRelRessource) carte;
+                ListeCarteEffetImmediatRelRessource.add(carteEffetImmediatRelRessource);
+                iles.enleverCarte(carte);
+                ajouterPointDeGloire(carte);
+                iles.joueurEstSurIle();
+            }
+
+
         }
         StringBuilder s1 = new StringBuilder();
         s1.append(detailTour);
@@ -344,7 +359,7 @@ public class Joueur {
     }
 
 
-/*
+
     public void activerEffetCarteImmediat(){
         for (CarteEffetImmediat carte: this.getListeCarteEffetImmediat()){
             if(carte.isActiverOuPas()){
@@ -354,8 +369,8 @@ public class Joueur {
         }
 
     }
-    */
 
+/*
     public void activerEffetCarteImmediat(){
         for(int i=0;i<getListeCarteEffetImmediat().size();i++){
             if(ListeCarteEffetImmediat.get(i).isActiverOuPas()){
@@ -366,6 +381,7 @@ public class Joueur {
         }
 
     }
+    */
 
 
 
@@ -374,7 +390,7 @@ public class Joueur {
      * les autres joueurs et d'appliquer les effets de chaque carte.
      */
 
-    /*
+
     public void activerEffetCarteImmRealJoueur(){
         for (CarteEffetImmediatRelJoueur carte: this.getListeCarteEffetImmRealJoueur()){
             if(carte.isActiverOuPas()){
@@ -384,7 +400,7 @@ public class Joueur {
         }
     }
 
-    */
+    /*
     public void activerEffetCarteImmRealJoueur(){
         for(int i=0;i<getListeCarteEffetImmRealJoueur().size();i++){
             if(ListeCarteEffetImmRealJoueur.get(i).isActiverOuPas()){
@@ -393,7 +409,7 @@ public class Joueur {
             }
         }
     }
-
+*/
 
 
     /**
@@ -525,7 +541,6 @@ public class Joueur {
             }
 
         }
-
         else {
             sombre = this.DeSombre.lancerLeDe();
             if(ActiverEffetLeMarteauDuForgeron){

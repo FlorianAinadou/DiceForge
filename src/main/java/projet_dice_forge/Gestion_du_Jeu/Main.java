@@ -10,5 +10,8 @@ public class Main {
 
         jeu = new Jeu(scanning.getNumPlayer(), scanning.whoAreThePlayers());
         jeu.lancerNPartie(scanning.getNumberOfGame());
+
+
+
     }
 }

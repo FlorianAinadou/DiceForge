@@ -25,7 +25,7 @@ public class LeMarteauDuForgeron extends CarteEffetImmediatRelRessource {
 
 
     public LeMarteauDuForgeron() {
-        super(11, new Ressource[] {new FragementLunaire(1) }, new Gloire(0), false);
+        super(11,"Le Marteau du Forgeron", new Ressource[] {new FragementLunaire(1) }, new Gloire(0), false);
     }
 
 

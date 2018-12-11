@@ -9,7 +9,7 @@ import main.java.projet_dice_forge.Ressource.Ressource;
 
 public class LePasseur extends CarteEffetImmediat {
     public LePasseur() {
-        super(6,new Ressource[] {new FragementLunaire(4) },new Gloire(12),false);
+        super(6,"Le Passeur",new Ressource[] {new FragementLunaire(4) },new Gloire(12),false);
     }
 
     public void activerEffetCarte(Joueur joueur) {

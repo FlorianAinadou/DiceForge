@@ -7,8 +7,8 @@ import main.java.projet_dice_forge.Ressource.Ressource;
 
 public abstract class CarteEffetPermanent extends Carte {
 
-    public CarteEffetPermanent(int idCarte, Ressource[] prix, Gloire gloire, boolean activerOuPas){
-        super(idCarte,prix,gloire,activerOuPas);
+    public CarteEffetPermanent(int idCarte,String nomDeLexploit, Ressource[] prix, Gloire gloire, boolean activerOuPas){
+        super(idCarte,nomDeLexploit,prix,gloire,activerOuPas);
     }
 
     public abstract void activerEffetCartePerm(Joueur joueur);

@@ -13,7 +13,7 @@ import java.util.Random;
 public class LAncien extends CarteEffetPermanent {
 
     public LAncien(){
-        super(10, new Ressource[]{new FragementSolaire(1)}, new Gloire(0), false);
+        super(10,"L'Ancien", new Ressource[]{new FragementSolaire(1)}, new Gloire(0), false);
 
     }
 

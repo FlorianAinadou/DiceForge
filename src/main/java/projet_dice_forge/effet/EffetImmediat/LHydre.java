@@ -10,7 +10,7 @@ import main.java.projet_dice_forge.Ressource.Ressource;
 public class LHydre extends CarteEffetImmediat {
 
     public LHydre(){
-        super(9, new Ressource[] {new FragementLunaire(5), new FragementSolaire(5)}, new Gloire(26), false);
+        super(9,"L'Hydre", new Ressource[] {new FragementLunaire(5), new FragementSolaire(5)}, new Gloire(26), false);
     }
 
     public void activerEffetCarte(Joueur joueur) {

@@ -15,7 +15,7 @@ import java.util.List;
 public class LaPince extends CarteEffetImmediat {
 
     public LaPince(){
-        super(2, new Ressource[] {new FragementLunaire(6) },new Gloire(8), false);
+        super(2,"La Pince", new Ressource[] {new FragementLunaire(6) },new Gloire(8), false);
     }
     public void activerEffetCarte(Joueur joueur) {
             joueur.lanceDe();

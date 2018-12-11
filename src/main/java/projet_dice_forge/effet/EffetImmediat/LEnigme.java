@@ -13,7 +13,7 @@ public class LEnigme extends CarteEffetImmediat {
     int nbFaveurMineur;
     int i;
     public LEnigme(){
-        super(5,new Ressource[] {new FragementSolaire(6) }, new Gloire(10), false);
+        super(5,"L'Enigme",new Ressource[] {new FragementSolaire(6) }, new Gloire(10), false);
     }
 
 
