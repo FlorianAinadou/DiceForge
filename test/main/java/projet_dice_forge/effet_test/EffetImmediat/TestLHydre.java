@@ -37,7 +37,7 @@ public class TestLHydre {
         joueur.activerEffetCarteImmediat();
 
         assertEquals(hydre.isActiverOuPas(),false);
-        assertEquals(26,joueur.getPointDeGloireCarte());
+        assertEquals(26,joueur.getPlateauDuJoueur().getPointsDeGloire());
 
 
 

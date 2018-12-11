@@ -42,6 +42,7 @@ public class Joueur {
         this.ListeCarteEffetImmRealJoueur=new ArrayList<>();
         this.ListeCarteEffetImmediatRelRessource = new ArrayList<>();
         this.adversaires=new ArrayList<>();
+        this.PointDeGloireCarte = 0;
     }
 
     public Joueur(int Idjoueur, De de1, De de2, PlateauDuJoueur Plateau){
@@ -69,14 +70,14 @@ public class Joueur {
         }
     }
     public  PlateauDuJoueur getPlateauDuJoueur(){
-        return Plateau;
+        return this.Plateau;
     }
 
     public int getPtGloire() {
-        return Plateau.getPointsDeGloire();
+        return this.Plateau.getPointsDeGloire();
     }
     public int getPtOr(){
-        return Plateau.getOr();
+        return this.Plateau.getOr();
     }
 
     public int getPtLunaire(){
@@ -300,7 +301,7 @@ public class Joueur {
      */
     public void ajouterPointDeGloire(Carte carte){
         int pointDeGloireGagnerAvecCarte = carte.getPointDeGloire().getNbRessources();
-        this.getPlateauDuJoueur().ajouterPointDeGloire(pointDeGloireGagnerAvecCarte);
+        this.getPlateauDuJoueur().ajouterPointDeGloire(carte.getPointDeGloire().getNbRessources());
 
     }
 
@@ -375,7 +376,8 @@ public class Joueur {
         for(int i=0;i<getListeCarteEffetImmediat().size();i++){
             if(ListeCarteEffetImmediat.get(i).isActiverOuPas()){
                 ListeCarteEffetImmediat.get(i).activerEffetCarte(this);
-                ListeCarteEffetImmediat.remove(i);
+                //ListeCarteEffetImmediat.remove(i);
+                ListeCarteEffetImmediat.get(i).desactiverCarte();
             }
 
         }
@@ -405,7 +407,8 @@ public class Joueur {
         for(int i=0;i<getListeCarteEffetImmRealJoueur().size();i++){
             if(ListeCarteEffetImmRealJoueur.get(i).isActiverOuPas()){
                 ListeCarteEffetImmRealJoueur.get(i).activerEffetImmCarteRealJoueur(this);
-                ListeCarteEffetImmRealJoueur.remove(i);
+                ListeCarteEffetImmRealJoueur.get(i).desactiverCarte();
+                //ListeCarteEffetImmRealJoueur.remove(i);
             }
         }
     }

@@ -23,7 +23,7 @@ public class TestLaMeduse {
         joueur.acheterCarte(iles,laMeduse); // achat d'une première carte par le joueur
         assertNotNull(joueur.getListeCarteEffetImmediat()); // vérification liste contient le
         assertTrue(joueur.getListeCarteEffetImmediat().get(0).isActiverOuPas());
-        assertEquals(14,joueur.getPointDeGloireCarte());
+        assertEquals(14,joueur.getPlateauDuJoueur().getPointsDeGloire());
         joueur.activerEffetCarteImmediat();
         assertFalse(joueur.getListeCarteEffetImmediat().get(0).isActiverOuPas());
 
@@ -33,7 +33,7 @@ public class TestLaMeduse {
         assertFalse(joueur.getListeCarteEffetImmediat().get(0).isActiverOuPas());
         joueur.activerEffetCarteImmediat();
         assertFalse(joueur.getListeCarteEffetImmediat().get(1).isActiverOuPas());
-        assertEquals(28,joueur.getPointDeGloireCarte());
+        assertEquals(28,joueur.getPlateauDuJoueur().getPointsDeGloire());
 
     }
 }
