@@ -21,7 +21,7 @@ public class Emeline extends Bot {
     protected  boolean rejouer;
     public Emeline(int id) {
         super(id);
-        rejouer=true;
+        rejouer=false;
     }
 
     /**
@@ -33,12 +33,11 @@ public class Emeline extends Bot {
     @Override
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         int monOr=this.getPlateauDuJoueur().getOr();
-        //int mesSolaires=this.getPlateauDuJoueur().getFragmentSolaire();
-        //int mesLunaires=this.getPlateauDuJoueur().getFragmentLunaire();
+
         super.jouer(temple,plateauDesIles);
         //this.getListeCarteEffetPermanent().forEach(carteEffetPermanent -> carteEffetPermanent.activerEffetCartePerm(this));
 
-        if (tour<4) {
+        if (tour<5) {
             if (this.puisJeAcheterLeCoffre(plateauDesIles) && !this.contientCarte(3)) {
                 this.acheterCarte(plateauDesIles.getIlesNb(7), plateauDesIles.getIlesNb(1).getCarte(3));
             }
@@ -72,7 +71,7 @@ public class Emeline extends Bot {
                         this.acheterCarte(plateauDesIles.getIlesNb(3), plateauDesIles.getIlesNb(3).getCarte(6));
                     }
                     else if (getPlateauDuJoueur().getFragmentSolaire()>=6 && plateauDesIles.getIlesNb(4).getCarte(5)!= null){
-                        this.acheterCarte(plateauDesIles.getIlesNb(4), plateauDesIles.getIlesNb(4).getCarte(6));
+                        this.acheterCarte(plateauDesIles.getIlesNb(4), plateauDesIles.getIlesNb(4).getCarte(5));
                             }
                     }
 
@@ -83,11 +82,12 @@ public class Emeline extends Bot {
                     this.accederAuMeilleurBassin(temple);
             }
         }
+        int mesSolaires=this.getPlateauDuJoueur().getFragmentSolaire();
+        int mesLunaires=this.getPlateauDuJoueur().getFragmentLunaire();
 
-       if(tour>7 && getPlateauDuJoueur().getFragmentSolaire()>4 && this.getPlateauDuJoueur().getFragmentLunaire()>4 && rejouer){
-            rejouer=false;
+       if(tour>7 && mesSolaires>4 && rejouer || tour>7 && mesSolaires>=2 && mesLunaires>=3 && rejouer){
+
             tour-=1;
-            this.getPlateauDuJoueur().enleverFragmentSolaire(2);
         }
 
 
@@ -306,19 +306,13 @@ public class Emeline extends Bot {
         return true;
     }
 
-   /* public boolean puisJeAcheterLeMarteau(PlateauDesIles plateauDesIles){
-        if(this.getPlateauDuJoueur().getFragmentLunaire()>=1 && plateauDesIles.getIlesNb(1).getCarte(1)!=null) return true;
 
-        return false;
-    }*/
 
     public boolean puisJeAcheterLeCoffre(PlateauDesIles plateauDesIles){
         if(this.getPlateauDuJoueur().getFragmentLunaire()>=1 && plateauDesIles.getIlesNb(4).getCarte(3)!=null) return true;
 
         return false;
     }
-
-    //public Face quelleFaceAiJeAchetéCeTour(){ }
 
 }
 

@@ -4,6 +4,7 @@ import main.java.projet_dice_forge.Partie_Bassin.*;
 import main.java.projet_dice_forge.Partie_Iles.*;
 import main.java.projet_dice_forge.Plateau_Joueur.*;
 import main.java.projet_dice_forge.Ressource.*;
+import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -76,13 +77,12 @@ class EmelineTest {
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
         bot.getPlateauDuJoueur().ajouterFragSol(6);
         bot.getPlateauDuJoueur().ajouterFragLun(6);
-        assertEquals(true, bot.puisjeAcheterLaCarteLaaPlusChere(plateauDesIles));
+        assertTrue( bot.puisjeAcheterLaCarteLaaPlusChere(plateauDesIles));
     }
 
     @Test
     void dansQuelleIleAller() {
         Emeline bot = new Emeline(2);
-        Temple temple= new Temple();
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
         bot.getPlateauDuJoueur().ajouterFragSol(0);
         bot.getPlateauDuJoueur().ajouterFragLun(1);
@@ -91,13 +91,22 @@ class EmelineTest {
 
     @Test
     void puisJeAcheterUneCarte() {
+        Emeline bot = new Emeline(2);
+        PlateauDesIles plateauDesIles= new PlateauDesIles(1);
+        bot.getPlateauDuJoueur().ajouterFragSol(0);
+        bot.getPlateauDuJoueur().ajouterFragLun(1);
+        assertTrue(bot.puisJeAcheterUneCarte(plateauDesIles));
     }
 
-    @Test
-    void puisJeAcheterLeMarteau() {
-    }
-
+//On vérfie qu'en cas d'absence de la carte "Le coffre du forgeron dans l'ile, le resultat retouné par la méthode soit false"
     @Test
     void puisJeAcheterLeCoffre() {
+        Emeline bot = new Emeline(1);
+        PlateauDesIles plateauDesIles= new PlateauDesIles(1);
+        plateauDesIles.getIlesNb(1).enleverCarte(new LecoffreDuForgeron());
+        plateauDesIles.getIlesNb(1).enleverCarte(new LecoffreDuForgeron());
+        bot.getPlateauDuJoueur().ajouterFragSol(0);
+        bot.getPlateauDuJoueur().ajouterFragLun(1);
+        assertTrue(!bot.puisJeAcheterLeCoffre(plateauDesIles));
     }
 }
