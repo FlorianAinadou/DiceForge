@@ -37,7 +37,7 @@ public class Emeline extends Bot {
         super.jouer(temple,plateauDesIles);
         //this.getListeCarteEffetPermanent().forEach(carteEffetPermanent -> carteEffetPermanent.activerEffetCartePerm(this));
 
-        if (tour<5) {
+        if (tour<6) {
             if (this.puisJeAcheterLeCoffre(plateauDesIles) && !this.contientCarte(3)) {
                 this.acheterCarte(plateauDesIles.getIlesNb(7), plateauDesIles.getIlesNb(1).getCarte(3));
             }
@@ -279,10 +279,10 @@ public class Emeline extends Bot {
 
         else {
             for (int j = 1; j < 7; j++) {
-                if(plateauDesIles.getIlesNb(j).getListCartes().size()-1>0) {
+                if(plateauDesIles.getIlesNb(j).getListCartes().size()-1>0 ) {
                     boolean act1 = plateauDesIles.getIlesNb(j).getListCartes().get(plateauDesIles.getIlesNb(j).getListCartes().size() - 1).getPrixLunaire() > prixIle;
                     boolean act2 = plateauDesIles.getIlesNb(j).getListCartes().get(plateauDesIles.getIlesNb(j).getListCartes().size() - 1).getPrixLunaire() < mesLunaires;
-                    if (act1 && act2 &&  plateauDesIles.getIlesNb(j).getListCartes().size()!=0 )
+                    if (act1 && act2 &&  plateauDesIles.getIlesNb(j).getListCartes().size()!=0)
                         prixIle = plateauDesIles.getIlesNb(j).getListCartes().get(plateauDesIles.getIlesNb(j).getListCartes().size() - 1).getPrixLunaire();
                     ile2 = j;
                 }
