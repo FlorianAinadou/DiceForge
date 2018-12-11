@@ -5,10 +5,11 @@ import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 import main.java.projet_dice_forge.effet.EffetPermanent.LAncien;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 
 public class LAncienTest {
 

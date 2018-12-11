@@ -3,10 +3,9 @@ package main.java.projet_dice_forge.effet_test.EffetPermanent;
 import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 import main.java.projet_dice_forge.effet.EffetPermanent.LeMarteauDuForgeron;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class TestLeMarteauDuForgeron {
 

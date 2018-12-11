@@ -1,14 +1,16 @@
 package main.java.projet_dice_forge.Plateau_Iles;
 
-import main.java.projet_dice_forge.Partie_Bassin.Bassin;
+
 import main.java.projet_dice_forge.Partie_Bassin.Temple;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class TempleTest {
     Temple temple = new Temple();

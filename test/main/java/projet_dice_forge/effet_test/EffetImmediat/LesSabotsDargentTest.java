@@ -7,9 +7,10 @@ import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Ressource.Or;
 import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetPermanent.LesSabotsDargent;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
 
 
 class LesSabotsDargentTest {

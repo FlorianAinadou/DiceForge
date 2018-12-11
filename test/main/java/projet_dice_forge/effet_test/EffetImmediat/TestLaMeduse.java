@@ -3,9 +3,13 @@ package main.java.projet_dice_forge.effet_test.EffetImmediat;
 import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.effet.EffetImmediat.LaMeduse;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+
 
 public class TestLaMeduse {
 

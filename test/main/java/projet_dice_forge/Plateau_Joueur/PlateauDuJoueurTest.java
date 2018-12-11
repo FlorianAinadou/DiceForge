@@ -1,8 +1,7 @@
 package main.java.projet_dice_forge.Plateau_Joueur;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 class PlateauDuJoueurTest {
     PlateauDuJoueur plateauDuJoueur = new PlateauDuJoueur(9);

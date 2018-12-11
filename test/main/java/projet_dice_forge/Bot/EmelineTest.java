@@ -4,10 +4,10 @@ import main.java.projet_dice_forge.Partie_Bassin.*;
 import main.java.projet_dice_forge.Partie_Iles.*;
 import main.java.projet_dice_forge.Plateau_Joueur.*;
 import main.java.projet_dice_forge.Ressource.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 class EmelineTest {
 
@@ -17,7 +17,7 @@ class EmelineTest {
 
 
     @Test
-    void accederAuMeilleurBassin() {
+    public void accederAuMeilleurBassin() {
         Emeline bot = new Emeline(1);
         Temple temple= new Temple();
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
@@ -27,7 +27,7 @@ class EmelineTest {
     }
 
     @Test
-    void quelleFaceChanger() {
+    public void quelleFaceChanger() {
         Emeline bot = new Emeline(1);
         Temple temple= new Temple();
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
@@ -36,7 +36,7 @@ class EmelineTest {
     }
 
     @Test
-    void quelleFaceAcheter() {
+    public void quelleFaceAcheter() {
         Emeline bot = new Emeline(1);
         Temple temple= new Temple();
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
@@ -47,7 +47,7 @@ class EmelineTest {
     }
 
     @Test
-    void quelDeChanger() {
+    public void quelDeChanger() {
         Emeline bot = new Emeline(1);
         Temple temple= new Temple();
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
@@ -57,7 +57,7 @@ class EmelineTest {
     }
 
     @Test
-    void quelEstLeMeilleurBassin() {
+    public void quelEstLeMeilleurBassin() {
         Emeline bot = new Emeline(1);
         Temple temple= new Temple();
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
@@ -66,11 +66,11 @@ class EmelineTest {
     }
 
     @Test
-    void quelleCarteAcheter() {
+    public void quelleCarteAcheter() {
     }
 
     @Test
-    void puisjeAcheterLaCarteLaaPlusChere() {
+    public void puisjeAcheterLaCarteLaaPlusChere() {
         Emeline bot = new Emeline(1);
         Temple temple= new Temple();
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
@@ -80,7 +80,7 @@ class EmelineTest {
     }
 
     @Test
-    void dansQuelleIleAller() {
+    public void dansQuelleIleAller() {
         Emeline bot = new Emeline(2);
         Temple temple= new Temple();
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
@@ -90,14 +90,14 @@ class EmelineTest {
     }
 
     @Test
-    void puisJeAcheterUneCarte() {
+    public void puisJeAcheterUneCarte() {
     }
 
     @Test
-    void puisJeAcheterLeMarteau() {
+    public void puisJeAcheterLeMarteau() {
     }
 
     @Test
-    void puisJeAcheterLeCoffre() {
+    public void puisJeAcheterLeCoffre() {
     }
 }

@@ -5,12 +5,11 @@ package main.java.projet_dice_forge.Plateau_Joueur;
 import main.java.projet_dice_forge.Ressource.FragementSolaire;
 import main.java.projet_dice_forge.Ressource.Or;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
 
 
 class DeTest {

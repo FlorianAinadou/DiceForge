@@ -5,16 +5,20 @@ import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Ressource.Ressource;
 import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
+
 
 
 public class LeCoffreDuForgeronTest {
 
     @Test
-    void LeCoffreDuForgeron(){
+    public void LeCoffreDuForgeron(){
         LecoffreDuForgeron lecoffreDuForgeron = new LecoffreDuForgeron();
         Ressource[] ressources = lecoffreDuForgeron.getPrix();
         assertEquals(ressources[0].getTypeRessource(),"FragementLunaire" );
@@ -22,7 +26,7 @@ public class LeCoffreDuForgeronTest {
         assertEquals(lecoffreDuForgeron.getPointDeGloire().getNbRessources(),2);
     }
     @Test
-    void activerEffetCarte(){
+    public void activerEffetCarte(){
         Joueur joueur = new Joueur(1);
         LecoffreDuForgeron lecoffreDuForgeron = new LecoffreDuForgeron();
         Iles ile = new Iles();

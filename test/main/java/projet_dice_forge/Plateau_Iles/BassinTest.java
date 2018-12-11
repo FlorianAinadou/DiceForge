@@ -5,12 +5,12 @@ import main.java.projet_dice_forge.Partie_Bassin.Bassin;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
 import main.java.projet_dice_forge.Ressource.Gloire;
 import main.java.projet_dice_forge.Ressource.Or;
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
 
 public class BassinTest {
     Bassin bassinTest1 = new Bassin(2);
