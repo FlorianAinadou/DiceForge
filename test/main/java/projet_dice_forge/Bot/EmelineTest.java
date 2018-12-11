@@ -10,7 +10,10 @@ import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+
 
 
 class EmelineTest {
@@ -91,13 +94,8 @@ class EmelineTest {
         bot.getPlateauDuJoueur().ajouterFragLun(1);
         assertEquals(1, bot.dansQuelleIleAller(plateauDesIles));
     }
-
+    
     @Test
-    public void puisJeAcheterLeMarteau() {
-    }
-
-
-
     public void puisJeAcheterUneCarte() {
         Emeline bot = new Emeline(2);
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
@@ -108,7 +106,8 @@ class EmelineTest {
 
 //On vérfie qu'en cas d'absence de la carte "Le coffre du forgeron dans l'ile, le resultat retouné par la méthode soit false"
     @Test
-    public void puisJeAcheterLeCoffre() {
+    public void puisJeAcheterLeCoffre(){
+
         Emeline bot = new Emeline(1);
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
         plateauDesIles.getIlesNb(1).enleverCarte(new LecoffreDuForgeron());
@@ -116,6 +115,5 @@ class EmelineTest {
         bot.getPlateauDuJoueur().ajouterFragSol(0);
         bot.getPlateauDuJoueur().ajouterFragLun(1);
         assertTrue(!bot.puisJeAcheterLeCoffre(plateauDesIles));
-
     }
 }
