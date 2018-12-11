@@ -43,11 +43,14 @@ public class FragmentLunaireTest {
 
     @Test
     public void EnleverRessourceTest(){
+        fragementLunaire.setRessources(0);
+        fragementLunaire.ajoutRessources(2);
         fragementLunaire.enleverRessources(2);
-        assertEquals(fragementLunaire.getNbRessources(),2);
+        assertEquals(fragementLunaire.getNbRessources(),0);
+        fragementLunaire.ajoutRessources(6);
         fragementLunaire.enleverRessources(1);
-        assertEquals(fragementLunaire.getNbRessources(),1);
+        assertEquals(fragementLunaire.getNbRessources(),5);
         fragementLunaire.enleverRessources(5);
-        assertEquals(fragementLunaire.getNbRessources(),1);
+        assertEquals(fragementLunaire.getNbRessources(),0);
     }
 }

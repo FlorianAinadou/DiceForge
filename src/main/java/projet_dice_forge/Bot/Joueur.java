@@ -173,13 +173,7 @@ public class Joueur {
     }
 
     public void acheterFace(Temple temp, Face acheter, Face echange, int idDe) {
-        int size = temp.getBassins().size();
-        for (int i = 0; i < size; i++) {
-            Bassin bas = temp.getBassins().get(i);
-            if (bas.faceIsIn(acheter)) {
-                //this.Plateau.enleverOr(temp.getBassins().get(i).getCout());
-            }
-        }
+
         echangerFace(acheter, echange, idDe);
         temp.deleteFace(echange);
         StringBuilder stringBuilder = new StringBuilder(detailTour);

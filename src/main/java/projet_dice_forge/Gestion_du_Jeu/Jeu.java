@@ -130,12 +130,11 @@ public class Jeu {
                 ptGloireMoy[k] += ptGLoire;
                 ptGloireMax[k] = ptGloireMax[k] < ptGLoire ? ptGLoire : ptGloireMax[k];
             }
-            initJeu();
         }
         for(int j = 0; j<nbrJoueur; j++) {
             System.out.print("Le joueur " + (bot[j].getIdJoueur()+1) + " a gagné " + gagnant[bot[j].getIdJoueur()]);
             System.out.println(" égalité " + egalite[bot[j].getIdJoueur()]);
-            System.out.print("Avec une moyenne de " + (ptGloireMoy[j]/nbrPartie) + " Un max de : " + ptGloireMax[j]);
+            System.out.println("Avec une moyenne de " + (ptGloireMoy[j]/nbrPartie) + " Un max de : " + ptGloireMax[j]);
         }
     }
 

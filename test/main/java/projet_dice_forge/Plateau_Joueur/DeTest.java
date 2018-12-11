@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertFalse;
 
 
-class DeTest {
+public class DeTest {
     De deTesteur= new De("sombre");
     De deTesteur2= new De("claire");
 

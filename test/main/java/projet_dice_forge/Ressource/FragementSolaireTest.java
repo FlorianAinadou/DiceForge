@@ -45,11 +45,14 @@ public class FragementSolaireTest {
 
     @Test
     public void EnleverRessourceTest(){
+        fragementSolaire.setRessources(0);
+        fragementSolaire.ajoutRessources(8);
         fragementSolaire.enleverRessources(2);
-        assertEquals(fragementSolaire.getNbRessources(),2);
+        assertEquals(fragementSolaire.getNbRessources(),4);
         fragementSolaire.enleverRessources(1);
-        assertEquals(fragementSolaire.getNbRessources(),1);
+        assertEquals(fragementSolaire.getNbRessources(),3);
+        fragementSolaire.ajoutRessources(2);
         fragementSolaire.enleverRessources(5);
-        assertEquals(fragementSolaire.getNbRessources(),1);
+        assertEquals(fragementSolaire.getNbRessources(),0);
     }
 }

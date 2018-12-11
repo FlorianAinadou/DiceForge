@@ -14,7 +14,7 @@ public class LesAilesDeLaGardienneTest {
     public void LesAilesDeLaGardienne() {
         LesAilesDeLaGardienne lesAilesDeLaGardienne = new LesAilesDeLaGardienne();
         assertEquals(lesAilesDeLaGardienne.getIdCarte(), 12);
-        assertEquals(lesAilesDeLaGardienne.getPointDeGloire().getNbRessources(), 2);
+        assertEquals(lesAilesDeLaGardienne.getPointDeGloire().getNbRessources(), 4);
     }
 
     @Test

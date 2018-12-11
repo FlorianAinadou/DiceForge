@@ -70,6 +70,10 @@ public class Face {
     @Override
     public boolean equals(Object other)
     {
+        if(other == this)
+        {
+            return true;
+        }
         if(other instanceof Face && other != null) {
             Face face = (Face) other;
             if(face.ListeResource.size() != this.ListeResource.size()) return false;

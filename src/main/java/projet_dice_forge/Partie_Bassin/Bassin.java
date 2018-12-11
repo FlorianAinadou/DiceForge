@@ -121,8 +121,9 @@ public class Bassin {
     }
 
     public boolean faceIsIn(Face face) {
-        for(Face fac : this.ListFace) {
-            if(face.equals(fac)) return true;
+        int size = ListFace.size();
+        for(int i = 0; i < size; i++) {
+            if(face.equals(ListFace.get(i))) return true;
         }
         return false;
     }

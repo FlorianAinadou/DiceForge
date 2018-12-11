@@ -45,10 +45,13 @@ public class GloireTest {
 
     @Test
     public  void EnleverRessourceTest(){
+        gloire.setRessources(0);
+        gloire.ajoutRessources(4);
         gloire.enleverRessources(2);
         assertEquals(gloire.getNbRessources(),2);
         gloire.enleverRessources(1);
         assertEquals(gloire.getNbRessources(),1);
+        gloire.ajoutRessources(5);
         gloire.enleverRessources(5);
         assertEquals(gloire.getNbRessources(),1);
     }

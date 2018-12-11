@@ -45,11 +45,14 @@ public class OrTest {
 
     @Test
     public void EnleverRessourceTest(){
+        or.setRessources(0);
+        or.ajoutRessources(10);
         or.enleverRessources(5);
-        assertEquals(or.getNbRessources(),1);
+        assertEquals(or.getNbRessources(),5);
         or.enleverRessources(1);
-        assertEquals(or.getNbRessources(),0);
+        assertEquals(or.getNbRessources(),4);
+        or.ajoutRessources(100);
         or.enleverRessources(5);
-        assertEquals(or.getNbRessources(),0);
+        assertEquals(or.getNbRessources(),7);
     }
 }

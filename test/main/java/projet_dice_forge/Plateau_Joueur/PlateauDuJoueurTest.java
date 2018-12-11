@@ -3,7 +3,7 @@ package main.java.projet_dice_forge.Plateau_Joueur;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-class PlateauDuJoueurTest {
+public class PlateauDuJoueurTest {
     PlateauDuJoueur plateauDuJoueur = new PlateauDuJoueur(9);
 
 
