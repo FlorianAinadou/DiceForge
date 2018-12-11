@@ -58,6 +58,7 @@ public class Jeu {
                 if(bot[j].isRejouer()){
                     bot[j].jouer(temple, plateauDesIles);
                     bot[j].déjaJouer();
+                    bot[j].getPlateauDuJoueur().enleverFragmentSolaire(2);
                 }
                 if(affichage) {
                     System.out.println(bot[j].getDetailTour());

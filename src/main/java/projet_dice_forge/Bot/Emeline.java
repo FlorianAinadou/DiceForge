@@ -33,7 +33,8 @@ public class Emeline extends Bot {
     @Override
     public void jouer(Temple temple, PlateauDesIles plateauDesIles) {
         int monOr=this.getPlateauDuJoueur().getOr();
-        int mesSolaires=this.getPlateauDuJoueur().getFragmentSolaire();
+        //int mesSolaires=this.getPlateauDuJoueur().getFragmentSolaire();
+        //int mesLunaires=this.getPlateauDuJoueur().getFragmentLunaire();
         super.jouer(temple,plateauDesIles);
         //this.getListeCarteEffetPermanent().forEach(carteEffetPermanent -> carteEffetPermanent.activerEffetCartePerm(this));
 
@@ -83,7 +84,7 @@ public class Emeline extends Bot {
             }
         }
 
-       if(tour>7 && mesSolaires>2 && rejouer){
+       if(tour>7 && getPlateauDuJoueur().getFragmentSolaire()>4 && this.getPlateauDuJoueur().getFragmentLunaire()>4 && rejouer){
             rejouer=false;
             tour-=1;
             this.getPlateauDuJoueur().enleverFragmentSolaire(2);
