@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public class TestLaMeduse {
 
     @Test
-    void LaMeduse(){
+    public void LaMeduse(){
         Joueur joueur = new Joueur(1);
         LaMeduse laMeduse = new LaMeduse();LaMeduse laMeduse1 = new LaMeduse();
         Iles iles = new Iles();

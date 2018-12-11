@@ -7,32 +7,32 @@ import static org.junit.Assert.assertFalse;
 public class FragmentLunaireTest {
     FragementLunaire fragementLunaire = new FragementLunaire(4);
     @Test
-    void getNombreRessourceTest(){
+    public void getNombreRessourceTest(){
         assertEquals(fragementLunaire.getNbRessources(),4);
         assertFalse(fragementLunaire.getNbRessources()==66);
 
     }
 
     @Test
-    void getTypeRessourceTest(){
+    public void getTypeRessourceTest(){
         assertEquals(fragementLunaire.getTypeRessource(),"FragementLunaire");
         assertFalse(fragementLunaire.getTypeRessource().equals("Bonjour"));
     }
 
     @Test
-    void getIdRessourceTest(){
+    public void getIdRessourceTest(){
         assertEquals(fragementLunaire.getIdRessource(),4);
         assertFalse(fragementLunaire.getIdRessource()==1);
     }
     @Test
-    void setRessourceTest(){
+    public void setRessourceTest(){
         fragementLunaire.setRessources(98);
         assertEquals(fragementLunaire.getNbRessources(),98);
         assertFalse(fragementLunaire.getNbRessources()==4);
     }
 
     @Test
-    void AjouterRessourceTest(){
+    public void AjouterRessourceTest(){
         fragementLunaire.ajoutRessources(2);
         assertEquals(fragementLunaire.getNbRessources(),6);
         fragementLunaire.ajoutRessources(12);
@@ -42,7 +42,7 @@ public class FragmentLunaireTest {
     }
 
     @Test
-    void EnleverRessourceTest(){
+    public void EnleverRessourceTest(){
         fragementLunaire.enleverRessources(2);
         assertEquals(fragementLunaire.getNbRessources(),2);
         fragementLunaire.enleverRessources(1);

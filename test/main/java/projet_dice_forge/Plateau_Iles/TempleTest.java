@@ -16,7 +16,7 @@ class TempleTest {
     Temple temple = new Temple();
 
     @Test
-    void getBassinTest(){
+    public void getBassinTest(){
         assertEquals(temple.getBassin(2).getCout(),2 );
         assertEquals(temple.getBassin(3).getCout(),3 );
         assertEquals(temple.getBassin(4).getCout(),4);
@@ -27,7 +27,7 @@ class TempleTest {
 
     }
     @Test
-    void getListFaceTest(){
+    public  void getListFaceTest(){
         assertEquals(temple.getBassin(2).getListFace(), temple.getFaceFromBassin(2));
         assertEquals(temple.getBassin(3).getListFace(), temple.getFaceFromBassin(3));
         assertEquals(temple.getBassin(4).getListFace(), temple.getFaceFromBassin(4));

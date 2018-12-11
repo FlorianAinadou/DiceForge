@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class LAncienTest {
 
     @Test
-    void LAncien(){
+    public void LAncien(){
         LAncien lAncien = new LAncien();
         assertEquals(lAncien.getIdCarte(),10);
         assertEquals(lAncien.getPointDeGloire().getNbRessources(),0);
@@ -22,7 +22,7 @@ public class LAncienTest {
 
     }
     @Test
-    void activerEffetCartePerm(){
+    public  void activerEffetCartePerm(){
         Joueur joueur = new Joueur(1);
         LAncien lAncien = new LAncien();
         Iles ile = new Iles();

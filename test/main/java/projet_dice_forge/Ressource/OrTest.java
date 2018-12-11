@@ -9,32 +9,32 @@ public class OrTest {
 
 
     @Test
-    void getNombreRessourceTest(){
+    public void getNombreRessourceTest(){
         assertEquals(or.getNbRessources(),6);
         assertFalse(or.getNbRessources()==66);
 
     }
 
     @Test
-    void getTypeRessourceTest(){
+    public void getTypeRessourceTest(){
         assertEquals(or.getTypeRessource(),"Or");
         assertFalse(or.getTypeRessource().equals("Bonjour"));
     }
 
     @Test
-    void getIdRessourceTest(){
+    public  void getIdRessourceTest(){
         assertEquals(or.getIdRessource(),1);
         assertFalse(or.getIdRessource()==4);
     }
     @Test
-    void setRessourceTest(){
+    public void setRessourceTest(){
         or.setRessources(98);
         assertEquals(or.getNbRessources(),98);
         assertFalse(or.getNbRessources()==6);
     }
 
     @Test
-    void AjouterRessourceTest(){
+    public void AjouterRessourceTest(){
         or.ajoutRessources(2);
         assertEquals(or.getNbRessources(),8);
         or.ajoutRessources(12);
@@ -44,7 +44,7 @@ public class OrTest {
     }
 
     @Test
-    void EnleverRessourceTest(){
+    public void EnleverRessourceTest(){
         or.enleverRessources(5);
         assertEquals(or.getNbRessources(),1);
         or.enleverRessources(1);

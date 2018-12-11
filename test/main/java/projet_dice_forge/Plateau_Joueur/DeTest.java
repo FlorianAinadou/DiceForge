@@ -17,7 +17,7 @@ class DeTest {
     De deTesteur2= new De("claire");
 
     @Test
-    void ajouterUneFace() {
+    public  void ajouterUneFace() {
         assertNotNull(deTesteur);
         assertEquals(deTesteur.getface(0).getRessource().get(0).getTypeRessource(), "Or");
         assertEquals(deTesteur.getface(1).getRessource().get(0).getTypeRessource(), "Or");
@@ -58,12 +58,12 @@ class DeTest {
     }*/
 
     @Test
-    void lancerLeDe() {
+    public void lancerLeDe() {
         assertNotNull(deTesteur.lancerLeDe());
     }
 
     @Test
-    void getValeurDe() {
+    public void getValeurDe() {
         assertEquals(7, deTesteur.getValeurDe());
         assertFalse(9== deTesteur.getValeurDe());
         assertEquals(6, deTesteur2.getValeurDe());

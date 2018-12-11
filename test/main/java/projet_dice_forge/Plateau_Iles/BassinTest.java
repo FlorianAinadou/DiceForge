@@ -21,7 +21,7 @@ public class BassinTest {
 
 
     @Test
-    void getcout(){
+    public  void getcout(){
         assertEquals(2,bassinTest1.getCout());
         assertFalse(bassinTest1.getCout()==10);
 
@@ -29,14 +29,14 @@ public class BassinTest {
 
 
     @Test
-    void setCout(){
+    public void setCout(){
         bassinTest1.setCout(90);
         assertEquals(90,bassinTest1.getCout());
         assertFalse(bassinTest1.getCout()==2);
     }
 
     @Test
-    void AjouterFaceBassin(){
+    public void AjouterFaceBassin(){
         bassinTest1.AjouterFaceBassin(faceTest1,3);
         faceTest1.AjouterRessource(new Or(2));
         faceTest2.AjouterRessource(new Gloire(3));
@@ -57,7 +57,7 @@ public class BassinTest {
     }
 
     @Test
-    void EnleverFaceBasinTest(){
+    public void EnleverFaceBasinTest(){
         bassinTest1.AjouterFaceBassin(faceTest1,3);
         bassinTest1.EnleverFaceBassin(faceTest1);
         ListFaceTest.add(0,faceTest1);
@@ -70,7 +70,7 @@ public class BassinTest {
     }
 
     @Test
-    void AcheterFaceTest(){
+    public void AcheterFaceTest(){
         joueurTest1.getPlateauDuJoueur().setOr(10);
         bassinTest1.AjouterFaceBassin(faceTest1,3);
         bassinTest1.AcheterFace(faceTest1,joueurTest1);
@@ -82,7 +82,7 @@ public class BassinTest {
     }
 
     @Test
-    void TailleBassinTest(){
+    public void TailleBassinTest(){
         bassinTest1.AjouterFaceBassin(faceTest1,3);
         assertEquals(3,bassinTest1.getListFace().size());
         bassinTest1.AjouterFaceBassin(faceTest1,3);
@@ -92,7 +92,7 @@ public class BassinTest {
     }
 
     @Test
-    void faceIsInTest(){
+    public void faceIsInTest(){
         faceTest1.AjouterRessource(new Or(2));
         faceTest2.AjouterRessource(new Gloire(3));
         bassinTest1.AjouterFaceBassin(faceTest1,2);

@@ -8,7 +8,7 @@ class PlateauDuJoueurTest {
 
 
     @Test
-    void ajouterOr() {
+    public void ajouterOr() {
         plateauDuJoueur.ajouterOr(6);
         assertEquals(6, plateauDuJoueur.getOr());
         plateauDuJoueur.ajouterOr(14);
@@ -16,7 +16,7 @@ class PlateauDuJoueurTest {
     }
 
     @Test
-    void enleverOr() {
+    public void enleverOr() {
         plateauDuJoueur.ajouterOr(6);
         plateauDuJoueur.enleverOr(5);
         assertEquals(1, plateauDuJoueur.getOr());
@@ -24,28 +24,28 @@ class PlateauDuJoueurTest {
     }
 
     @Test
-    void ajouterPointDeGloire() {
+    public  void ajouterPointDeGloire() {
         plateauDuJoueur.ajouterPointDeGloire(5);
         assertEquals(5,plateauDuJoueur.getPointsDeGloire());
     }
 
 
     @Test
-    void setMaxOr() {
+    public void setMaxOr() {
         plateauDuJoueur.setMaxOr(5);
         assertEquals(5,plateauDuJoueur.getMaxOr());
     }
 
 
     @Test
-    void enleverFragmentSolaire() {
+    public void enleverFragmentSolaire() {
         plateauDuJoueur.ajouterFragSol(6);
         plateauDuJoueur.enleverFragmentSolaire(5);
         assertEquals(1,plateauDuJoueur.getFragmentSolaire());
     }
 
     @Test
-    void enleverFragmentLunaire() {
+    public void enleverFragmentLunaire() {
         plateauDuJoueur.ajouterFragLun(6);
         plateauDuJoueur.enleverFragmentLunaire(5);
         assertEquals(1,plateauDuJoueur.getFragmentLunaire());
@@ -53,19 +53,19 @@ class PlateauDuJoueurTest {
 
 
     @Test
-    void setMaxFragSol() {
+    public  void setMaxFragSol() {
         plateauDuJoueur.setMaxFragSol(5);
         assertEquals(5,plateauDuJoueur.getMaxFragSol());
     }
 
     @Test
-    void setMaxFragLun() {
+    public void setMaxFragLun() {
         plateauDuJoueur.setMaxFragLun(5);
         assertEquals(5,plateauDuJoueur.getMaxFragLun());
     }
 
     @Test
-    void ajouterFragLun() {
+    public void ajouterFragLun() {
         plateauDuJoueur.ajouterFragLun(3);
         assertEquals(3,plateauDuJoueur.getFragmentLunaire());
         plateauDuJoueur.ajouterFragLun(6);
@@ -73,7 +73,7 @@ class PlateauDuJoueurTest {
     }
 
     @Test
-    void ajouterFragSol() {
+    public  void ajouterFragSol() {
         plateauDuJoueur.ajouterFragSol(3);
         assertEquals(3,plateauDuJoueur.getFragmentSolaire());
         plateauDuJoueur.ajouterFragSol(6);

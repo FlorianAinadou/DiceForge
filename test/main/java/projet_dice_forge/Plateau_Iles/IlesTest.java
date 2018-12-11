@@ -8,8 +8,12 @@ import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
 import main.java.projet_dice_forge.effet.EffetPermanent.LAncien;
 import main.java.projet_dice_forge.effet.EffetPermanent.LesAilesDeLaGardienne;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+
+
+import static org.junit.jupiter.api.Assertions.*;
+
 
 
 

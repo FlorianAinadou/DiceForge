@@ -9,32 +9,32 @@ public class GloireTest {
 
 
     @Test
-    void getNombreRessourceTest(){
+    public void getNombreRessourceTest(){
         assertEquals(gloire.getNbRessources(),4);
         assertFalse(gloire.getNbRessources()==66);
 
     }
 
     @Test
-    void getTypeRessourceTest(){
+    public void getTypeRessourceTest(){
         assertEquals(gloire.getTypeRessource(),"Gloire");
         assertFalse(gloire.getTypeRessource().equals("Bonjour"));
     }
 
     @Test
-    void getIdRessourceTest(){
+    public void getIdRessourceTest(){
         assertEquals(gloire.getIdRessource(),2);
         assertFalse(gloire.getIdRessource()==4);
     }
     @Test
-    void setRessourceTest(){
+    public void setRessourceTest(){
         gloire.setRessources(98);
         assertEquals(gloire.getNbRessources(),98);
         assertFalse(gloire.getNbRessources()==6);
     }
 
     @Test
-    void AjouterRessourceTest(){
+    public  void AjouterRessourceTest(){
         gloire.ajoutRessources(2);
         assertEquals(gloire.getNbRessources(),6);
         gloire.ajoutRessources(12);
@@ -44,7 +44,7 @@ public class GloireTest {
     }
 
     @Test
-    void EnleverRessourceTest(){
+    public  void EnleverRessourceTest(){
         gloire.enleverRessources(2);
         assertEquals(gloire.getNbRessources(),2);
         gloire.enleverRessources(1);

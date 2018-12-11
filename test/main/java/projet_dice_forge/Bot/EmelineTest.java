@@ -10,6 +10,8 @@ import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.testng.Assert.assertEquals;
 
 class EmelineTest {
 
@@ -101,7 +103,7 @@ class EmelineTest {
 
     @Test
     public void puisJeAcheterLeCoffre() {
-=======
+
     void puisJeAcheterUneCarte() {
         Emeline bot = new Emeline(2);
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);

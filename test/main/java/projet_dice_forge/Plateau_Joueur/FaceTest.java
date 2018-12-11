@@ -12,7 +12,7 @@ class FaceTest {
 
 
     @Test
-    void ajouterRessource() {
+    public  void ajouterRessource() {
         Face face= new Face();
         face.AjouterRessource(new Or(2));
         assertNotNull(face.getRessource());
@@ -20,7 +20,7 @@ class FaceTest {
 
 
     @Test
-    void getValeurFace() {
+    public void getValeurFace() {
         Face face= new Face();
         face.AjouterRessource(new Or(2));
         face.AjouterRessource(new FragementLunaire(2));

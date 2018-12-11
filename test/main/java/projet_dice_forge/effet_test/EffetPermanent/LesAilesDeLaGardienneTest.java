@@ -11,14 +11,14 @@ import static org.junit.Assert.assertEquals;
 public class LesAilesDeLaGardienneTest {
 
     @Test
-    void LesAilesDeLaGardienne() {
+    public void LesAilesDeLaGardienne() {
         LesAilesDeLaGardienne lesAilesDeLaGardienne = new LesAilesDeLaGardienne();
         assertEquals(lesAilesDeLaGardienne.getIdCarte(), 12);
         assertEquals(lesAilesDeLaGardienne.getPointDeGloire().getNbRessources(), 2);
     }
 
     @Test
-    void activerEffetCartePerm() {
+    public  void activerEffetCartePerm() {
         Joueur joueur = new Joueur(1);
         Iles ile = new Iles();
         LesAilesDeLaGardienne lesAilesDeLaGardienne = new LesAilesDeLaGardienne();

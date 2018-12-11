@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 class LesSabotsDargentTest {
 
      @Test
-     void LesSabotsDargent(){
+     public void LesSabotsDargent(){
          LesSabotsDargent lesSabotsDargent = new LesSabotsDargent();
          Ressource[] ressources = lesSabotsDargent.getPrix();
         assertEquals(ressources[0].getTypeRessource(),"FragementLunaire" );
@@ -25,7 +25,7 @@ class LesSabotsDargentTest {
      }
 
      @Test
-    void activerEffetCarte(){
+    public void activerEffetCarte(){
          Joueur joueur = new Joueur(1);
          De de = new De("claire");
          Face face = new Face();
