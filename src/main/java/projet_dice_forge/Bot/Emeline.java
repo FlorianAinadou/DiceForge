@@ -258,20 +258,18 @@ public class Emeline extends Bot {
         int mesSolaires=this.getPlateauDuJoueur().getFragmentSolaire();
         int mesLunaires=this.getPlateauDuJoueur().getFragmentLunaire();
         int prixIle=0;
-        int ile1=0, ile2=0;
-
-        //if(this.puisjeAcheterLaCarteLaaPlusChere(plateauDesIles)) return 7;
-
-        // else {
+        int ile1=0;
+        int ile2=0;
 
         if(mesSolaires>mesLunaires) {
             for (int i = 1; i < 7; i++) {
                 if(plateauDesIles.getIlesNb(i).getListCartes().size()-1>0) {
                     boolean act1 = plateauDesIles.getIlesNb(i).getListCartes().get(plateauDesIles.getIlesNb(i).getListCartes().size() - 1).getPrixSolaire() > prixIle;
                     boolean act2 = plateauDesIles.getIlesNb(i).getListCartes().get(plateauDesIles.getIlesNb(i).getListCartes().size() - 1).getPrixSolaire() < mesSolaires;
-                    if (act1 && act2 &&  plateauDesIles.getIlesNb(i).getListCartes().size()!=0)
+                    if (act1 && act2 &&  plateauDesIles.getIlesNb(i).getListCartes().size()!=0) {
                         prixIle = plateauDesIles.getIlesNb(i).getListCartes().get(plateauDesIles.getIlesNb(i).getListCartes().size() - 1).getPrixSolaire();
-                    ile1 = i;
+                        ile1 = i;
+                    }
                 }
 
             }
@@ -279,7 +277,7 @@ public class Emeline extends Bot {
         }
 
 
-        if(mesSolaires<mesLunaires) {
+        else {
             for (int j = 1; j < 7; j++) {
                 if(plateauDesIles.getIlesNb(j).getListCartes().size()-1>0) {
                     boolean act1 = plateauDesIles.getIlesNb(j).getListCartes().get(plateauDesIles.getIlesNb(j).getListCartes().size() - 1).getPrixLunaire() > prixIle;
@@ -293,10 +291,6 @@ public class Emeline extends Bot {
             return ile2;
         }
 
-
-        // }
-
-        return 0;
     }
 
     public boolean puisJeAcheterUneCarte(PlateauDesIles plateauDesIles){

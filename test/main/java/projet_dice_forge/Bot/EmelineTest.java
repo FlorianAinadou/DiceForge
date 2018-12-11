@@ -47,7 +47,8 @@ public class EmelineTest {
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
         bot.getPlateauDuJoueur().ajouterOr(4);
         Face face= new Face();
-        face.AjouterRessource(new Or(6));
+        face.AjouterRessource(new Or(2));
+        face.AjouterRessource(new FragementLunaire(1));
         assertEquals(bot.quelleFaceAcheter(temple.getBassin(4).getListFace()), face);
     }
 
@@ -86,11 +87,11 @@ public class EmelineTest {
 
     @Test
     public void dansQuelleIleAller() {
-        Emeline bot = new Emeline(2);
+        Emeline bot = new Emeline(3);
         PlateauDesIles plateauDesIles= new PlateauDesIles(1);
-        bot.getPlateauDuJoueur().ajouterFragSol(0);
-        bot.getPlateauDuJoueur().ajouterFragLun(1);
-        assertEquals(1, bot.dansQuelleIleAller(plateauDesIles));
+        bot.getPlateauDuJoueur().ajouterFragSol(1);
+        bot.getPlateauDuJoueur().ajouterFragLun(0);
+        assertEquals(0, bot.dansQuelleIleAller(plateauDesIles));
     }
     
     @Test
