@@ -60,6 +60,19 @@ public class Bassin {
     }
 
     /**
+     * Permet d'afficher les faces présentent dans le bassin.
+     */
+  /*  public void AfficherBassin() {
+        System.out.println("Bassin:");
+        for (int i = 0; i < this.ListFace.size(); i++) {
+            Face face = this.ListFace.get(i);
+
+            System.out.println(face.getNb() + face.getTypeDeRessource());
+        }
+    }
+    */
+
+    /**
      * Permet d'enlever une face du bassin.
      * @param faceJoueur
      */
@@ -73,21 +86,12 @@ public class Bassin {
             }
         }
     }
-    /**
-     * Permet d'acheter une face dans le bassin
-     * @param face face sélectionnée
-     * @param joueur joeur qui achète
-     */
 
     public void AcheterFace(Face face, Joueur joueur){
         this.EnleverFaceBassin(face);
         PlateauDuJoueur plateau =joueur.getPlateauDuJoueur();
         plateau.setOr(plateau.getOr() - this.getCout());
     }
-
-    /**
-     *
-     */
 
     public Face FaceAleaBassin(){
         int nbFaceBassin = this.ListFace.size();
@@ -99,10 +103,6 @@ public class Bassin {
         EnleverFaceBassin(face);
         return face;
     }
-
-    /**
-     * @return La taille du bassin
-     */
 
     public int TailleBassin(){
        return this.ListFace.size();
@@ -120,14 +120,9 @@ public class Bassin {
         return res;
     }
 
-    /**
-     * Permet de vérifier si une face est présente dans un bassin
-     */
-
     public boolean faceIsIn(Face face) {
-        int size = ListFace.size();
-        for(int i = 0; i < size; i++) {
-            if(face.equals(ListFace.get(i))) return true;
+        for(Face fac : this.ListFace) {
+            if(face.equals(fac)) return true;
         }
         return false;
     }

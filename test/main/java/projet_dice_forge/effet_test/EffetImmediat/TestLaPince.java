@@ -42,8 +42,9 @@ public class TestLaPince {
         fixé des dé
          */
 
-
         assertTrue(8 <= joueur.getPlateauDuJoueur().getPointsDeGloire() && joueur.getPlateauDuJoueur().getPointsDeGloire() <= 12);
+
+
 
 
     }

@@ -6,8 +6,10 @@ import main.java.projet_dice_forge.Partie_Iles.Carte;
 import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
+import main.java.projet_dice_forge.Ressource.Ressource;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Bot extends Joueur {
@@ -63,9 +65,7 @@ protected boolean rejouer=false;
         return res;
 
     }
-    /**
-     * @return L'ile qui contient la carte recherchée
-     */
+
     protected Iles getIleFromCarte(Carte carte, PlateauDesIles plateauDesIles){
         for(int i =0 ; i <plateauDesIles.getNbIle(); i++){
             Iles ile = plateauDesIles.getIlesNb(i+1);

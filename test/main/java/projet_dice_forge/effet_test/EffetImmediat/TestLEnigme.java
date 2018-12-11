@@ -10,7 +10,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-
 public class TestLEnigme {
 
 
@@ -44,6 +43,7 @@ public class TestLEnigme {
 
         assertFalse(enigme.isActiverOuPas());
         assertTrue(10 <= joueur.getPlateauDuJoueur().getPointsDeGloire() && joueur.getPlateauDuJoueur().getPointsDeGloire() <= 14);
+
 
 
     }

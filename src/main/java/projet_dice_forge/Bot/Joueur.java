@@ -1,15 +1,13 @@
 package main.java.projet_dice_forge.Bot;
 
 
-import main.java.projet_dice_forge.Partie_Bassin.Bassin;
-import main.java.projet_dice_forge.Partie_Bassin.Temple;
+import main.java.projet_dice_forge.Partie_Bassin.*;
 import main.java.projet_dice_forge.Partie_Iles.*;
-import main.java.projet_dice_forge.Plateau_Joueur.De;
-import main.java.projet_dice_forge.Plateau_Joueur.Face;
-import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
-import main.java.projet_dice_forge.Ressource.Or;
-import main.java.projet_dice_forge.Ressource.Ressource;
+import main.java.projet_dice_forge.Plateau_Joueur.*;
+import main.java.projet_dice_forge.Ressource.*;
 
+
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -163,9 +161,7 @@ public class Joueur {
      */
     public void lanceDe() {
         Face claire = faveurMineurChoix(0);
-        this.DeClaire.setFaceactive(claire);
         Face sombre = faveurMineurChoix(1);
-        this.DeSombre.setFaceactive(sombre);
         StringBuilder s1= new StringBuilder();
         s1.append(detailTour);
         s1.append("Dé 1: " + claire.toString());
@@ -175,12 +171,15 @@ public class Joueur {
         detailTour = s1.toString();
 
     }
-    /**
-     * Permet à un joueur d'acheter une face dans un bassin et de la mettre sur le dé choisi
-     */
 
     public void acheterFace(Temple temp, Face acheter, Face echange, int idDe) {
-
+        int size = temp.getBassins().size();
+        for (int i = 0; i < size; i++) {
+            Bassin bas = temp.getBassins().get(i);
+            if (bas.faceIsIn(acheter)) {
+                //this.Plateau.enleverOr(temp.getBassins().get(i).getCout());
+            }
+        }
         echangerFace(acheter, echange, idDe);
         temp.deleteFace(echange);
         StringBuilder stringBuilder = new StringBuilder(detailTour);
@@ -286,8 +285,9 @@ public class Joueur {
                 ajouterPointDeGloire(carte);
                 iles.joueurEstSurIle();
             }
-        }
 
+
+        }
         StringBuilder s1 = new StringBuilder();
         s1.append(detailTour);
         s1.append("Le joueur "+ (this.getIdJoueur()+1) + " achete la carte "+ carte.toString() + "\n");
@@ -359,6 +359,8 @@ public class Joueur {
         }
     }
 
+
+
     public void activerEffetCarteImmediat(){
         for (CarteEffetImmediat carte: this.getListeCarteEffetImmediat()){
             if(carte.isActiverOuPas()){
@@ -368,6 +370,22 @@ public class Joueur {
         }
 
     }
+
+/*
+    public void activerEffetCarteImmediat(){
+        for(int i=0;i<getListeCarteEffetImmediat().size();i++){
+            if(ListeCarteEffetImmediat.get(i).isActiverOuPas()){
+                ListeCarteEffetImmediat.get(i).activerEffetCarte(this);
+                //ListeCarteEffetImmediat.remove(i);
+                ListeCarteEffetImmediat.get(i).desactiverCarte();
+            }
+
+        }
+
+    }
+    */
+
+
 
     /**
      * Cette méthode nous permet de parcourir la liste de carte que le Joueur possède à effet Immediat en relation avec
@@ -383,6 +401,19 @@ public class Joueur {
             }
         }
     }
+
+    /*
+    public void activerEffetCarteImmRealJoueur(){
+        for(int i=0;i<getListeCarteEffetImmRealJoueur().size();i++){
+            if(ListeCarteEffetImmRealJoueur.get(i).isActiverOuPas()){
+                ListeCarteEffetImmRealJoueur.get(i).activerEffetImmCarteRealJoueur(this);
+                ListeCarteEffetImmRealJoueur.get(i).desactiverCarte();
+                //ListeCarteEffetImmRealJoueur.remove(i);
+            }
+        }
+    }
+*/
+
 
     /**
      *Cette méthode nous permet de parcourir la liste de carte que le Joueur possède à effet Permanent en relation avec
@@ -416,7 +447,7 @@ public class Joueur {
      * Ainsi on choisis de manière aléatoire le dée qu'on va lancée.
      */
 
-    public void ajouterRessource(Face face, int idDe){
+    public void ajouterRessource(Face face){
         for (Ressource ressource:face.getRessource()){
             if(ressource.getIdRessource()==1){
                 this.Plateau.ajouterOr(ressource.getNbRessources());
@@ -429,18 +460,6 @@ public class Joueur {
             }
             if(ressource.getIdRessource()==3){
                 this.Plateau.ajouterFragSol(ressource.getNbRessources());
-            }
-            if(ressource.getIdRessource()==5){
-                if(idDe==0){
-                    this.ajouterRessource(this.DeSombre.getFaceactive(),2);
-                }
-                if(idDe==1){
-                    this.ajouterRessource(this.DeClaire.getFaceactive(),2);
-                }
-                if(idDe==2){
-                    break;
-                }
-
             }
         }
 
@@ -487,7 +506,7 @@ public class Joueur {
                 effetMarteauDeClaire(this);
             }
             else{
-                ajouterRessource(claire,0);
+                ajouterRessource(claire);
             }
         }
         else {
@@ -496,7 +515,7 @@ public class Joueur {
                 effetMarteauDeSombre(this);
             }
             else {
-                ajouterRessource(sombre,1);
+                ajouterRessource(sombre);
             }
         }
     }
@@ -519,7 +538,7 @@ public class Joueur {
 
             }
             else{
-                ajouterRessource(claire,0);
+                ajouterRessource(claire);
                 return claire;
 
             }
@@ -534,7 +553,7 @@ public class Joueur {
 
 
             else{
-                ajouterRessource(sombre,0);
+                ajouterRessource(sombre);
                 return sombre;
             }
 

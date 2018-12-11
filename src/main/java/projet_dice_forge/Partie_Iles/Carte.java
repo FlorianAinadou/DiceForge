@@ -1,7 +1,11 @@
 package main.java.projet_dice_forge.Partie_Iles;
 
+import main.java.projet_dice_forge.Bot.Joueur;
 import main.java.projet_dice_forge.Ressource.Gloire;
 import main.java.projet_dice_forge.Ressource.Ressource;
+import main.java.projet_dice_forge.effet.EffetImmediat.LesHerbesFolles;
+
+import java.util.ArrayList;
 
 
 public class Carte implements Cloneable {
@@ -103,10 +107,6 @@ public class Carte implements Cloneable {
 
         return 0;
     }
-
-    /**
-     * Permet de savoir quel type de ressource il est nécessaire de payer pour acheter la carte
-     */
 
     public String getTypeRessourcesRéclamées(){
         if(this.getPrixSolaire()!=0 && this.getPrixLunaire()==0) return "FragementSolaire";

@@ -14,14 +14,5 @@ public class PlateauDesIlesTest {
     PlateauDesIles plateauDesIles =new PlateauDesIles(2);
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PlateauDesIlesTest {
-    PlateauDesIles plateauDesIles =new PlateauDesIles(2);
-
-    @Test
-   public void plateauDesIles(){
-        assertEquals(plateauDesIles.getNbIle(),7);
-        assertEquals(plateauDesIles.getIlesNb(1),plateauDesIles.getIlesN1());
-    }
 }

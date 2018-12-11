@@ -1,5 +1,7 @@
 package main.java.projet_dice_forge.Partie_Iles;
 
+import main.java.projet_dice_forge.Partie_Iles.Carte;
+
 import java.util.ArrayList;
 
 
@@ -24,17 +26,14 @@ public class Iles {
         ListeExploit =new ArrayList<>();
 
     }
-    /**
-     * Permet de définir si le portail est occupé ou non
-     */
 
     public void joueurEstSurIle(){
         this.portail=occupé;
     }
 
-    /**
-     * Permet d'enlever une carte dans l'île
-     */
+
+
+
 
     public void enleverCarte(Carte carte){
         for(int i=0; i<ListeExploit.size(); i++){
@@ -45,10 +44,25 @@ public class Iles {
         }
     }
 
-    /**
-     * Permet d'ajouter des cartes à une île
-     */
 
+
+
+
+/*
+    public void enleverCarteV2(Carte carte){
+        for(int i=0; i<ListeExploit.size(); i++){
+            if(carte instanceof (ListeExploit.get(i))){
+                ListeExploit.remove(i);
+                break;
+            }
+        }
+    }
+    */
+    public void printLsite(){
+        for(int i=0; i<ListeExploit.size(); i++){
+            ListeExploit.get(i).afficherCarte();
+        }
+    }
     public void ajouterCarte(Carte carte) {
             this.ListeExploit.add(carte);
     }
@@ -66,6 +80,11 @@ public class Iles {
         return null;
     }
 
+    /*public void ajouterCarte(Carte carte,int quantité){
+        for(int i =0; i<quantité; i++){
+            this.ListeExploit.add(carte);
+        }
+    }*/
 
     public ArrayList<Carte> getListCartes() {
         return ListeExploit;

@@ -130,6 +130,7 @@ public class Jeu {
                 ptGloireMoy[k] += ptGLoire;
                 ptGloireMax[k] = ptGloireMax[k] < ptGLoire ? ptGLoire : ptGloireMax[k];
             }
+            initJeu();
         }
         for(int j = 0; j<nbrJoueur; j++) {
             System.out.print("Le joueur " + (bot[j].getIdJoueur()+1) + " a gagné " + gagnant[bot[j].getIdJoueur()]);

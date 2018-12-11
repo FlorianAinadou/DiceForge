@@ -148,10 +148,6 @@ public class Temple {
         return bassin12Or;
     }
 
-    /**
-     * Permet d'accéder à un bassin via son coût
-     */
-
     public Bassin getBassin(int coutBassin) {
         for(Bassin b : bassins) {
             if(b.getCout() == coutBassin)
@@ -166,9 +162,6 @@ public class Temple {
         return getBassin(coutBassin).getListFace();
     }
 
-    /**
-     * Permet d'enlever une face dans le bassin sélectionné
-     */
     public void deleteFace(Face face) {
         int size = bassins.size();
         for(int i = 0; i<size; i++) {
