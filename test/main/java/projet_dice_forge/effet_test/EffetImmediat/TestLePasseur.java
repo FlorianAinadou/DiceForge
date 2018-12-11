@@ -36,7 +36,7 @@ public class TestLePasseur {
             joueur.activerEffetCarteImmediat();
 
             assertEquals(lePasseur.isActiverOuPas(),false);
-            assertEquals(12,joueur.getPointDeGloireCarte());
+            assertEquals(12,joueur.getPlateauDuJoueur().getPointsDeGloire());
 
 
 

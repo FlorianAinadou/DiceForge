@@ -39,7 +39,7 @@ public class TestLesHerbesFolles {
         assertEquals(3,joueur.getPlateauDuJoueur().getFragmentLunaire());
 
         assertEquals(lesHerbesFolles.isActiverOuPas(),false);
-        assertEquals(2,joueur.getPointDeGloireCarte());
+        assertEquals(2,joueur.getPlateauDuJoueur().getPointsDeGloire());
 
 
     }

@@ -42,7 +42,7 @@ public class TestLEnigme {
          */
 
         assertFalse(enigme.isActiverOuPas());
-        assertEquals(10,joueur.getPointDeGloireCarte());
+        assertEquals(10,joueur.getPlateauDuJoueur().getPointsDeGloire());
 
 
 

@@ -42,7 +42,7 @@ public class TestLaPince {
          */
 
 
-        assertEquals(8,joueur.getPointDeGloireCarte());
+        assertEquals(8,joueur.getPlateauDuJoueur().getPointsDeGloire());
 
 
 

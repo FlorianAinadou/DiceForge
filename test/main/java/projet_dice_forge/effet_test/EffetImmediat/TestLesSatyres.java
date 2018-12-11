@@ -48,7 +48,7 @@ public class TestLesSatyres {
         assertFalse(lesSatyres.isActiverOuPas());
 
 
-        assertEquals(6,joueur1.getPointDeGloireCarte());
+        assertEquals(6,joueur1.getPlateauDuJoueur().getPointsDeGloire());
     }
 
     /**

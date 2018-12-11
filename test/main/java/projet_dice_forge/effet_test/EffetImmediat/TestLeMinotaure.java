@@ -44,17 +44,17 @@ public class TestLeMinotaure {
 
         assertTrue(!leMinotaure.isActiverOuPas());
         joueur1.acheterCarte(ile,leMinotaure);
-
+        //assertTrue(joueur1.get.get(0).isActiverOuPas());
         joueur1.activerEffetCarteImmRealJoueur();
         /*
         System.out.println(joueur1.getPlateauDuJoueur().getOr());
         */
         System.out.println(joueur2.getPlateauDuJoueur().getPointsDeGloire());
 
-        assertFalse(leMinotaure.isActiverOuPas());
+        assertFalse(joueur1.getListeCarteEffetImmRealJoueur().get(0).isActiverOuPas());
 
 
-        assertEquals(8,joueur1.getPointDeGloireCarte());
+        assertEquals(8,joueur1.getPlateauDuJoueur().getPointsDeGloire());
 
 
 
