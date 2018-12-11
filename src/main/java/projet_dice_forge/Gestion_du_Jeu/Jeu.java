@@ -107,6 +107,8 @@ public class Jeu {
     public void lancerNPartie(int nbrPartie) {
         int[] gagnant = new int[nbrJoueur];
         int[] egalite = new int[nbrJoueur];
+        int[] ptGloireMoy = new int[nbrJoueur];
+        int[] ptGloireMax = new int[nbrJoueur];
         ArrayList<Integer> win;
         boolean affichage = nbrPartie <= 1;
         for(int i = 0; i<nbrPartie; i++ )
@@ -121,11 +123,17 @@ public class Jeu {
                     egalite[bot[gagn].getIdJoueur()]++;
                 }
             }
+            for(int k = 0; k<nbrJoueur; k++){
+                int ptGLoire = bot[k].getPtGloire();
+                ptGloireMoy[k] += ptGLoire;
+                ptGloireMax[k] = ptGloireMax[k] < ptGLoire ? ptGLoire : ptGloireMax[k];
+            }
             initJeu();
         }
         for(int j = 0; j<nbrJoueur; j++) {
             System.out.print("Le joueur " + (bot[j].getIdJoueur()+1) + " a gagné " + gagnant[bot[j].getIdJoueur()]);
             System.out.println(" égalité " + egalite[bot[j].getIdJoueur()]);
+            System.out.println("Avec une moyenne de " + (ptGloireMoy[j]/nbrPartie) + " Un max de : " + ptGloireMax[j]);
         }
     }
 
