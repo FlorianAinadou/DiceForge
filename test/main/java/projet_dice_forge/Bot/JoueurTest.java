@@ -6,7 +6,7 @@ import main.java.projet_dice_forge.Ressource.*;
 import org.junit.Test;
 
 
-class JoueurTest {
+public class JoueurTest {
     @Test
     public void acheterFaceTest(){
         Temple temple = new Temple();
