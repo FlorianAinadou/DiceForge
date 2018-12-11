@@ -7,14 +7,8 @@ import main.java.projet_dice_forge.Partie_Iles.Iles;
 import main.java.projet_dice_forge.Partie_Iles.PlateauDesIles;
 import main.java.projet_dice_forge.Plateau_Joueur.De;
 import main.java.projet_dice_forge.Plateau_Joueur.Face;
-import main.java.projet_dice_forge.Plateau_Joueur.PlateauDuJoueur;
-import main.java.projet_dice_forge.Ressource.FragementLunaire;
-import main.java.projet_dice_forge.Ressource.Or;
-import main.java.projet_dice_forge.effet.EffetImmediat.LecoffreDuForgeron;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Emeline extends Bot {
@@ -292,6 +286,9 @@ public class Emeline extends Bot {
         }
 
     }
+    /**
+     * @return Un booléen qui indique si le joueur peut acheter une carte dans l'île sélectionnée
+     */
 
     public boolean puisJeAcheterUneCarte(PlateauDesIles plateauDesIles){
         if(this.dansQuelleIleAller(plateauDesIles)==0){

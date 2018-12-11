@@ -10,11 +10,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 
-
-
-
-
-
 public class LeCoffreDuForgeronTest {
 
     @Test
@@ -25,6 +20,7 @@ public class LeCoffreDuForgeronTest {
         assertEquals(ressources[0].getNbRessources(), 1);
         assertEquals(lecoffreDuForgeron.getPointDeGloire().getNbRessources(),2);
     }
+
     @Test
     public void activerEffetCarte(){
         Joueur joueur = new Joueur(1);
